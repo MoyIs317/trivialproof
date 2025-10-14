@@ -2,6 +2,9 @@ baseURL: "https://moyis317.github.io/trivialproof/"
 languageCode: "en-us"
 title: "My New Hugo Site"
 theme: "hugo-profile"
+canonifyURLs: true
+relativeURLs: true
+
 
 outputs:
   home:
