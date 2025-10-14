@@ -2,36 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/</loc>
+    <loc>http://localhost:1313/trivialproof/blogs/</loc>
     <lastmod>2025-08-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/</loc>
+    <loc>http://localhost:1313/trivialproof/tags/datos/</loc>
     <lastmod>2025-08-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/datos/</loc>
+    <loc>http://localhost:1313/trivialproof/tags/estad%C3%ADstica/</loc>
     <lastmod>2025-08-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/estad%C3%ADstica/</loc>
+    <loc>http://localhost:1313/trivialproof/blogs/estadistica/</loc>
     <lastmod>2025-08-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/estadistica/</loc>
+    <loc>http://localhost:1313/trivialproof/tags/matem%C3%A1ticas/</loc>
     <lastmod>2025-08-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/matem%C3%A1ticas/</loc>
+    <loc>http://localhost:1313/trivialproof/</loc>
     <lastmod>2025-08-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/trivialproof/tags/</loc>
     <lastmod>2025-08-01T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/c%C3%A1lculo/</loc>
+    <loc>http://localhost:1313/trivialproof/tags/c%C3%A1lculo/</loc>
     <lastmod>2021-04-03T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/geometr%C3%ADa/</loc>
+    <loc>http://localhost:1313/trivialproof/tags/geometr%C3%ADa/</loc>
     <lastmod>2021-04-03T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/blogs/geometria/</loc>
+    <loc>http://localhost:1313/trivialproof/blogs/geometria/</loc>
     <lastmod>2021-04-03T22:53:58+05:30</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/trivialproof/categories/</loc>
   </url>
 </urlset>
