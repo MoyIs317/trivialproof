@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://moyis317.github.io/trivialproof/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://moyis317.github.io/trivialproof/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://moyis317.github.io/trivialproof/tags/</loc>
   </url>
 </urlset>
