@@ -337,20 +337,20 @@ Estadística | Trivial Proof
 <blockquote>
 <p>Definición: La estadística como área de estudio es el arte y ciencia de diseñar estudios y analizar  los datos que estos producen. Su objetivo final es el traducir los datos en   conocimiento y comprensión del mundo que nos rodea. En resumen, la estadística es el arte y la ciencia de aprender de los datos,</p></blockquote>
 <p>Dentro de la misma estadística no encontramos con una subrama a la que se le suele llamar estadística descriptiva, esta es una serie de herramientas que nos permite resumir nuestros datos con la finalidad de enfatizar nuestra información y con esto poder lograr nuestro planteamiento de preguntas y modelos.</p>
-<p>A lo largo de esta secciones daremos algunas definiciones así como ejemplos con python y R, esto con la finalidad de ejemplificar cada idea y obtener habilidades a lo largo de la lectura.</p>
+<p>A lo largo de esta secciones daremos algunas definiciones así como ejemplos con Python y R, esto con la finalidad de ejemplificar cada idea y obtener habilidades a lo largo de la lectura.</p>
 <p><em><strong>Definición (Muestra)</strong></em>:  Entenderemos como muestra a una parte  de una población de estudio. a la información y mediciones obtenidas de esta los llamaremos datos.</p>
-<p><em><strong>Definición (Variable)</strong></em>: Diremos que una varible es cualquier caracterstica de un individuo perteneciente a una población.</p>
-<p>A nuestras varibles las podemos clasificar en cuantitativas y cualitativas.</p>
-<p><strong>Definición (Variables Cuantitativas)</strong>: Diremos que una varible es cuantitativa si esta puede tomar valores numericos y representan una cantidad, además podemos dividir a estas varibles en discretas y continuas.</p>
-<p><strong>Definición (Variables Cualitativas)</strong>: Aquí los valores que toma la varible representan una cualidad, atributo o categoría, en algunos textos pueden ser llamadas <em>variables categóricas</em>.</p>
-<p>Para dar un breve ejemplo de este tipo de varibles pensemos en un grupo de estudiantes en alguna universidad, sus estaturas, sus calificaciones son ejemplos de varibles cuantitativas mientras que su sexo, o religión son ejemplos de varibles cualitativas.</p>
-<p>En la practica algunos modelos de Machine Learning aceptan varibles categóricas de entrada o salida, por lo que es común usar numeros para etiquetar los valores de alguna variable categórica, sin embargo es importante no confundir el echo de que no representa un cantidad si no que señala una cualidad.</p>
-<h3 id="descripciones-númericas">Descripciones númericas</h3>
+<p><em><strong>Definición (Variable)</strong></em>: Diremos que una variable es cualquier característica de un individuo perteneciente a una población.</p>
+<p>A nuestras variables las podemos clasificar en cuantitativas y cualitativas.</p>
+<p><strong>Definición (Variables Cuantitativas)</strong>: Diremos que una variable es cuantitativa si esta puede tomar valores numéricos y representan una cantidad, además podemos dividir a estas variables en discretas y continuas.</p>
+<p><strong>Definición (Variables Cualitativas)</strong>: Aquí los valores que toma la variable representan una cualidad, atributo o categoría, en algunos textos pueden ser llamadas <em>variables categóricas</em>.</p>
+<p>Para dar un breve ejemplo de este tipo de variables pensemos en un grupo de estudiantes en alguna universidad, sus estaturas, sus calificaciones son ejemplos de variables cuantitativas mientras que su sexo, o religión son ejemplos de variables cualitativas.</p>
+<p>En la practica algunos modelos de Machine Learning aceptan variables categóricas de entrada o salida, por lo que es común usar números para etiquetar los valores de alguna variable categórica, sin embargo es importante no confundir el echo de que no representa un cantidad si no que señala una cualidad.</p>
+<h3 id="descripciones-numéricas">Descripciones numéricas</h3>
 <p>Empezaremos por explicar las medidas de tendencia central las cuales tienen como finalidad buscar un valor central que representen a nuestros datos, estas son la <em>media, moda</em> y <em>mediana</em>.</p>
 <blockquote>
 <p>Definición (Media): Consideremos $$ x_1, x_2, &hellip;, x_n$$ observaciones de alguna muestra, la media no es otra cosa más que el promedio de estos números y comúnmente lo representamos por \(\bar{x}\), teniendo de esta forma que: $$ \bar{x} := \frac{x_1 + x_2 +&hellip; + x_3}{n} $$</p></blockquote>
-<p>En python tenemos muchas formas de obtener la mediana de un arreglo unidimensional, por ejemplo si empezamos con una lista a este le podemos calcular la suma de sus elementos y dividir esto entre su longitud, o con la ayuda de la libreria numpy podemos crear un array, y este objeto cuenta con el metódo mean.</p>
-<p>Por ejemplo consideremos un arreglo con las estaturas de un grupo de personas, veamos como podmeos calular la media en python.</p>
+<p>En Python tenemos muchas formas de obtener la mediana de un arreglo unidimensional, por ejemplo si empezamos con una lista a este le podemos calcular la suma de sus elementos y dividir esto entre su longitud, o con la ayuda de la librería Numpy podemos crear un array, y este objeto cuenta con el método mean.</p>
+<p>Por ejemplo consideremos un arreglo con las estaturas de un grupo de personas, veamos como podemos calcular la media en Python.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#### Primera forma </span>
 </span></span><span style="display:flex;"><span>estaturas <span style="color:#f92672">=</span> [<span style="color:#ae81ff">187</span>, <span style="color:#ae81ff">163</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">177</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">169</span>]
 </span></span><span style="display:flex;"><span>sum(estaturas) <span style="color:#f92672">/</span> len(estaturas)
@@ -360,7 +360,7 @@ Estadística | Trivial Proof
 </span></span><span style="display:flex;"><span>array <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">187</span>, <span style="color:#ae81ff">163</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">177</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">169</span>])
 </span></span><span style="display:flex;"><span>print(array<span style="color:#f92672">.</span>mean())
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">170.14285714285714</span>
-</span></span></code></pre></div><p>en el caso de R podemos proceder de la misma forma considerar un vector númerico, sumar cada entrada de este, y dvidirlo entre su longitud, o directamante aplicar la función para calcular su media, tal y como vemos a continuación:</p>
+</span></span></code></pre></div><p>en el caso de R podemos proceder de la misma forma considerar un vector numérico, sumar cada entrada de este, y dividirlo entre su longitud, o directamente aplicar la función para calcular su media, tal y como vemos a continuación:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>estaturas <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">187</span>, <span style="color:#ae81ff">163</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">177</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">169</span>)
 </span></span><span style="display:flex;"><span><span style="color:#75715e">### Primera forma</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">sum</span>(estaturas) <span style="color:#f92672">/</span> <span style="color:#a6e22e">length</span>(estaturas)
@@ -368,7 +368,7 @@ Estadística | Trivial Proof
 </span></span><span style="display:flex;"><span><span style="color:#75715e">### Segunda forma</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">mean</span>(estaturas)
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">170.142857142857</span>
-</span></span></code></pre></div><p>Hay una serie de propiedades y observaciones interesnates de la media, cuya demostración es directa de la definición, las cuales solo se enunciaran:</p>
+</span></span></code></pre></div><p>Hay una serie de propiedades y observaciones interesantes de la media, cuya demostración es directa de la definición, las cuales solo se enunciaran:</p>
 <ol>
 <li>La media no necesariamente pertenece al conjunto de observaciones.</li>
 <li>Si tenemos las observaciones \(x_1, x_2, x_3,&hellip;,x_n\) y consideramos una constante \(c\) y se define \(y_i = x_i + c\) entonces \(\bar{y} = \bar{x} + c\).</li>
@@ -388,7 +388,7 @@ Estadística | Trivial Proof
 <h4 id="polígono-de-frecuencia">Polígono de frecuencia</h4>
 <h4 id="gráfica-de-pastel">Gráfica de pastel</h4>
 <h4 id="boxplot">Boxplot</h4>
-<h4 id="destribución-émpirica">Destribución émpirica</h4>
+<h4 id="distribución-empírica">Distribución empírica</h4>
 
           </article>
         </div>
@@ -405,7 +405,7 @@ Estadística | Trivial Proof
   <ul>
     <li><a href="#lección-1-estadística-descriptiva">Lección 1 Estadística Descriptiva</a>
       <ul>
-        <li><a href="#descripciones-númericas">Descripciones númericas</a></li>
+        <li><a href="#descripciones-numéricas">Descripciones numéricas</a></li>
         <li><a href="#descripciones-gráficas">Descripciones gráficas</a></li>
       </ul>
     </li>
@@ -535,6 +535,26 @@ Estadística | Trivial Proof
         <div class="col-lg-4 col-md-6 pt-2">
             <div class="card h-100">
                 
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="../../blogs/%C3%A1lgebra/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Álgebra">Álgebra</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h1 id="10-lecciones-básicas-del-álgebra">10 Lecciones básicas del álgebra</h1>
+<h2 id="grupos">Grupos</h2>
+<p>Una gran revolución en las matemáticas ocurrió en el siglo XX pues se empezó con un estudio más abstracto de las ecuaciones</p></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Oct 15, 2025</span>
+                    <a href="../../blogs/%C3%A1lgebra/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
                 <div class="card-header">
                     <a href="../../blogs/estadistica/">
                         <img src="../../images/est_portada.png" class="card-img-top" alt="Estadística">
@@ -583,26 +603,6 @@ Estadística | Trivial Proof
             </div>
         </div>
         
-        <div class="col-lg-4 col-md-6 pt-2">
-            <div class="card h-100">
-                
-                <div class="card-body bg-transparent p-3 shadow-sm">
-                    <a href="../../blogs/%C3%A1lgebra/" class="primary-font card-title">
-                        <h5 class="card-title bg-transparent" title="Álgebra">Álgebra</h5>
-                    </a>
-                    <div class="card-text secondary-font">
-                        <p><h1 id="10-lecciones-básicas-del-álgebra">10 Lecciones básicas del álgebra</h1>
-<h2 id="grupos">Grupos</h2>
-<p>Desde la educación básica nos encontramos con ciertas</p></p>
-                    </div>
-                </div>
-                <div class="mt-auto card-footer">
-                    <span class="float-start">Jan 1, 0001</span>
-                    <a href="../../blogs/%C3%A1lgebra/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                </div>
-            </div>
-        </div>
-        
     </div>
 </div>
 
@@ -634,18 +634,6 @@ Estadística | Trivial Proof
     </span>
     
 
-    
-    <span class="px-1">
-        <a href="https://linkedin.com" target="_blank" aria-label="linkedin">
-            <svg xmlns="http://www.w3.org/2000/svg" width='2.4em' height='2.4em' fill="#fff" aria-label="LinkedIn"
-                viewBox="0 0 512 512">
-                <rect width="512" height="512" fill="#0077b5" rx="15%" />
-                <circle cx="142" cy="138" r="37" />
-                <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198" />
-                <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" />
-            </svg>
-        </a>
-    </span>
     
 
     

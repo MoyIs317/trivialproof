@@ -6,8 +6,22 @@
     <description>Recent content in Tags on Trivial Proof</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Aug 2025 22:53:58 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://moyis317.github.io/trivialproof/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Álgebra Abstracta</title>
+      <link>https://moyis317.github.io/trivialproof/tags/%C3%A1lgebra-abstracta/</link>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://moyis317.github.io/trivialproof/tags/%C3%A1lgebra-abstracta/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Matemáticas</title>
+      <link>https://moyis317.github.io/trivialproof/tags/matem%C3%A1ticas/</link>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://moyis317.github.io/trivialproof/tags/matem%C3%A1ticas/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Datos</title>
       <link>https://moyis317.github.io/trivialproof/tags/datos/</link>
@@ -23,13 +37,6 @@
       <description></description>
     </item>
     <item>
-      <title>Matemáticas</title>
-      <link>https://moyis317.github.io/trivialproof/tags/matem%C3%A1ticas/</link>
-      <pubDate>Fri, 01 Aug 2025 22:53:58 +0530</pubDate>
-      <guid>https://moyis317.github.io/trivialproof/tags/matem%C3%A1ticas/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Cálculo</title>
       <link>https://moyis317.github.io/trivialproof/tags/c%C3%A1lculo/</link>
       <pubDate>Sat, 03 Apr 2021 22:53:58 +0530</pubDate>
@@ -41,13 +48,6 @@
       <link>https://moyis317.github.io/trivialproof/tags/geometr%C3%ADa/</link>
       <pubDate>Sat, 03 Apr 2021 22:53:58 +0530</pubDate>
       <guid>https://moyis317.github.io/trivialproof/tags/geometr%C3%ADa/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Álgebra Abstracta</title>
-      <link>https://moyis317.github.io/trivialproof/tags/%C3%A1lgebra-abstracta/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://moyis317.github.io/trivialproof/tags/%C3%A1lgebra-abstracta/</guid>
       <description></description>
     </item>
   </channel>

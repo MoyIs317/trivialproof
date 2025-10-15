@@ -153,9 +153,7 @@ params:
     socialLinks:
       fontAwesomeIcons:
         - icon: fab fa-github
-          url: https://example.com
-        - icon: fab fa-x-twitter
-          url: https://example.com
+          url: https://github.com/MoyIs317
       customIcons:
         - icon: /fav.png
           url: "https://example.com"
@@ -368,7 +366,6 @@ params:
       disableFeaturedImage: false
     socialNetworks:
       github: https://github.com/MoyIs317
-      linkedin: https://linkedin.com
 
   # List pages like blogs and posts
   listPages:

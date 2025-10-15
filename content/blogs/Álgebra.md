@@ -1,6 +1,6 @@
 ---
 title: "Álgebra"
-date: 2025-10-15:53:58+05:30
+date: 2025-10-15
 draft: false
 author: "Moisés A."
 tags:
@@ -12,4 +12,4 @@ mathjax: True
 ---
 # 10 Lecciones básicas del álgebra 
 ## Grupos
-Desde la educación básica nos encontramos con ciertas 
+Una gran revolución en las matemáticas ocurrió en el siglo XX pues se empezó con un estudio más abstracto de las ecuaciones 
