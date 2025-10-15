@@ -62,7 +62,7 @@ Menus:
     #   weight: 2
 
 params:
-  title: "Hugo Profile"
+  title: "Trivial Proof"
   description: Text about my cool site
   # staticPath: ""  # The path to serve the static files from
   favicon: "/fav.png"
@@ -154,15 +154,13 @@ params:
       fontAwesomeIcons:
         - icon: fab fa-github
           url: https://github.com/MoyIs317
-      customIcons:
-        - icon: /fav.png
-          url: "https://example.com"
+
 
   # About
   about:
     enable: true
     title: "Sobre mí"
-    image: "/images/me.png"
+    image: "/images/lore.gif"
     content: |-
       Soy un matemático con un fuerte interés en el análisis de datos, probabilidad, geometría, estadística, optimización y el cómputo científico.
     skills:
@@ -258,7 +256,7 @@ params:
   # Education
   education:
     enable: true
-    # title: "Custom Name"
+    title: "Educación"
     index: false
     items:
       - title: "Licenciatura en Matemáticas"
@@ -346,7 +344,7 @@ params:
   #Contact
   contact:
     enable: true
-    # title: "Custom Name"
+    title: "Contacto"
     content: Mi bandeja de entrada está siempre abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible para responderte!
     btnName: Mandame correo
     btnLink: moisesguam842@gmail.com
