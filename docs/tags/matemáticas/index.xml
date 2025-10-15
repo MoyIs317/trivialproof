@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Matemáticas on My New Hugo Site</title>
+    <title>Matemáticas on Trivial Proof</title>
     <link>https://moyis317.github.io/trivialproof/tags/matem%C3%A1ticas/</link>
-    <description>Recent content in Matemáticas on My New Hugo Site</description>
+    <description>Recent content in Matemáticas on Trivial Proof</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Aug 2025 22:53:58 +0530</lastBuildDate>
@@ -21,6 +21,13 @@
       <pubDate>Sat, 03 Apr 2021 22:53:58 +0530</pubDate>
       <guid>https://moyis317.github.io/trivialproof/blogs/geometria/</guid>
       <description>&lt;h1 id=&#34;10-lecciones-básicas-de-geometría-diferencial&#34;&gt;10 Lecciones Básicas de Geometría Diferencial&lt;/h1&gt;&#xA;&lt;h2 id=&#34;teoría-local-de-curvas&#34;&gt;Teoría local de curvas&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Álgebra</title>
+      <link>https://moyis317.github.io/trivialproof/blogs/%C3%A1lgebra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://moyis317.github.io/trivialproof/blogs/%C3%A1lgebra/</guid>
+      <description>&lt;h1 id=&#34;10-lecciones-básicas-del-álgebra&#34;&gt;10 Lecciones básicas del álgebra&lt;/h1&gt;&#xA;&lt;h2 id=&#34;grupos&#34;&gt;Grupos&lt;/h2&gt;&#xA;&lt;p&gt;Desde la educación básica nos encontramos con ciertas&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
