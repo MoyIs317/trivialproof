@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Geometría on Trivial Proof</title>
+    <link>http://localhost:1313/trivialproof/tags/geometr%C3%ADa/</link>
+    <description>Recent content in Geometría on Trivial Proof</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Apr 2021 22:53:58 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/trivialproof/tags/geometr%C3%ADa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Geometría Diferencial</title>
+      <link>http://localhost:1313/trivialproof/blogs/geometria/</link>
+      <pubDate>Sat, 03 Apr 2021 22:53:58 +0530</pubDate>
+      <guid>http://localhost:1313/trivialproof/blogs/geometria/</guid>
+      <description>&lt;h1 id=&#34;10-lecciones-básicas-de-geometría-diferencial&#34;&gt;10 Lecciones Básicas de Geometría Diferencial&lt;/h1&gt;&#xA;&lt;h2 id=&#34;teoría-local-de-curvas&#34;&gt;Teoría local de curvas&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

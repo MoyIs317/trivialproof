@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Trivial Proof</title>
+    <link>http://localhost:1313/trivialproof/blogs/</link>
+    <description>Recent content in Blogs on Trivial Proof</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/trivialproof/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Álgebra</title>
+      <link>http://localhost:1313/trivialproof/blogs/%C3%A1lgebra/</link>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/trivialproof/blogs/%C3%A1lgebra/</guid>
+      <description>&lt;h1 id=&#34;10-lecciones-básicas-del-álgebra&#34;&gt;10 Lecciones básicas del álgebra&lt;/h1&gt;&#xA;&lt;h2 id=&#34;grupos&#34;&gt;Grupos&lt;/h2&gt;&#xA;&lt;p&gt;Una gran revolución en las matemáticas ocurrió en el siglo XX pues se empezó con un estudio más abstracto de las ecuaciones&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Estadística</title>
+      <link>http://localhost:1313/trivialproof/blogs/estadistica/</link>
+      <pubDate>Fri, 01 Aug 2025 22:53:58 +0530</pubDate>
+      <guid>http://localhost:1313/trivialproof/blogs/estadistica/</guid>
+      <description>&lt;h1 id=&#34;10-lecciones-básicas-de-estadística&#34;&gt;10 Lecciones Básicas de Estadística&lt;/h1&gt;&#xA;&lt;h2 id=&#34;lección-1-estadística-descriptiva&#34;&gt;Lección 1 Estadística Descriptiva&lt;/h2&gt;&#xA;&lt;p&gt;En la actualidad nos encontramos con una inmensa cantidad de datos, estos vienen en distintas &amp;ldquo;formas&amp;rdquo;, &amp;ldquo;sabores&amp;rdquo; y &amp;ldquo;colores&amp;rdquo;; desde datos numéricos, una inmensa cantidad de texto, miles de imágenes, y millones de horas de video a la mano de todas las personas con acceso a internet, sin embargo es tanta la información que el poder entender y obtener información a partir de esta es una habilidad que se ha convertido de vital importancia.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Geometría Diferencial</title>
+      <link>http://localhost:1313/trivialproof/blogs/geometria/</link>
+      <pubDate>Sat, 03 Apr 2021 22:53:58 +0530</pubDate>
+      <guid>http://localhost:1313/trivialproof/blogs/geometria/</guid>
+      <description>&lt;h1 id=&#34;10-lecciones-básicas-de-geometría-diferencial&#34;&gt;10 Lecciones Básicas de Geometría Diferencial&lt;/h1&gt;&#xA;&lt;h2 id=&#34;teoría-local-de-curvas&#34;&gt;Teoría local de curvas&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>
