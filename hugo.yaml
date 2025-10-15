@@ -1,6 +1,6 @@
 baseURL: "https://moyis317.github.io/trivialproof/"
 languageCode: "en-us"
-title: "My New Hugo Site"
+title: "Trivial Proof"
 theme: "hugo-profile"
 canonifyURLs: true
 relativeURLs: true
@@ -267,7 +267,7 @@ params:
         school:
           name: "Facultad de Ciencias (UNAM)"
           url: "https://example.org"
-        date: "2020 - 2014"
+        date: "2020 - 2024"
         content: |-
           Servicio Social
             - Cursos propedeuticos.
