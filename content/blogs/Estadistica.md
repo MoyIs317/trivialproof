@@ -7,7 +7,7 @@ tags:
   - Matemáticas
   - Estadística
   - Datos
-image: /images/est_portada.png
+image: /images/estadis_cover.png
 description: "Ideas básicas de estadística"
 toc: true
 mathjax: True

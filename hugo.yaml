@@ -298,6 +298,7 @@ params:
     items:
       - title: Red de Tesis UNAM
         content: Es un analisis de una red social entree las tésis de matemáticas publicadas en la facultad de ciencias UNAM.
+        image: static\projects\redes.png
         featured:
           name: Demo
           link: "red_tesis2.html"

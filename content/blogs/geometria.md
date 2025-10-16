@@ -7,7 +7,7 @@ tags:
   - Matemáticas
   - Geometría
   - Cálculo
-image: /images/est_portada.png
+image: /images/geodif_cover.png
 description: ""
 toc: true
 ---
