@@ -301,7 +301,7 @@ params:
         image: /projects/redes.png
         featured:
           name: Demo
-          link: "red_tesis2019_busqueda.html"
+          link: "red_tesis2019_busqueda_4.html"
         badges:
           - "Python"
           - "HTML"
