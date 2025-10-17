@@ -298,13 +298,21 @@ params:
     items:
       - title: Red de Tesis UNAM
         content: Es un analisis de una red social entree las tésis de matemáticas publicadas en la facultad de ciencias UNAM.
-        image: static\projects\redes.png
+        image: /projects/redes.png
         featured:
           name: Demo
-          link: "red_tesis2.html"
+          link: "red_tesis2019_busqueda.html"
         badges:
           - "Python"
           - "HTML"
+      - title: Análisis de sentimientos de música
+        content: Apliqué tecnicas de NLP para analizar los sentimentos de un dísco músical.
+        featured: 
+          name: github
+          link: 
+        badges:
+          - "Python"
+          
 
   #Contact
   contact:
