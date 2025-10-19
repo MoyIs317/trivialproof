@@ -75,23 +75,90 @@ Hay una serie de propiedades y observaciones interesantes de la media, cuya demo
 2. Si tenemos las observaciones \\(x_1, x_2, x_3,...,x_n\\) y consideramos una constante \\(c\\) y se define \\(y_i = x_i + c\\) entonces \\(\bar{y} = \bar{x} + c\\).
 3. De nuevo si tenemos las observaciones \\(x_1, x_2, x_3,...,x_n\\) y consideramos una constante \\(c\\) y se define \\(y_i = c\bar{x_i}\\) entonces  \\(\bar{y} = c \bar{x}\\).
 
->Definición (Mediana): 
+> Definición (Mediana):
+> Dado un conjunto de observaciones \\( x_1, x_2,..., x_n  \\), la **mediana** se define de la siguiente manera:  
+> 
+> - Si \\( n \\) es **impar**, la mediana es el valor en la posición  \\( \frac{n+1}{2} \\) una vez que ordenamos las observaciones.  
+> - Si \\( n \\) es **par**, entonces la mediana se calcula como  
+>   $$\text{Mediana} = \frac{x_{n/2} + x_{n/2 + 1}}{2}$$  
+>   una vez que tengamos ordenados nuestros datos.
 
 
->Definición (Moda):
-
-Existen otras cantidades que nos permiten medir la dispersión de los datos, a continuación se detallarán algunas de estas.
-
->Definición (Varianza):
 
 
+Tanto en Python como en R tenemos muchas formas de obtener este resultado, expondré una de las más sencillas.
+```python
+import numpy as np
+estaturas = [187, 163, 145, 178, 177, 172, 169]
+#Igual que en ejejmplo anterior puedes hacer el procedimiento paso a paso o simplemente usar la función ya integrada en alguna librería, en nuestro caso aplicaremos la segunda forma
+mediana = np.median(estaturas)
+print(mediana)
+172.0
+```
+para el caso de R es igual de simple
+```r
+estaturas <- c(187, 163, 145, 178, 177, 172, 169)
+median(estaturas)
+172.0
+```
+>Definición (Moda): Definimos a la moda como el valor más repetido en el conjunto de nuestras observaciones.
+
+Es importante señalar que para el caso de la moda existen ocasiones en la que no es única. Para calcular este valor en Python utilizaremos otra librería interesante que os permitirá obtener esta medida.
+
+```python
+from scipy import stats
+#Hemos modificado nuestra lista para observar mejor el resultado
+estaturas = [187, 163, 145, 178, 177, 172, 169, 145, 178, 145]
+print(stats.mode(estaturas))
+ModeResult(mode=np.int64(145), count=np.int64(3))
+#Nota: Es importante hacer notar que si la moda no es única entonces devuelve le dato menor
+```
+Existen otras cantidades que nos permiten medir la dispersión de los datos es decir que tan separados están nuestros, a continuación se detallarán algunas de estas.
+
+>Definición (Varianza Muestral): Para un conjunto de observaciones
 
 ### Descripciones gráficas
-Nosotros trabajaremos con los siguientes datos:      los cuales correspondes a 
+Nosotros trabajaremos con los siguientes datos [Student Depresion Dataset](https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset) los cuales correspondes a un dataset de Kaggle en el que se mide el nivel de estrés de una muestra de estudiantes, para más información respecto a las variables revisar el link. Con este dataset exploraremos algunas gráficas más  comunes en estadística.
 
 #### Gráfica de barras
+Para datos categóricos la forma más común para poder visualizarlos es por medio del gráfico de barras. En este gráfico cada barra representa la frecuencia(o frecuencias relativas) de las diferentes categorías. 
+
+Para nuestro ejemplo tenemos que nuestro dataset tenemos una columna llamada **Gender** que corresponde al genero de cada individuo en el dataset, podríamos construir una gráfica que nos permita ver la cantidad de integrantes de cada sexo. Usaremos la librería de Seaborn, en particular usaremos el objeto catplot el cual es usado para variables categóricas y el parámetro kind = 'bar' , se recomienda leer la documentación al respecto
+
+```python
+import kagglehub
+import pandas as pd 
+import matplotlib.pyplot as plt
+import os
+import seaborn as sns
+path = kagglehub.dataset_download("adilshamim8/student-depression-dataset")
+files = os.listdir(path)
+csv_files = [f for f in files if f.endswith(".csv")]
+if csv_files:
+    file_path = os.path.join(path, csv_files[0])
+    estres = pd.read_csv(file_path)
+    print(f"\nLeyendo archivo: {csv_files[0]}")
+    display(df.head())
+else:
+    print("Error")
+genero = estres["Gender"].value_counts()
+sns.catplot(data = genero, kind="bar", color = 'palette')
+plt.xlabel("Genero")
+plt.ylabel("Cantidad")
+```
+El anterior código nos devuelve la siguiente imagen:
+
+![Gráfica de barras](/images/estadis/genero.png)
 #### Histograma
-#### Polígono de frecuencia 
+Ahora veremos un gráfico que perecería darnos un resultado parecido al gráfico de barras sin embargo le damos el nombre de histograma cuando existe un orden entre nuestras variables, aquí se intenta el tener una idea de como se comportan nuestros datos pensando en una función de densidad empírica, aquí cada barra representa la frecuancia de un intervalo sobre el rango de observaciones. 
+
+Vamos a construir un histograma para la columna de **CGPA** el cual corresponde al promedio acumulado de calificaciones por sus siglas en inglés, usando Seaborn con la función displot y el parámetro kind = 'hist', podemos ver la dstribución de CGPA por genero. 
+
+```python
+sns.displot(data=estres, x= 'CGPA', kind = 'hist', col = 'Gender', hue = 'Gender');
+```
+obteniendo
+![Histograma del CGPA](/images/estadis/CGPA_gender.png)
 #### Gráfica de pastel
 #### Boxplot
 #### Distribución empírica

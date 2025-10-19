@@ -307,6 +307,7 @@ params:
           - "HTML"
       - title: Análisis de sentimientos de música
         content: Apliqué tecnicas de NLP para analizar los sentimentos de un dísco músical.
+        image: /projects/sentimientos.png
         featured: 
           name: github
           link: 
