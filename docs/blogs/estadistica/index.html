@@ -382,17 +382,69 @@ Estadística | Trivial Proof
 <li>De nuevo si tenemos las observaciones \(x_1, x_2, x_3,&hellip;,x_n\) y consideramos una constante \(c\) y se define \(y_i = c\bar{x_i}\) entonces  \(\bar{y} = c \bar{x}\).</li>
 </ol>
 <blockquote>
-<p>Definición (Mediana):</p></blockquote>
+<p>Definición (Mediana):
+Dado un conjunto de observaciones \( x_1, x_2,&hellip;, x_n  \), la <strong>mediana</strong> se define de la siguiente manera:</p>
+<ul>
+<li>Si \( n \) es <strong>impar</strong>, la mediana es el valor en la posición  \( \frac{n+1}{2} \) una vez que ordenamos las observaciones.</li>
+<li>Si \( n \) es <strong>par</strong>, entonces la mediana se calcula como<br>
+$$\text{Mediana} = \frac{x_{n/2} + x_{n/2 + 1}}{2}$$<br>
+una vez que tengamos ordenados nuestros datos.</li>
+</ul></blockquote>
+<p>Tanto en Python como en R tenemos muchas formas de obtener este resultado, expondré una de las más sencillas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>estaturas <span style="color:#f92672">=</span> [<span style="color:#ae81ff">187</span>, <span style="color:#ae81ff">163</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">177</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">169</span>]
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Igual que en ejejmplo anterior puedes hacer el procedimiento paso a paso o simplemente usar la función ya integrada en alguna librería, en nuestro caso aplicaremos la segunda forma</span>
+</span></span><span style="display:flex;"><span>mediana <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>median(estaturas)
+</span></span><span style="display:flex;"><span>print(mediana)
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">172.0</span>
+</span></span></code></pre></div><p>para el caso de R es igual de simple</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>estaturas <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">187</span>, <span style="color:#ae81ff">163</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">177</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">169</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">median</span>(estaturas)
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">172.0</span>
+</span></span></code></pre></div><blockquote>
+<p>Definición (Moda): Definimos a la moda como el valor más repetido en el conjunto de nuestras observaciones.</p></blockquote>
+<p>Es importante señalar que para el caso de la moda existen ocasiones en la que no es única. Para calcular este valor en Python utilizaremos otra librería interesante que os permitirá obtener esta medida.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> scipy <span style="color:#f92672">import</span> stats
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Hemos modificado nuestra lista para observar mejor el resultado</span>
+</span></span><span style="display:flex;"><span>estaturas <span style="color:#f92672">=</span> [<span style="color:#ae81ff">187</span>, <span style="color:#ae81ff">163</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">177</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">169</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">145</span>]
+</span></span><span style="display:flex;"><span>print(stats<span style="color:#f92672">.</span>mode(estaturas))
+</span></span><span style="display:flex;"><span>ModeResult(mode<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>int64(<span style="color:#ae81ff">145</span>), count<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>int64(<span style="color:#ae81ff">3</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Nota: Es importante hacer notar que si la moda no es única entonces devuelve le dato menor</span>
+</span></span></code></pre></div><p>Existen otras cantidades que nos permiten medir la dispersión de los datos es decir que tan separados están nuestros, a continuación se detallarán algunas de estas.</p>
 <blockquote>
-<p>Definición (Moda):</p></blockquote>
-<p>Existen otras cantidades que nos permiten medir la dispersión de los datos, a continuación se detallarán algunas de estas.</p>
-<blockquote>
-<p>Definición (Varianza):</p></blockquote>
+<p>Definición (Varianza Muestral): Para un conjunto de observaciones</p></blockquote>
 <h3 id="descripciones-gráficas">Descripciones gráficas</h3>
-<p>Nosotros trabajaremos con los siguientes datos:      los cuales correspondes a</p>
+<p>Nosotros trabajaremos con los siguientes datos <a href="https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset">Student Depresion Dataset</a> los cuales correspondes a un dataset de Kaggle en el que se mide el nivel de estrés de una muestra de estudiantes, para más información respecto a las variables revisar el link. Con este dataset exploraremos algunas gráficas más  comunes en estadística.</p>
 <h4 id="gráfica-de-barras">Gráfica de barras</h4>
+<p>Para datos categóricos la forma más común para poder visualizarlos es por medio del gráfico de barras. En este gráfico cada barra representa la frecuencia(o frecuencias relativas) de las diferentes categorías.</p>
+<p>Para nuestro ejemplo tenemos que nuestro dataset tenemos una columna llamada <strong>Gender</strong> que corresponde al genero de cada individuo en el dataset, podríamos construir una gráfica que nos permita ver la cantidad de integrantes de cada sexo. Usaremos la librería de Seaborn, en particular usaremos el objeto catplot el cual es usado para variables categóricas y el parámetro kind = &lsquo;bar&rsquo; , se recomienda leer la documentación al respecto</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> kagglehub
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+</span></span><span style="display:flex;"><span>path <span style="color:#f92672">=</span> kagglehub<span style="color:#f92672">.</span>dataset_download(<span style="color:#e6db74">&#34;adilshamim8/student-depression-dataset&#34;</span>)
+</span></span><span style="display:flex;"><span>files <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>listdir(path)
+</span></span><span style="display:flex;"><span>csv_files <span style="color:#f92672">=</span> [f <span style="color:#66d9ef">for</span> f <span style="color:#f92672">in</span> files <span style="color:#66d9ef">if</span> f<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.csv&#34;</span>)]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> csv_files:
+</span></span><span style="display:flex;"><span>    file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(path, csv_files[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>    estres <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(file_path)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Leyendo archivo: </span><span style="color:#e6db74">{</span>csv_files[<span style="color:#ae81ff">0</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    display(df<span style="color:#f92672">.</span>head())
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Error&#34;</span>)
+</span></span><span style="display:flex;"><span>genero <span style="color:#f92672">=</span> estres[<span style="color:#e6db74">&#34;Gender&#34;</span>]<span style="color:#f92672">.</span>value_counts()
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>catplot(data <span style="color:#f92672">=</span> genero, kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bar&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;palette&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Genero&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Cantidad&#34;</span>)
+</span></span></code></pre></div><p>El anterior código nos devuelve la siguiente imagen:</p>
+<p><img src="../../images/estadis/genero.png" alt="Gráfica de barras"></p>
 <h4 id="histograma">Histograma</h4>
-<h4 id="polígono-de-frecuencia">Polígono de frecuencia</h4>
+<p>Ahora veremos un gráfico que perecería darnos un resultado parecido al gráfico de barras sin embargo le damos el nombre de histograma cuando existe un orden entre nuestras variables, aquí se intenta el tener una idea de como se comportan nuestros datos pensando en una función de densidad empírica, aquí cada barra representa la frecuancia de un intervalo sobre el rango de observaciones.</p>
+<p>Vamos a construir un histograma para la columna de <strong>CGPA</strong> el cual corresponde al promedio acumulado de calificaciones por sus siglas en inglés, usando Seaborn con la función displot y el parámetro kind = &lsquo;hist&rsquo;, podemos ver la dstribución de CGPA por genero.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>displot(data<span style="color:#f92672">=</span>estres, x<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;CGPA&#39;</span>, kind <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hist&#39;</span>, col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Gender&#39;</span>, hue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Gender&#39;</span>);
+</span></span></code></pre></div><p>obteniendo
+<img src="../../images/estadis/CGPA_gender.png" alt="Histograma del CGPA"></p>
 <h4 id="gráfica-de-pastel">Gráfica de pastel</h4>
 <h4 id="boxplot">Boxplot</h4>
 <h4 id="distribución-empírica">Distribución empírica</h4>
