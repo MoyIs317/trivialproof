@@ -160,6 +160,7 @@ sns.displot(data=estres, x= 'CGPA', kind = 'hist', col = 'Gender', hue = 'Gender
 obteniendo
 ![Histograma del CGPA](/images/estadis/CGPA_gender.png)
 #### Gráfica de pastel
+Una gráfica de pastel
 #### Boxplot
 #### Distribución empírica
 
