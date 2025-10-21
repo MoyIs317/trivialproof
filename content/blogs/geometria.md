@@ -10,11 +10,12 @@ tags:
 image: /images/geodif_cover.png
 description: ""
 toc: true
+mathjax: True
 ---
 # 10 Lecciones Básicas de Geometría Diferencial
 
 ## Teoría local de curvas
-Nos concentraremos en el estudio de curvas en \\( R^2\\) y  \\(R3\\) sin embargo la mayoría de los resultados se pueden extender a \\(R^n\\).
+Nos concentraremos en el estudio de curvas en \\( R^2 \\) y  \\(R^3 \\) sin embargo la mayoría de los resultados se pueden extender a \\(R^n \\).
 
 Empecemos por recordar que una curva es una aplicación 
 
