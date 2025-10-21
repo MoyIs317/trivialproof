@@ -412,9 +412,10 @@ una vez que tengamos ordenados nuestros datos.</li>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Nota: Es importante hacer notar que si la moda no es única entonces devuelve le dato menor</span>
 </span></span></code></pre></div><p>Existen otras cantidades que nos permiten medir la dispersión de los datos es decir que tan separados están nuestros, a continuación se detallarán algunas de estas.</p>
 <blockquote>
-<p>Definición (Varianza Muestral): Para un conjunto de observaciones</p></blockquote>
+<p>Definición (Varianza Muestral): Para un conjunto de observaciones la cantidad que mide  la variabilidad de estas &gt;respecto de su media, En términos matemáticos lo escribimos de la forma:
+$$ s ^2 = \frac{1}{n-1}\sum_{i = 1}^{n}(x_i - \bar{x})^2 $$</p></blockquote>
 <h3 id="descripciones-gráficas">Descripciones gráficas</h3>
-<p>Nosotros trabajaremos con los siguientes datos <a href="https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset">Student Depresion Dataset</a> los cuales correspondes a un dataset de Kaggle en el que se mide el nivel de estrés de una muestra de estudiantes, para más información respecto a las variables revisar el link. Con este dataset exploraremos algunas gráficas más  comunes en estadística.</p>
+<p>Nosotros trabajaremos con los siguientes datos <a href="https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset">Student Depresion Dataset</a> los cuales correspondes a un dataset de Kaggle en el que se mide el nivel de estrés de una muestra de estudiantes, para más información respecto a las variables revisar el link. Con este dataset exploraremos algunas gráficas más  comunes en estadística. Las representaciones gráficas las elaboraremos en Python, se invita al lector a investigar sus análogo en R.</p>
 <h4 id="gráfica-de-barras">Gráfica de barras</h4>
 <p>Para datos categóricos la forma más común para poder visualizarlos es por medio del gráfico de barras. En este gráfico cada barra representa la frecuencia(o frecuencias relativas) de las diferentes categorías.</p>
 <p>Para nuestro ejemplo tenemos que nuestro dataset tenemos una columna llamada <strong>Gender</strong> que corresponde al genero de cada individuo en el dataset, podríamos construir una gráfica que nos permita ver la cantidad de integrantes de cada sexo. Usaremos la librería de Seaborn, en particular usaremos el objeto catplot el cual es usado para variables categóricas y el parámetro kind = &lsquo;bar&rsquo; , se recomienda leer la documentación al respecto</p>
@@ -446,9 +447,17 @@ una vez que tengamos ordenados nuestros datos.</li>
 </span></span></code></pre></div><p>obteniendo
 <img src="../../images/estadis/CGPA_gender.png" alt="Histograma del CGPA"></p>
 <h4 id="gráfica-de-pastel">Gráfica de pastel</h4>
-<p>Una gráfica de pastel</p>
+<p>Una gráfica de pastel es usada para representar las frecuencias relativas o las proporciones de los distintos resultados de una variable categórica. Para este caso exploraremos la variable de <strong>Dietary Habits</strong> la cual tiene información de las hábitos en la dieta de los individuos en nuestro dataset. En este caso Seaborn no tiene una función especifica para crear un gráfico de pastel, por lo que usaremos matplotlib directamente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>habitos <span style="color:#f92672">=</span> estres[<span style="color:#e6db74">&#39;Dietary Habits&#39;</span>]<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>to_frame()<span style="color:#f92672">.</span>reset_index()
+</span></span><span style="display:flex;"><span>habitos<span style="color:#f92672">.</span>columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Dietary Habits&#39;</span>, <span style="color:#e6db74">&#39;count&#39;</span>]
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>pie(data<span style="color:#f92672">=</span>habitos, x <span style="color:#f92672">=</span> habitos[<span style="color:#e6db74">&#39;count&#39;</span>], labels<span style="color:#f92672">=</span>habitos[<span style="color:#e6db74">&#39;Dietary Habits&#39;</span>], autopct<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%.2f%%</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><p><a href="../../images/estadis/pie.png">Gráfica de pastel</a></p>
 <h4 id="boxplot">Boxplot</h4>
-<h4 id="distribución-empírica">Distribución empírica</h4>
+<p>Este gráfico nos permite obtener información de nuestra muestra por medio de la información de los cuartiles de la misma, este grafico se compones de unas líneas y una caja, las líneas indican la variabilidad que existe fuera del rango intercuatil. Este gráfico nos permite comparar una variable cuantitativa con una cualitativa.</p>
+<p>Por ejemplo en nuestro dataset podemos ver el <strong>CGPA</strong>  comparándolo con <strong>Gender</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>catplot(data <span style="color:#f92672">=</span> estres, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Gender&#39;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;CGPA&#39;</span>, kind <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;box&#39;</span>, hue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Gender&#39;</span>, palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pastel&#39;</span>);
+</span></span></code></pre></div><p><a href="../../images/estadis/box.png">Gráfico de caja</a>
+Estos son algunos de los gráficos más comunes que podemos encontrar en distintos estudios estadísticos, se recomienda a explorar la documentación de Seaborn y Matplotlib, o explorar algunas librerías que sirven para la elaboración de dashbords.</p>
 
           </article>
         </div>
@@ -677,7 +686,9 @@ una vez que tengamos ordenados nuestros datos.</li>
                     </a>
                     <div class="card-text secondary-font">
                         <p><h1 id="10-lecciones-básicas-de-geometría-diferencial">10 Lecciones Básicas de Geometría Diferencial</h1>
-<h2 id="teoría-local-de-curvas">Teoría local de curvas</h2></p>
+<h2 id="teoría-local-de-curvas">Teoría local de curvas</h2>
+<p>Nos concentraremos en el estudio de curvas en \( R^2\) y  \(R3\) sin embargo la mayoría de los resultados se pueden extender a \(R^n\).</p>
+<p>Empecemos por recordar que una curva es una aplicación</p></p>
                     </div>
                 </div>
                 <div class="mt-auto card-footer">

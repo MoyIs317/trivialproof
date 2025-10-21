@@ -115,10 +115,11 @@ ModeResult(mode=np.int64(145), count=np.int64(3))
 ```
 Existen otras cantidades que nos permiten medir la dispersión de los datos es decir que tan separados están nuestros, a continuación se detallarán algunas de estas.
 
->Definición (Varianza Muestral): Para un conjunto de observaciones
+>Definición (Varianza Muestral): Para un conjunto de observaciones la cantidad que mide  la variabilidad de estas >respecto de su media, En términos matemáticos lo escribimos de la forma:
+>$$ s ^2 = \frac{1}{n-1}\sum_{i = 1}^{n}(x_i - \bar{x})^2 $$
 
 ### Descripciones gráficas
-Nosotros trabajaremos con los siguientes datos [Student Depresion Dataset](https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset) los cuales correspondes a un dataset de Kaggle en el que se mide el nivel de estrés de una muestra de estudiantes, para más información respecto a las variables revisar el link. Con este dataset exploraremos algunas gráficas más  comunes en estadística.
+Nosotros trabajaremos con los siguientes datos [Student Depresion Dataset](https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset) los cuales correspondes a un dataset de Kaggle en el que se mide el nivel de estrés de una muestra de estudiantes, para más información respecto a las variables revisar el link. Con este dataset exploraremos algunas gráficas más  comunes en estadística. Las representaciones gráficas las elaboraremos en Python, se invita al lector a investigar sus análogo en R.
 
 #### Gráfica de barras
 Para datos categóricos la forma más común para poder visualizarlos es por medio del gráfico de barras. En este gráfico cada barra representa la frecuencia(o frecuencias relativas) de las diferentes categorías. 
@@ -160,9 +161,24 @@ sns.displot(data=estres, x= 'CGPA', kind = 'hist', col = 'Gender', hue = 'Gender
 obteniendo
 ![Histograma del CGPA](/images/estadis/CGPA_gender.png)
 #### Gráfica de pastel
-Una gráfica de pastel
+Una gráfica de pastel es usada para representar las frecuencias relativas o las proporciones de los distintos resultados de una variable categórica. Para este caso exploraremos la variable de **Dietary Habits** la cual tiene información de las hábitos en la dieta de los individuos en nuestro dataset. En este caso Seaborn no tiene una función especifica para crear un gráfico de pastel, por lo que usaremos matplotlib directamente.
+```python
+habitos = estres['Dietary Habits'].value_counts().to_frame().reset_index()
+habitos.columns=['Dietary Habits', 'count']
+plt.pie(data=habitos, x = habitos['count'], labels=habitos['Dietary Habits'], autopct='%.2f%%')
+```
+[Gráfica de pastel](/images/estadis/pie.png)
 #### Boxplot
-#### Distribución empírica
+Este gráfico nos permite obtener información de nuestra muestra por medio de la información de los cuartiles de la misma, este grafico se compones de unas líneas y una caja, las líneas indican la variabilidad que existe fuera del rango intercuatil. Este gráfico nos permite comparar una variable cuantitativa con una cualitativa.
+
+Por ejemplo en nuestro dataset podemos ver el **CGPA**  comparándolo con **Gender**. 
+
+```python
+sns.catplot(data = estres, x = 'Gender', y = 'CGPA', kind = 'box', hue = 'Gender', palette='pastel');
+```
+[Gráfico de caja](/images/estadis/box.png)
+ Estos son algunos de los gráficos más comunes que podemos encontrar en distintos estudios estadísticos, se recomienda a explorar la documentación de Seaborn y Matplotlib, o explorar algunas librerías que sirven para la elaboración de dashbords.
+
 
 
 
