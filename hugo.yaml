@@ -63,7 +63,7 @@ Menus:
 
 params:
   title: "Trivial Proof"
-  description: Text about my cool site
+  description: Es mi blog en el cual subo mis proyectos de matematicas, computación y lo que me apasione
   # staticPath: ""  # The path to serve the static files from
   favicon: "/fav.png"
 
@@ -298,10 +298,10 @@ params:
     items:
       - title: Red de Tesis UNAM
         content: Es un analisis de una red social entree las tésis de matemáticas publicadas en la facultad de ciencias UNAM.
-        image: /projects/redes.png
+        image: /projects/red_tesis/redes.png
         featured:
-          name: Demo
-          link: "red_tesis2018_busqueda_1.html"
+          name: Proyecto
+          link: /project/red_tesis/reporte/
         badges:
           - "Python"
           - "HTML"
@@ -345,7 +345,7 @@ params:
 
   # Single pages like blog and post
   singlePages:
-    socialShare: true
+    socialShare: false
     readTime:
       enable: true
       content: "min read"
