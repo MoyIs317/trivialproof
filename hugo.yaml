@@ -39,7 +39,7 @@ Menus:
       url: /blogs
       weight: 1
     - identifier: gallery
-      name: Gallery
+      name: Galería
       title: Blog posts
       url: /gallery
       weight: 2
@@ -62,10 +62,11 @@ Menus:
     #   weight: 2
 
 params:
-  title: "Trivial Proof"
+  title: "Trivial Proof" 
   description: Es mi blog en el cual subo mis proyectos de matematicas, computación y lo que me apasione
   # staticPath: ""  # The path to serve the static files from
-  favicon: "/fav.png"
+  favicon: "/TP3.png"
+
 
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
   # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
@@ -118,7 +119,7 @@ params:
     align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
     # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
     # showBrandLogo: false # Show brand logo in nav bar | default is true
-    brandName: "Hugo Profile" # Brand name for the brand | default is the title variable
+    brandName: "Trivial Proof" # Brand name for the brand | default is the title variable
     disableSearch: false
     # searchPlaceholder: "Search"
     stickyNavBar:
@@ -294,7 +295,7 @@ params:
   # projects
   projects:
     enable: true
-    # title: "Custom Name"
+    title: "Proyectos"
     items:
       - title: Red de Tesis UNAM
         content: Es un analisis de una red social entree las tésis de matemáticas publicadas en la facultad de ciencias UNAM.
