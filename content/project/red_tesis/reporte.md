@@ -38,7 +38,7 @@ La red esta constituida solamente por las tesis realizadas para obtener el titul
   <img src="/projects/red_tesis/red_ejemplo.png" alt="Imagen ejemplo de la red">
 </div>
 
-Las aristas corresponden a la relación de trabajo colaborativo es decir no se trata de una red dirigida pues consideramos a esta realción como la de colaboración.
+Las aristas corresponden a la relación de trabajo colaborativo es decir no se trata de una red dirigida pues consideramos a esta relación como la de colaboración.
 
 > **Nota** Existen registros los cuales no tienen director de tesis o algunos se desconoce el año de publicación.
 
@@ -97,24 +97,64 @@ average_degree_1 = 2* num_aristas / num_nodos
 print(f"El grado promedio es: {average_degree_1}")
 1.5773809523809523
 ```
-
 En resumen tenemos:
 
 | Red   | #Nodos | #Aristas | Densidad       | Grado Promedio |
 |:------|-------:|---------:|:--------------|---------------:|
 | Tesis | 3024   | 2385     | 0.00052       | 1.58           |
 
-De estas metricas podemos concluir que tenemos una red muy dispersa y que la red cuenta con un gran cantidad de componentes conexas esto concuerda con lo que podemso ver en la imagen de la red.
-
 <div style="text-align: center;">
   <img src="/projects/red_tesis/red_imagen_general.png" alt="Imagen ejemplo de la red">
 </div>
 
+Esta información nos dice que nuestra red es muy dispersa, dando un breve vistaso a nuestra red podemos ver que hay muchos "pedazos", es decir, no esta unida
+completamente, esta es la idea general del concepto de conexidad, cada "pedazo" se le llama componente conexa, veamos cuantas de estas hay en nuestra red.
 
+```python
+componentes = nx.connected_components(red) #Esto genera un generador
+num_componentes = nx.number_connected_components(red) #Nos da el número de componentes conexas
+#Obtengamos la componente conexa mpas grande
+componente_max = max(componentes, key = len)
+sub_componente = red.subgraph(componente_max)
+print(f"""Para la red que estamos estudiando tenemos: \n
+      El número de componentes conexas es : {num_componentes} \n
+      """)
 
-## Conexidad
+Para la red que estamos estudiando tenemos: 
 
-## Busqueda de comunidades
+      El número de componentes conexas es : 655
+```
+De aquí obtenemos que la componente conexa más grande se compone de 449 nodos lo cual corresponde apenas a un 14.85% de los nodos de la red. Veamos esta componente.
+
+<iframe src="/projects/red_tesis/Componente_max.html" width="100%" height="700px" style="border:none;"></iframe>
+
+En esta componente lo que intentaremos determinar es la importancia de los nodos, existen distintas metricas de centralidad. Exploraremos dos de estas medidas para esto procederemos a definirlas:
+
+> **Grado de centralidad:** Dada una gráfica definimos al grado de centralidad como $$ C_{D}(v) = \delta(v)$$, aveces se toma dicho calor normalizado, usando la siguiente expresión $$ \frac{\delta(v)}{n-1}$$ donde \\(n \\) corresponde al número de nodos en la gráfica.
+
+> **Centralidad de cercanía:** Dada una gráfica definimos a esta metrica como el promedio de las distancias de las geodesicas de un nodo a los demás. Esta toma la siguiente expresión: $$C_{c}(i) =(n-1) [\sum_{j=1}^{n}d(i,j)]^{-1}$$ la cual esta normalizada.
+
+Ambas métricas nos dan una gran cantida de información sobre los nodos que estamos estudiando, sin embargo, el grado de centralidad solo nos dice información de las relaciones directas que existen entre nodos, sin embargo la centrlidad de cercania nos dice el tipo de relaciones con nodos unidos a traves de más de un nodo.
+
+Obteniendo el grado de centralidad en nuestra componente usando Networks nos regresa un diccionario, podemos ver los cinco nodos con un mayor valor. Observamos que estos cinco nodos se encuentran entre los quince directores con más tesis dirigidas. 
+
+```python
+grados_centralidad = nx.degree_centrality(sub_componente)
+grados_centralidad_orden = dict(sorted(grados_centralidad.items(), key = lambda item: item[1], reverse=True))
+
+'Hortensia Galeana Sanchez': 0.09821428571428571,
+ 'Hugo Alberto Rincon Mejia': 0.06696428571428571,
+ 'Alejandro Bravo Mojica': 0.05803571428571428,
+ 'Monica Alicia Clapp Jimenez Labora': 0.05357142857142857,
+ 'Emilio Esteban Lluis Puebla': 0.049107142857142856
+```
+
+Ahora calculando la centralidad de cercanias
+
+```python
+
+```
+
 
 ## Conclusión
 

@@ -357,7 +357,7 @@ Análisis de Red de Tesis UNAM | Trivial Proof
 <div style="text-align: center;">
   <img src="../../../projects/red_tesis/red_ejemplo.png" alt="Imagen ejemplo de la red">
 </div>
-<p>Las aristas corresponden a la relación de trabajo colaborativo es decir no se trata de una red dirigida pues consideramos a esta realción como la de colaboración.</p>
+<p>Las aristas corresponden a la relación de trabajo colaborativo es decir no se trata de una red dirigida pues consideramos a esta relación como la de colaboración.</p>
 <blockquote>
 <p><strong>Nota</strong> Existen registros los cuales no tienen director de tesis o algunos se desconoce el año de publicación.</p></blockquote>
 <h2 id="dos-pequeñas-observaciones">Dos pequeñas observaciones</h2>
@@ -420,13 +420,42 @@ La red cuenta con:
       </tr>
   </tbody>
 </table>
-<p>De estas metricas podemos concluir que tenemos una red muy dispersa y que la red cuenta con un gran cantidad de componentes conexas esto concuerda con lo que podemso ver en la imagen de la red.</p>
 <div style="text-align: center;">
   <img src="../../../projects/red_tesis/red_imagen_general.png" alt="Imagen ejemplo de la red">
 </div>
-<h2 id="conexidad">Conexidad</h2>
-<h2 id="busqueda-de-comunidades">Busqueda de comunidades</h2>
-<h2 id="conclusión">Conclusión</h2>
+<p>Esta información nos dice que nuestra red es muy dispersa, dando un breve vistaso a nuestra red podemos ver que hay muchos &ldquo;pedazos&rdquo;, es decir, no esta unida
+completamente, esta es la idea general del concepto de conexidad, cada &ldquo;pedazo&rdquo; se le llama componente conexa, veamos cuantas de estas hay en nuestra red.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>componentes <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>connected_components(red) <span style="color:#75715e">#Esto genera un generador</span>
+</span></span><span style="display:flex;"><span>num_componentes <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>number_connected_components(red) <span style="color:#75715e">#Nos da el número de componentes conexas</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Obtengamos la componente conexa mpas grande</span>
+</span></span><span style="display:flex;"><span>componente_max <span style="color:#f92672">=</span> max(componentes, key <span style="color:#f92672">=</span> len)
+</span></span><span style="display:flex;"><span>sub_componente <span style="color:#f92672">=</span> red<span style="color:#f92672">.</span>subgraph(componente_max)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;Para la red que estamos estudiando tenemos: </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      El número de componentes conexas es : </span><span style="color:#e6db74">{</span>num_componentes<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Para la red que estamos estudiando tenemos: 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      El número de componentes conexas es : <span style="color:#ae81ff">655</span>
+</span></span></code></pre></div><p>De aquí obtenemos que la componente conexa más grande se compone de 449 nodos lo cual corresponde apenas a un 14.85% de los nodos de la red. Veamos esta componente.</p>
+<iframe src="../../../projects/red_tesis/Componente_max.html" width="100%" height="700px" style="border:none;"></iframe>
+<p>En esta componente lo que intentaremos determinar es la importancia de los nodos, existen distintas metricas de centralidad. Exploraremos dos de estas medidas para esto procederemos a definirlas:</p>
+<blockquote>
+<p><strong>Grado de centralidad:</strong> Dada una gráfica definimos al grado de centralidad como $$ C_{D}(v) = \delta(v)$$, aveces se toma dicho calor normalizado, usando la siguiente expresión $$ \frac{\delta(v)}{n-1}$$ donde \(n \) corresponde al número de nodos en la gráfica.</p></blockquote>
+<blockquote>
+<p><strong>Centralidad de cercanía:</strong> Dada una gráfica definimos a esta metrica como el promedio de las distancias de las geodesicas de un nodo a los demás. Esta toma la siguiente expresión: $$C_{c}(i) =(n-1) [\sum_{j=1}^{n}d(i,j)]^{-1}$$ la cual esta normalizada.</p></blockquote>
+<p>Ambas métricas nos dan una gran cantida de información sobre los nodos que estamos estudiando, sin embargo, el grado de centralidad solo nos dice información de las relaciones directas que existen entre nodos, sin embargo la centrlidad de cercania nos dice el tipo de relaciones con nodos unidos a traves de más de un nodo.</p>
+<p>Obteniendo el grado de centralidad en nuestra componente usando Networks nos regresa un diccionario, podemos ver los cinco nodos con un mayor valor. Observamos que estos cinco nodos se encuentran entre los quince directores con más tesis dirigidas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>grados_centralidad <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>degree_centrality(sub_componente)
+</span></span><span style="display:flex;"><span>grados_centralidad_orden <span style="color:#f92672">=</span> dict(sorted(grados_centralidad<span style="color:#f92672">.</span>items(), key <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> item: item[<span style="color:#ae81ff">1</span>], reverse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;Hortensia Galeana Sanchez&#39;</span>: <span style="color:#ae81ff">0.09821428571428571</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;Hugo Alberto Rincon Mejia&#39;</span>: <span style="color:#ae81ff">0.06696428571428571</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;Alejandro Bravo Mojica&#39;</span>: <span style="color:#ae81ff">0.05803571428571428</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;Monica Alicia Clapp Jimenez Labora&#39;</span>: <span style="color:#ae81ff">0.05357142857142857</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;Emilio Esteban Lluis Puebla&#39;</span>: <span style="color:#ae81ff">0.049107142857142856</span>
+</span></span></code></pre></div><p>Ahora calculando la centralidad de cercanias</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><h2 id="conclusión">Conclusión</h2>
 
           </article>
         </div>
@@ -449,8 +478,6 @@ La red cuenta con:
       </ul>
     </li>
     <li><a href="#propiedades-de-la-red">Propiedades de la Red</a></li>
-    <li><a href="#conexidad">Conexidad</a></li>
-    <li><a href="#busqueda-de-comunidades">Busqueda de comunidades</a></li>
     <li><a href="#conclusión">Conclusión</a></li>
   </ul>
 </nav>
@@ -633,10 +660,12 @@ La red cuenta con:
                         <h5 class="card-title bg-transparent" title="Geometría Diferencial">Geometría Diferencial</h5>
                     </a>
                     <div class="card-text secondary-font">
-                        <p><h1 id="10-lecciones-básicas-de-geometría-diferencial">10 Lecciones Básicas de Geometría Diferencial</h1>
-<h2 id="teoría-local-de-curvas">Teoría local de curvas</h2>
-<p>Nos concentraremos en el estudio de curvas en \( R^2 \) y  \(R^3 \) sin embargo la mayoría de los resultados se pueden extender a \(R^n \).</p>
-<p>Empecemos por recordar que una curva es una aplicación</p></p>
+                        <p><h1 id="lecciones-básicas-de-geometría-diferencial">Lecciones Básicas de Geometría Diferencial</h1>
+<h2 id="superficies">Superficies</h2>
+<h3 id="qué-es-un-superficie">¿Qué es un superficie?</h3>
+<p>Primero debemos recordar que es un conjunto abierto.</p>
+<blockquote>
+<p>Un subconjunto (U \subseteq \matbb{R}^{n}) es abierto si para cada (a \in U) hay un número positivo (\epsilon&gt;0) tal que para cada punto ( x\in \matbb{R}^{n}) a una …</p></blockquote></p>
                     </div>
                 </div>
                 <div class="mt-auto card-footer">

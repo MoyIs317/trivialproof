@@ -12,10 +12,11 @@ description: ""
 toc: true
 mathjax: True
 ---
-# 10 Lecciones Básicas de Geometría Diferencial
+# Lecciones Básicas de Geometría Diferencial
 
-## Teoría local de curvas
-Nos concentraremos en el estudio de curvas en \\( R^2 \\) y  \\(R^3 \\) sin embargo la mayoría de los resultados se pueden extender a \\(R^n \\).
+## Superficies
+### ¿Qué es un superficie?
 
-Empecemos por recordar que una curva es una aplicación 
-
+Primero debemos recordar que es un conjunto abierto.
+> Un subconjunto \(U \subseteq \matbb{R}^{n}\) es abierto si para cada \(a \in U\) hay un número positivo \(\epsilon>0\) tal que para cada punto \( x\in \matbb{R}^{n}\) a una distancia menor o igual que \(\epsilon\) de \(a\) también pertenece a \(U\). $$ a \in U, || a - x || < \epsilon \Longrightarrow x \ in U$$
+ 

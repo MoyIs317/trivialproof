@@ -34,7 +34,7 @@
       <link>https://moyis317.github.io/trivialproof/blogs/geometria/</link>
       <pubDate>Sat, 03 Apr 2021 22:53:58 +0530</pubDate>
       <guid>https://moyis317.github.io/trivialproof/blogs/geometria/</guid>
-      <description>&lt;h1 id=&#34;10-lecciones-básicas-de-geometría-diferencial&#34;&gt;10 Lecciones Básicas de Geometría Diferencial&lt;/h1&gt;&#xA;&lt;h2 id=&#34;teoría-local-de-curvas&#34;&gt;Teoría local de curvas&lt;/h2&gt;&#xA;&lt;p&gt;Nos concentraremos en el estudio de curvas en \( R^2 \) y  \(R^3 \) sin embargo la mayoría de los resultados se pueden extender a \(R^n \).&lt;/p&gt;&#xA;&lt;p&gt;Empecemos por recordar que una curva es una aplicación&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;lecciones-básicas-de-geometría-diferencial&#34;&gt;Lecciones Básicas de Geometría Diferencial&lt;/h1&gt;&#xA;&lt;h2 id=&#34;superficies&#34;&gt;Superficies&lt;/h2&gt;&#xA;&lt;h3 id=&#34;qué-es-un-superficie&#34;&gt;¿Qué es un superficie?&lt;/h3&gt;&#xA;&lt;p&gt;Primero debemos recordar que es un conjunto abierto.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Un subconjunto (U \subseteq \matbb{R}^{n}) es abierto si para cada (a \in U) hay un número positivo (\epsilon&amp;gt;0) tal que para cada punto ( x\in \matbb{R}^{n}) a una distancia menor o igual que (\epsilon) de (a) también pertenece a (U). $$ a \in U, || a - x || &amp;lt; \epsilon \Longrightarrow x \ in U$$&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
