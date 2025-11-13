@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tesis on Trivial Proof</title>
+    <link>http://localhost:1313/trivialproof/tags/tesis/</link>
+    <description>Recent content in Tesis on Trivial Proof</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/trivialproof/tags/tesis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Análisis de Red de Tesis UNAM</title>
+      <link>http://localhost:1313/trivialproof/project/red_tesis/reporte/</link>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/trivialproof/project/red_tesis/reporte/</guid>
+      <description>&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;&#xA;&lt;p&gt;Una red social (en el área de las matemáticas) es un grupo de personar unidas por cierto tipo de relación, hay una gran variedad de relaciones que tenemos los humanos entre sí, por ejemplo las relaciones de amistad, de romance, laborales, etc.&lt;/p&gt;&#xA;&lt;p&gt;En las redes sociales cada nodo representa una persona y una arista entre dos nodos representa la relación que existe entre ellos. Las redes nos permiten estudiar distintos fenómenos que involucran la interacción entre las personas.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

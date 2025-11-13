@@ -89,7 +89,7 @@ print(f"La densidad de la red es: {nx.density(red)}")
 La densidad de la red es: 0.0005217932359844367
 ```
 
->**Grado Promedio:**  Para un grafo no dirigido podemos definir el gredo proemdio como la siguiente expresión: $$ \<k\> = \frac{2|E|}{|V|}$$ Este numero nos índica el número de conexionesde cada nodo en promedio.
+>**Grado Promedio:**  Para un grafo no dirigido podemos definir el grado promedio como la siguiente expresión: $$ \<k\> = \frac{2|E|}{|V|}$$ Este numero nos índica el número de conexionesde cada nodo en promedio.
 
 Para nuestra red tenemos lo siguiente:
 ```python
@@ -130,32 +130,65 @@ De aquí obtenemos que la componente conexa más grande se compone de 449 nodos 
 
 En esta componente lo que intentaremos determinar es la importancia de los nodos, existen distintas metricas de centralidad. Exploraremos dos de estas medidas para esto procederemos a definirlas:
 
-> **Grado de centralidad:** Dada una gráfica definimos al grado de centralidad como $$ C_{D}(v) = \delta(v)$$, aveces se toma dicho calor normalizado, usando la siguiente expresión $$ \frac{\delta(v)}{n-1}$$ donde \\(n \\) corresponde al número de nodos en la gráfica.
+> **Grado de centralidad:** Dada una gráfica definimos al grado de centralidad como $$ C_{D}(v) = \delta(v)$$, a veces se toma dicho calor normalizado, usando la siguiente expresión $$ \frac{\delta(v)}{n-1}$$ donde \\(n \\) corresponde al número de nodos en la gráfica.
 
 > **Centralidad de cercanía:** Dada una gráfica definimos a esta metrica como el promedio de las distancias de las geodesicas de un nodo a los demás. Esta toma la siguiente expresión: $$C_{c}(i) =(n-1) [\sum_{j=1}^{n}d(i,j)]^{-1}$$ la cual esta normalizada.
 
-Ambas métricas nos dan una gran cantida de información sobre los nodos que estamos estudiando, sin embargo, el grado de centralidad solo nos dice información de las relaciones directas que existen entre nodos, sin embargo la centrlidad de cercania nos dice el tipo de relaciones con nodos unidos a traves de más de un nodo.
+> **Centralidad de intermediación:**  Dado un grafo con \\( V \\) como el conjunto de vértices o nodos y \\( E \\) el conjunto de aristas si consideramos un nodo de este \\( i \\) definimos a la centralidad de intermediación como la siguiente suma $$C(i)= \sum_{j\neq k \in V} \frac{b_{jik}}{b_{jk}}$$ donde \\(b_{jk}\\) es el  número de caminos mpas cortos desde el nodo \\(j\\) hasta el nodo \\(k\\), mientras que \\(b_{jik}\\) es el número de caminos más cortos desde \\(j\\) hasta \\(k\\) que pasan por el nodo \\(i\\).
 
-Obteniendo el grado de centralidad en nuestra componente usando Networks nos regresa un diccionario, podemos ver los cinco nodos con un mayor valor. Observamos que estos cinco nodos se encuentran entre los quince directores con más tesis dirigidas. 
+>**Centralidad de vector propio:** Sea un grafo donde \\( V \\) es el conjunto de vértices o nodos y \\( E \\) el conjunto de aristas.  El número de vértices lo denotamos por \\( n = |V| \\).Sea \\(A := (a_{ij})\\) la matriz de adyacencia de nuestro grafo, y \\( A' \\) su matriz transpuesta. En el caso de un grafo no dirigido, se cumple que \\( A = A'\\). La centralidad de vector propio la definimos como: $$C_{VP}(j) = \sum_{i=1}^{n} a_{ij} \, C_{VP}(i)= a_{1j}C_{VP}(1) + a_{2j}C_{VP}(2) + \dots + a_{nj}C_{VP}(n)$$ Esta expresión establece que la centralidad de un nodo es proporcional a la suma de las centralidades de los nodos que están conectados a él.
 
-```python
-grados_centralidad = nx.degree_centrality(sub_componente)
-grados_centralidad_orden = dict(sorted(grados_centralidad.items(), key = lambda item: item[1], reverse=True))
 
-'Hortensia Galeana Sanchez': 0.09821428571428571,
- 'Hugo Alberto Rincon Mejia': 0.06696428571428571,
- 'Alejandro Bravo Mojica': 0.05803571428571428,
- 'Monica Alicia Clapp Jimenez Labora': 0.05357142857142857,
- 'Emilio Esteban Lluis Puebla': 0.049107142857142856
-```
-
-Ahora calculando la centralidad de cercanias
+Todas estas métricas nos dan una gran cantida de información sobre los nodos que estamos estudiando, procedermos a mostrar los nodos loc cuales tienen el valor más alto en cada métrica-
 
 ```python
+grados = dict(sub_componente.degree())
+
+for node, data in sub_componente.nodes(data=True):
+    label = data.get('label', str(node))
+    degree = grados[node]
+    size = 5 + degree * 2  
+    componente.add_node(node, label=label, size=size)
+
+for u, v in sub_componente.edges():
+    componente.add_edge(u, v)
+
+componente.save_graph('Componente_max.html')
+porcentaje_nodos = round((len(sub_componente) / num_nodos )* 100,2)
+print(f" El porcentaje de nodos en esta compoenete es {porcentaje_nodos}")
+
+G = sub_componente.to_undirected()  
+deg_central = nx.degree_centrality(G)
+close_central = nx.closeness_centrality(G)
+betw_central = nx.betweenness_centrality(G)
+eig_central = nx.eigenvector_centrality(G, max_iter=1000)
+
+def top1(dic):
+    return max(dic, key=dic.get), dic[max(dic, key=dic.get)]
+
+print("Más alto en degree:", top1(deg_central))
+print("Más alto en closeness:", top1(close_central))
+print("Más alto en betweenness:", top1(betw_central))
+print("Más alto en eigenvector:", top1(eig_central))
+
+ El porcentaje de nodos en esta compoenete es 14.85
+Más alto en degree: ('Hortensia Galeana Sanchez', 0.09821428571428571)
+Más alto en closeness: ('Francisco Federico Raggi Cardenas', 0.18353133961491191)
+Más alto en betweenness: ('Hugo Alberto Rincon Mejia', 0.6563798338127197)
+Más alto en eigenvector: ('Hortensia Galeana Sanchez', 0.6812820600968277)
 
 ```
-
 
 ## Conclusión
+Erdos se caracterizaba en su red por:
+- Colaboraba con muchísimas personas diferentes (más de 500 coautores)
+- Conectaba diferentes comunidades de matemáticos (Diversas áreas de las matemáticas)
+- Tenía una posición estratégica que minimizaba distancias en la red
+De las métricas que hemos calculdo podemos observar lo siguiente:
+- El nodo que ha tenido más trabajos tanto colaborativos como de dirección en esta componente connexa es Hortensia Galeana Sanchez, esto lo deducimos la tener un alto grado de centralidad. Además también coincide en ser el nodo más colaborativo en toda la red.
+- El nodo que esta más cerca de los demás (Enterminos de geodesicas) es Francisco Federico Raggi Cardenas, esto lo podemos interpretar como un director que si fuera el análogo a Erdos entonces su némero promedio a los demás es bajo.
+- El nodo que conecta a más clussters en la red es Hugo Alberto Rincon Mejia, esto lo obtenemos por la centralidad de intermediación.
+- Por último la centralidad de vector propio nos dice no solo cuántas conexiones tiene un nodo, sino qué tan importantes son los nodos a los que está conectado, este nodo corresponde a Hortensia Galeana Sanchez.
 
+Optamos por tomar a Hortensia Galeana Sanchez como análogo a Erdos en esta grafo, el número de Erdos correspondiente será la distancia de la longitud más corta, en el siguiente ([link](/red_interactiva3.html)) hay un buscador en el que se puede buscar la ruta más corta desde Hortensia Galeana Sanchez a los demás nodos de la misma componente conexa (no se muestra toda la red por el tamaño de la misma) .
 

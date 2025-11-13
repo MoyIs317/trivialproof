@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/trivialproof/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=trivialproof/livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=../../TP3.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="../../css/font.css" media="all">
+
+
+
+<meta property="og:url" content="http://localhost:1313/trivialproof/blogs/estadistica/">
+  <meta property="og:site_name" content="Trivial Proof">
+  <meta property="og:title" content="Estadística">
+  <meta property="og:description" content="Ideas básicas de estadística">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blogs">
+    <meta property="article:published_time" content="2025-08-01T22:53:58+05:30">
+    <meta property="article:modified_time" content="2025-08-01T22:53:58+05:30">
+    <meta property="article:tag" content="Matemáticas">
+    <meta property="article:tag" content="Estadística">
+    <meta property="article:tag" content="Datos">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Estadística">
+  <meta name="twitter:description" content="Ideas básicas de estadística">
+
+
+<link rel="stylesheet" href="../../bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="../../css/header.css" media="all">
+<link rel="stylesheet" href="../../css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="../../css/theme.css" media="all">
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --text-link-color: #007bff;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --text-link-color-dark: #ffffff;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+
+
+<meta name="description" content="Ideas básicas de estadística">
+<link rel="stylesheet" href="../../css/single.css">
+
+
+<script defer src="../../fontawesome-6/all-6.4.2.js"></script>
+
+
+  
+  
+
+  <title>
+Estadística | Trivial Proof
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  true ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="../../">
+                
+                <img src="../../TP3.png" width="30" height="30"
+                    class="d-inline-block align-top">
+                Trivial Proof
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Ctrl &#43; k to Search...'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Ctrl &#43; k to Search...' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="../../#about" aria-label="about">
+                            Sobre mí
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="../../#education"
+                            aria-label="education">
+                            Educación
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="../../#projects"
+                            aria-label="projects">
+                            Proyectos
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="../../#contact"
+                            aria-label="contact">
+                            Contacto
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="../../blogs" title="Blog posts">
+                            
+                            Blog
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="../../gallery" title="Blog posts">
+                            
+                            Galería
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Estadística</h1>
+            <div class="text-center">
+              
+                Moisés A.
+                <small>|</small>
+              
+              Aug 1, 2025
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="../../images/estadis_cover.png" alt="Estadística">
+          </div>
+          
+          <article class="page-content  p-2">
+          <h1 id="10-lecciones-básicas-de-estadística">10 Lecciones Básicas de Estadística</h1>
+<h2 id="lección-1-estadística-descriptiva">Lección 1 Estadística Descriptiva</h2>
+<p>En la actualidad nos encontramos con una inmensa cantidad de datos, estos vienen en distintas &ldquo;formas&rdquo;, &ldquo;sabores&rdquo; y &ldquo;colores&rdquo;; desde datos numéricos, una inmensa cantidad de texto, miles de imágenes, y millones de horas de video a la mano de todas las personas con acceso a internet, sin embargo es tanta la información que el poder entender y obtener información a partir de esta es una habilidad que se ha convertido de vital importancia.</p>
+<p>Es gracias a las matemáticas que tenemos una forma de comprender la información que tenemos a la mano, una de las tantas ramas que se usan es la estadística.</p>
+<blockquote>
+<p>Definición: La estadística como área de estudio es el arte y ciencia de diseñar estudios y analizar  los datos que estos producen. Su objetivo final es el traducir los datos en   conocimiento y comprensión del mundo que nos rodea. En resumen, la estadística es el arte y la ciencia de aprender de los datos,</p></blockquote>
+<p>Dentro de la misma estadística no encontramos con una subrama a la que se le suele llamar estadística descriptiva, esta es una serie de herramientas que nos permite resumir nuestros datos con la finalidad de enfatizar nuestra información y con esto poder lograr nuestro planteamiento de preguntas y modelos.</p>
+<p>A lo largo de esta secciones daremos algunas definiciones así como ejemplos con Python y R, esto con la finalidad de ejemplificar cada idea y obtener habilidades a lo largo de la lectura.</p>
+<p><em><strong>Definición (Muestra)</strong></em>:  Entenderemos como muestra a una parte  de una población de estudio. a la información y mediciones obtenidas de esta los llamaremos datos.</p>
+<p><em><strong>Definición (Variable)</strong></em>: Diremos que una variable es cualquier característica de un individuo perteneciente a una población.</p>
+<p>A nuestras variables las podemos clasificar en cuantitativas y cualitativas.</p>
+<p><strong>Definición (Variables Cuantitativas)</strong>: Diremos que una variable es cuantitativa si esta puede tomar valores numéricos y representan una cantidad, además podemos dividir a estas variables en discretas y continuas.</p>
+<p><strong>Definición (Variables Cualitativas)</strong>: Aquí los valores que toma la variable representan una cualidad, atributo o categoría, en algunos textos pueden ser llamadas <em>variables categóricas</em>.</p>
+<p>Para dar un breve ejemplo de este tipo de variables pensemos en un grupo de estudiantes en alguna universidad, sus estaturas, sus calificaciones son ejemplos de variables cuantitativas mientras que su sexo, o religión son ejemplos de variables cualitativas.</p>
+<p>En la practica algunos modelos de Machine Learning aceptan variables categóricas de entrada o salida, por lo que es común usar números para etiquetar los valores de alguna variable categórica, sin embargo es importante no confundir el echo de que no representa un cantidad si no que señala una cualidad.</p>
+<h3 id="descripciones-numéricas">Descripciones numéricas</h3>
+<p>Empezaremos por explicar las medidas de tendencia central las cuales tienen como finalidad buscar un valor central que representen a nuestros datos, estas son la <em>media, moda</em> y <em>mediana</em>.</p>
+<blockquote>
+<p>Definición (Media): Consideremos $$ x_1, x_2, &hellip;, x_n$$ observaciones de alguna muestra, la media no es otra cosa más que el promedio de estos números y comúnmente lo representamos por \(\bar{x}\), teniendo de esta forma que: $$ \bar{x} := \frac{x_1 + x_2 +&hellip; + x_3}{n} $$</p></blockquote>
+<p>En Python tenemos muchas formas de obtener la mediana de un arreglo unidimensional, por ejemplo si empezamos con una lista a este le podemos calcular la suma de sus elementos y dividir esto entre su longitud, o con la ayuda de la librería Numpy podemos crear un array, y este objeto cuenta con el método mean.</p>
+<p>Por ejemplo consideremos un arreglo con las estaturas de un grupo de personas, veamos como podemos calcular la media en Python.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#### Primera forma </span>
+</span></span><span style="display:flex;"><span>estaturas <span style="color:#f92672">=</span> [<span style="color:#ae81ff">187</span>, <span style="color:#ae81ff">163</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">177</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">169</span>]
+</span></span><span style="display:flex;"><span>sum(estaturas) <span style="color:#f92672">/</span> len(estaturas)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#### Segunda forma</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>array <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">187</span>, <span style="color:#ae81ff">163</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">177</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">169</span>])
+</span></span><span style="display:flex;"><span>print(array<span style="color:#f92672">.</span>mean())
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">170.14285714285714</span>
+</span></span></code></pre></div><p>en el caso de R podemos proceder de la misma forma considerar un vector numérico, sumar cada entrada de este, y dividirlo entre su longitud, o directamente aplicar la función para calcular su media, tal y como vemos a continuación:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>estaturas <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">187</span>, <span style="color:#ae81ff">163</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">177</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">169</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Primera forma</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sum</span>(estaturas) <span style="color:#f92672">/</span> <span style="color:#a6e22e">length</span>(estaturas)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Segunda forma</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mean</span>(estaturas)
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">170.142857142857</span>
+</span></span></code></pre></div><p>Hay una serie de propiedades y observaciones interesantes de la media, cuya demostración es directa de la definición, las cuales solo se enunciaran:</p>
+<ol>
+<li>La media no necesariamente pertenece al conjunto de observaciones.</li>
+<li>Si tenemos las observaciones \(x_1, x_2, x_3,&hellip;,x_n\) y consideramos una constante \(c\) y se define \(y_i = x_i + c\) entonces \(\bar{y} = \bar{x} + c\).</li>
+<li>De nuevo si tenemos las observaciones \(x_1, x_2, x_3,&hellip;,x_n\) y consideramos una constante \(c\) y se define \(y_i = c\bar{x_i}\) entonces  \(\bar{y} = c \bar{x}\).</li>
+</ol>
+<blockquote>
+<p>Definición (Mediana):
+Dado un conjunto de observaciones \( x_1, x_2,&hellip;, x_n  \), la <strong>mediana</strong> se define de la siguiente manera:</p>
+<ul>
+<li>Si \( n \) es <strong>impar</strong>, la mediana es el valor en la posición  \( \frac{n+1}{2} \) una vez que ordenamos las observaciones.</li>
+<li>Si \( n \) es <strong>par</strong>, entonces la mediana se calcula como<br>
+$$\text{Mediana} = \frac{x_{n/2} + x_{n/2 + 1}}{2}$$<br>
+una vez que tengamos ordenados nuestros datos.</li>
+</ul></blockquote>
+<p>Tanto en Python como en R tenemos muchas formas de obtener este resultado, expondré una de las más sencillas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>estaturas <span style="color:#f92672">=</span> [<span style="color:#ae81ff">187</span>, <span style="color:#ae81ff">163</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">177</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">169</span>]
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Igual que en ejejmplo anterior puedes hacer el procedimiento paso a paso o simplemente usar la función ya integrada en alguna librería, en nuestro caso aplicaremos la segunda forma</span>
+</span></span><span style="display:flex;"><span>mediana <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>median(estaturas)
+</span></span><span style="display:flex;"><span>print(mediana)
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">172.0</span>
+</span></span></code></pre></div><p>para el caso de R es igual de simple</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>estaturas <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">187</span>, <span style="color:#ae81ff">163</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">177</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">169</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">median</span>(estaturas)
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">172.0</span>
+</span></span></code></pre></div><blockquote>
+<p>Definición (Moda): Definimos a la moda como el valor más repetido en el conjunto de nuestras observaciones.</p></blockquote>
+<p>Es importante señalar que para el caso de la moda existen ocasiones en la que no es única. Para calcular este valor en Python utilizaremos otra librería interesante que os permitirá obtener esta medida.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> scipy <span style="color:#f92672">import</span> stats
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Hemos modificado nuestra lista para observar mejor el resultado</span>
+</span></span><span style="display:flex;"><span>estaturas <span style="color:#f92672">=</span> [<span style="color:#ae81ff">187</span>, <span style="color:#ae81ff">163</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">177</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">169</span>, <span style="color:#ae81ff">145</span>, <span style="color:#ae81ff">178</span>, <span style="color:#ae81ff">145</span>]
+</span></span><span style="display:flex;"><span>print(stats<span style="color:#f92672">.</span>mode(estaturas))
+</span></span><span style="display:flex;"><span>ModeResult(mode<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>int64(<span style="color:#ae81ff">145</span>), count<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>int64(<span style="color:#ae81ff">3</span>))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Nota: Es importante hacer notar que si la moda no es única entonces devuelve le dato menor</span>
+</span></span></code></pre></div><p>Existen otras cantidades que nos permiten medir la dispersión de los datos es decir que tan separados están nuestros, a continuación se detallarán algunas de estas.</p>
+<blockquote>
+<p>Definición (Varianza Muestral): Para un conjunto de observaciones la cantidad que mide  la variabilidad de estas &gt;respecto de su media, En términos matemáticos lo escribimos de la forma:
+$$ s ^2 = \frac{1}{n-1}\sum_{i = 1}^{n}(x_i - \bar{x})^2 $$</p></blockquote>
+<h3 id="descripciones-gráficas">Descripciones gráficas</h3>
+<p>Nosotros trabajaremos con los siguientes datos <a href="https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset">Student Depresion Dataset</a> los cuales correspondes a un dataset de Kaggle en el que se mide el nivel de estrés de una muestra de estudiantes, para más información respecto a las variables revisar el link. Con este dataset exploraremos algunas gráficas más  comunes en estadística. Las representaciones gráficas las elaboraremos en Python, se invita al lector a investigar sus análogo en R.</p>
+<h4 id="gráfica-de-barras">Gráfica de barras</h4>
+<p>Para datos categóricos la forma más común para poder visualizarlos es por medio del gráfico de barras. En este gráfico cada barra representa la frecuencia(o frecuencias relativas) de las diferentes categorías.</p>
+<p>Para nuestro ejemplo tenemos que nuestro dataset tenemos una columna llamada <strong>Gender</strong> que corresponde al genero de cada individuo en el dataset, podríamos construir una gráfica que nos permita ver la cantidad de integrantes de cada sexo. Usaremos la librería de Seaborn, en particular usaremos el objeto catplot el cual es usado para variables categóricas y el parámetro kind = &lsquo;bar&rsquo; , se recomienda leer la documentación al respecto</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> kagglehub
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+</span></span><span style="display:flex;"><span>path <span style="color:#f92672">=</span> kagglehub<span style="color:#f92672">.</span>dataset_download(<span style="color:#e6db74">&#34;adilshamim8/student-depression-dataset&#34;</span>)
+</span></span><span style="display:flex;"><span>files <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>listdir(path)
+</span></span><span style="display:flex;"><span>csv_files <span style="color:#f92672">=</span> [f <span style="color:#66d9ef">for</span> f <span style="color:#f92672">in</span> files <span style="color:#66d9ef">if</span> f<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.csv&#34;</span>)]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> csv_files:
+</span></span><span style="display:flex;"><span>    file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(path, csv_files[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>    estres <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(file_path)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Leyendo archivo: </span><span style="color:#e6db74">{</span>csv_files[<span style="color:#ae81ff">0</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    display(df<span style="color:#f92672">.</span>head())
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Error&#34;</span>)
+</span></span><span style="display:flex;"><span>genero <span style="color:#f92672">=</span> estres[<span style="color:#e6db74">&#34;Gender&#34;</span>]<span style="color:#f92672">.</span>value_counts()
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>catplot(data <span style="color:#f92672">=</span> genero, kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bar&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;palette&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Genero&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;Cantidad&#34;</span>)
+</span></span></code></pre></div><p>El anterior código nos devuelve la siguiente imagen:</p>
+<p><img src="../../images/estadis/genero.png" alt="Gráfica de barras"></p>
+<h4 id="histograma">Histograma</h4>
+<p>Ahora veremos un gráfico que perecería darnos un resultado parecido al gráfico de barras sin embargo le damos el nombre de histograma cuando existe un orden entre nuestras variables, aquí se intenta el tener una idea de como se comportan nuestros datos pensando en una función de densidad empírica, aquí cada barra representa la frecuancia de un intervalo sobre el rango de observaciones.</p>
+<p>Vamos a construir un histograma para la columna de <strong>CGPA</strong> el cual corresponde al promedio acumulado de calificaciones por sus siglas en inglés, usando Seaborn con la función displot y el parámetro kind = &lsquo;hist&rsquo;, podemos ver la dstribución de CGPA por genero.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>displot(data<span style="color:#f92672">=</span>estres, x<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;CGPA&#39;</span>, kind <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hist&#39;</span>, col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Gender&#39;</span>, hue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Gender&#39;</span>);
+</span></span></code></pre></div><p>obteniendo
+<img src="../../images/estadis/CGPA_gender.png" alt="Histograma del CGPA"></p>
+<h4 id="gráfica-de-pastel">Gráfica de pastel</h4>
+<p>Una gráfica de pastel es usada para representar las frecuencias relativas o las proporciones de los distintos resultados de una variable categórica. Para este caso exploraremos la variable de <strong>Dietary Habits</strong> la cual tiene información de las hábitos en la dieta de los individuos en nuestro dataset. En este caso Seaborn no tiene una función especifica para crear un gráfico de pastel, por lo que usaremos matplotlib directamente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>habitos <span style="color:#f92672">=</span> estres[<span style="color:#e6db74">&#39;Dietary Habits&#39;</span>]<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>to_frame()<span style="color:#f92672">.</span>reset_index()
+</span></span><span style="display:flex;"><span>habitos<span style="color:#f92672">.</span>columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Dietary Habits&#39;</span>, <span style="color:#e6db74">&#39;count&#39;</span>]
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>pie(data<span style="color:#f92672">=</span>habitos, x <span style="color:#f92672">=</span> habitos[<span style="color:#e6db74">&#39;count&#39;</span>], labels<span style="color:#f92672">=</span>habitos[<span style="color:#e6db74">&#39;Dietary Habits&#39;</span>], autopct<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%.2f%%</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><p><a href="../../images/estadis/pie.png">Gráfica de pastel</a></p>
+<h4 id="boxplot">Boxplot</h4>
+<p>Este gráfico nos permite obtener información de nuestra muestra por medio de la información de los cuartiles de la misma, este grafico se compones de unas líneas y una caja, las líneas indican la variabilidad que existe fuera del rango intercuatil. Este gráfico nos permite comparar una variable cuantitativa con una cualitativa.</p>
+<p>Por ejemplo en nuestro dataset podemos ver el <strong>CGPA</strong>  comparándolo con <strong>Gender</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>catplot(data <span style="color:#f92672">=</span> estres, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Gender&#39;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;CGPA&#39;</span>, kind <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;box&#39;</span>, hue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Gender&#39;</span>, palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pastel&#39;</span>);
+</span></span></code></pre></div><p><a href="../../images/estadis/box.png">Gráfico de caja</a>
+Estos son algunos de los gráficos más comunes que podemos encontrar en distintos estudios estadísticos, se recomienda a explorar la documentación de Seaborn y Matplotlib, o explorar algunas librerías que sirven para la elaboración de dashbords.</p>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#lección-1-estadística-descriptiva">Lección 1 Estadística Descriptiva</a>
+      <ul>
+        <li><a href="#descripciones-numéricas">Descripciones numéricas</a></li>
+        <li><a href="#descripciones-gráficas">Descripciones gráficas</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/trivialproof/tags/matem%C3%A1ticas"
+                target="_blank"
+              >Matemáticas</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/trivialproof/tags/estad%C3%ADstica"
+                target="_blank"
+              >Estadística</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/trivialproof/tags/datos"
+                target="_blank"
+              >Datos</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="../../js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar =  true ;
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+
+<script src="../../js/readingTime.js"></script>
+
+
+
+  </div><footer>
+    
+ 
+ 
+<div class="container py-3" id="recent-posts">
+    
+    
+    <div class="h3 text-center text-secondary py-3">
+        Recent Posts
+    </div>
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="../../blogs/ecuaciones/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Ecuaciones Diferenciales">Ecuaciones Diferenciales</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h1 id="lecciones-básicas-de-ecuaciones-diferenciales">Lecciones básicas de ecuaciones diferenciales</h1>
+<p>La forma que tenemos para describir el cambio es por medio de la derivada, así que para conocer como se da este cambio es por medio de las ecuaciones diferenciales, las cuales son ecuaciones en las que hay presencia derivadas.</p>
+<h2 id="conceptos-básicos">Conceptos básicos</h2></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Oct 16, 2025</span>
+                    <a href="../../blogs/ecuaciones/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="../../blogs/%C3%A1lgebra/">
+                        <img src="../../images/algebra_cover.png" class="card-img-top" alt="Álgebra">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="../../blogs/%C3%A1lgebra/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Álgebra">Álgebra</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h1 id="lecciones-básicas-del-álgebra">Lecciones básicas del álgebra</h1>
+<h2 id="enteros-y-el-algoritmo-de-la-división">Enteros y el algoritmo de la división</h2>
+<p>Los números enteros son un conjunto de números con los que estamos familiarizados desde una temprana edad estos los escribimos de la siguiente forma: $$ \mathbb{Z} = { 0, 1, -1, 2, -2, \ldots } $$
+Este conjunto tiene una gran …</p></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Oct 15, 2025</span>
+                    <a href="../../blogs/%C3%A1lgebra/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="../../blogs/estadistica/">
+                        <img src="../../images/estadis_cover.png" class="card-img-top" alt="Estadística">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="../../blogs/estadistica/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Estadística">Estadística</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h1 id="10-lecciones-básicas-de-estadística">10 Lecciones Básicas de Estadística</h1>
+<h2 id="lección-1-estadística-descriptiva">Lección 1 Estadística Descriptiva</h2>
+<p>En la actualidad nos encontramos con una inmensa cantidad de datos, estos vienen en distintas &ldquo;formas&rdquo;, &ldquo;sabores&rdquo; y &ldquo;colores&rdquo;; desde datos numéricos, una inmensa cantidad de texto, miles de …</p></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Aug 1, 2025</span>
+                    <a href="../../blogs/estadistica/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="../../blogs/geometria/">
+                        <img src="../../images/geodif_cover.png" class="card-img-top" alt="Geometría Diferencial">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="../../blogs/geometria/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Geometría Diferencial">Geometría Diferencial</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h1 id="lecciones-básicas-de-geometría-diferencial">Lecciones Básicas de Geometría Diferencial</h1>
+<h2 id="superficies">Superficies</h2>
+<h3 id="qué-es-un-superficie">¿Qué es un superficie?</h3>
+<p>Primero debemos recordar que es un conjunto abierto.</p>
+<blockquote>
+<p>Un subconjunto (U \subseteq \matbb{R}^{n}) es abierto si para cada (a \in U) hay un número positivo (\epsilon&gt;0) tal que para cada punto ( x\in \matbb{R}^{n}) a una …</p></blockquote></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Apr 3, 2021</span>
+                    <a href="../../blogs/geometria/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="https://github.com/MoyIs317" target="_blank" aria-label="github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
+                <path id="footer-socialNetworks-github-svg-path"
+                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
+
+                <metadata>
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description about="https://iconscout.com/legal#licenses"
+                            dc:title="Github, Online, Project, Hosting, Square"
+                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
+                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+                            <dc:creator>
+                                <rdf:Bag>
+                                    <rdf:li>Font Awesome</rdf:li>
+                                </rdf:Bag>
+                            </dc:creator>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </metadata>
+            </svg>
+        </a>
+    </span>
+    
+
+    
+
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            
+                <div class="pb-2">
+                    <a href="http://localhost:1313/trivialproof/" title="Trivial Proof">
+                        <img alt="Footer logo" src="../../TP3.png"
+                            height="40px" width="40px">
+                    </a>
+                </div>
+            
+            &copy; 2025  All rights reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</footer><script src="../../bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+        document.documentElement.classList.remove('dark');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            document.documentElement.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="../../js/search.js"></script>
+
+
+
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" integrity="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW" crossorigin="anonymous"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\[','\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        TeX: { equationNumbers: { autoNumber: "AMS" },
+             extensions: ["AMSmath.js", "AMSsymbols.js"] }
+      }
+    });
+</script>
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>

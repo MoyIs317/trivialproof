@@ -394,7 +394,7 @@ La red cuenta con:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;La densidad de la red es: </span><span style="color:#e6db74">{</span>nx<span style="color:#f92672">.</span>density(red)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>La densidad de la red es: <span style="color:#ae81ff">0.0005217932359844367</span>
 </span></span></code></pre></div><blockquote>
-<p><strong>Grado Promedio:</strong>  Para un grafo no dirigido podemos definir el gredo proemdio como la siguiente expresión: $$ &lt;k&gt; = \frac{2|E|}{|V|}$$ Este numero nos índica el número de conexionesde cada nodo en promedio.</p></blockquote>
+<p><strong>Grado Promedio:</strong>  Para un grafo no dirigido podemos definir el grado promedio como la siguiente expresión: $$ &lt;k&gt; = \frac{2|E|}{|V|}$$ Este numero nos índica el número de conexionesde cada nodo en promedio.</p></blockquote>
 <p>Para nuestra red tenemos lo siguiente:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>average_degree_1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span> num_aristas <span style="color:#f92672">/</span> num_nodos
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;El grado promedio es: </span><span style="color:#e6db74">{</span>average_degree_1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
@@ -441,21 +441,61 @@ completamente, esta es la idea general del concepto de conexidad, cada &ldquo;pe
 <iframe src="../../../projects/red_tesis/Componente_max.html" width="100%" height="700px" style="border:none;"></iframe>
 <p>En esta componente lo que intentaremos determinar es la importancia de los nodos, existen distintas metricas de centralidad. Exploraremos dos de estas medidas para esto procederemos a definirlas:</p>
 <blockquote>
-<p><strong>Grado de centralidad:</strong> Dada una gráfica definimos al grado de centralidad como $$ C_{D}(v) = \delta(v)$$, aveces se toma dicho calor normalizado, usando la siguiente expresión $$ \frac{\delta(v)}{n-1}$$ donde \(n \) corresponde al número de nodos en la gráfica.</p></blockquote>
+<p><strong>Grado de centralidad:</strong> Dada una gráfica definimos al grado de centralidad como $$ C_{D}(v) = \delta(v)$$, a veces se toma dicho calor normalizado, usando la siguiente expresión $$ \frac{\delta(v)}{n-1}$$ donde \(n \) corresponde al número de nodos en la gráfica.</p></blockquote>
 <blockquote>
 <p><strong>Centralidad de cercanía:</strong> Dada una gráfica definimos a esta metrica como el promedio de las distancias de las geodesicas de un nodo a los demás. Esta toma la siguiente expresión: $$C_{c}(i) =(n-1) [\sum_{j=1}^{n}d(i,j)]^{-1}$$ la cual esta normalizada.</p></blockquote>
-<p>Ambas métricas nos dan una gran cantida de información sobre los nodos que estamos estudiando, sin embargo, el grado de centralidad solo nos dice información de las relaciones directas que existen entre nodos, sin embargo la centrlidad de cercania nos dice el tipo de relaciones con nodos unidos a traves de más de un nodo.</p>
-<p>Obteniendo el grado de centralidad en nuestra componente usando Networks nos regresa un diccionario, podemos ver los cinco nodos con un mayor valor. Observamos que estos cinco nodos se encuentran entre los quince directores con más tesis dirigidas.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>grados_centralidad <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>degree_centrality(sub_componente)
-</span></span><span style="display:flex;"><span>grados_centralidad_orden <span style="color:#f92672">=</span> dict(sorted(grados_centralidad<span style="color:#f92672">.</span>items(), key <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> item: item[<span style="color:#ae81ff">1</span>], reverse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
+<blockquote>
+<p><strong>Centralidad de intermediación:</strong>  Dado un grafo con \( V \) como el conjunto de vértices o nodos y \( E \) el conjunto de aristas si consideramos un nodo de este \( i \) definimos a la centralidad de intermediación como la siguiente suma $$C(i)= \sum_{j\neq k \in V} \frac{b_{jik}}{b_{jk}}$$ donde \(b_{jk}\) es el  número de caminos mpas cortos desde el nodo \(j\) hasta el nodo \(k\), mientras que \(b_{jik}\) es el número de caminos más cortos desde \(j\) hasta \(k\) que pasan por el nodo \(i\).</p></blockquote>
+<blockquote>
+<p><strong>Centralidad de vector propio:</strong> Sea un grafo donde \( V \) es el conjunto de vértices o nodos y \( E \) el conjunto de aristas.  El número de vértices lo denotamos por \( n = |V| \).Sea \(A := (a_{ij})\) la matriz de adyacencia de nuestro grafo, y \( A&rsquo; \) su matriz transpuesta. En el caso de un grafo no dirigido, se cumple que \( A = A&rsquo;\). La centralidad de vector propio la definimos como: $$C_{VP}(j) = \sum_{i=1}^{n} a_{ij} , C_{VP}(i)= a_{1j}C_{VP}(1) + a_{2j}C_{VP}(2) + \dots + a_{nj}C_{VP}(n)$$ Esta expresión establece que la centralidad de un nodo es proporcional a la suma de las centralidades de los nodos que están conectados a él.</p></blockquote>
+<p>Todas estas métricas nos dan una gran cantida de información sobre los nodos que estamos estudiando, procedermos a mostrar los nodos loc cuales tienen el valor más alto en cada métrica-</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>grados <span style="color:#f92672">=</span> dict(sub_componente<span style="color:#f92672">.</span>degree())
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;Hortensia Galeana Sanchez&#39;</span>: <span style="color:#ae81ff">0.09821428571428571</span>,
-</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;Hugo Alberto Rincon Mejia&#39;</span>: <span style="color:#ae81ff">0.06696428571428571</span>,
-</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;Alejandro Bravo Mojica&#39;</span>: <span style="color:#ae81ff">0.05803571428571428</span>,
-</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;Monica Alicia Clapp Jimenez Labora&#39;</span>: <span style="color:#ae81ff">0.05357142857142857</span>,
-</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;Emilio Esteban Lluis Puebla&#39;</span>: <span style="color:#ae81ff">0.049107142857142856</span>
-</span></span></code></pre></div><p>Ahora calculando la centralidad de cercanias</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><h2 id="conclusión">Conclusión</h2>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> node, data <span style="color:#f92672">in</span> sub_componente<span style="color:#f92672">.</span>nodes(data<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
+</span></span><span style="display:flex;"><span>    label <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;label&#39;</span>, str(node))
+</span></span><span style="display:flex;"><span>    degree <span style="color:#f92672">=</span> grados[node]
+</span></span><span style="display:flex;"><span>    size <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">+</span> degree <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>  
+</span></span><span style="display:flex;"><span>    componente<span style="color:#f92672">.</span>add_node(node, label<span style="color:#f92672">=</span>label, size<span style="color:#f92672">=</span>size)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> u, v <span style="color:#f92672">in</span> sub_componente<span style="color:#f92672">.</span>edges():
+</span></span><span style="display:flex;"><span>    componente<span style="color:#f92672">.</span>add_edge(u, v)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>componente<span style="color:#f92672">.</span>save_graph(<span style="color:#e6db74">&#39;Componente_max.html&#39;</span>)
+</span></span><span style="display:flex;"><span>porcentaje_nodos <span style="color:#f92672">=</span> round((len(sub_componente) <span style="color:#f92672">/</span> num_nodos )<span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34; El porcentaje de nodos en esta compoenete es </span><span style="color:#e6db74">{</span>porcentaje_nodos<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>G <span style="color:#f92672">=</span> sub_componente<span style="color:#f92672">.</span>to_undirected()  
+</span></span><span style="display:flex;"><span>deg_central <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>degree_centrality(G)
+</span></span><span style="display:flex;"><span>close_central <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>closeness_centrality(G)
+</span></span><span style="display:flex;"><span>betw_central <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>betweenness_centrality(G)
+</span></span><span style="display:flex;"><span>eig_central <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>eigenvector_centrality(G, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">top1</span>(dic):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> max(dic, key<span style="color:#f92672">=</span>dic<span style="color:#f92672">.</span>get), dic[max(dic, key<span style="color:#f92672">=</span>dic<span style="color:#f92672">.</span>get)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Más alto en degree:&#34;</span>, top1(deg_central))
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Más alto en closeness:&#34;</span>, top1(close_central))
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Más alto en betweenness:&#34;</span>, top1(betw_central))
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Más alto en eigenvector:&#34;</span>, top1(eig_central))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> El porcentaje de nodos en esta compoenete es <span style="color:#ae81ff">14.85</span>
+</span></span><span style="display:flex;"><span>Más alto en degree: (<span style="color:#e6db74">&#39;Hortensia Galeana Sanchez&#39;</span>, <span style="color:#ae81ff">0.09821428571428571</span>)
+</span></span><span style="display:flex;"><span>Más alto en closeness: (<span style="color:#e6db74">&#39;Francisco Federico Raggi Cardenas&#39;</span>, <span style="color:#ae81ff">0.18353133961491191</span>)
+</span></span><span style="display:flex;"><span>Más alto en betweenness: (<span style="color:#e6db74">&#39;Hugo Alberto Rincon Mejia&#39;</span>, <span style="color:#ae81ff">0.6563798338127197</span>)
+</span></span><span style="display:flex;"><span>Más alto en eigenvector: (<span style="color:#e6db74">&#39;Hortensia Galeana Sanchez&#39;</span>, <span style="color:#ae81ff">0.6812820600968277</span>)
+</span></span></code></pre></div><h2 id="conclusión">Conclusión</h2>
+<p>Erdos se caracterizaba en su red por:</p>
+<ul>
+<li>Colaboraba con muchísimas personas diferentes (más de 500 coautores)</li>
+<li>Conectaba diferentes comunidades de matemáticos (Diversas áreas de las matemáticas)</li>
+<li>Tenía una posición estratégica que minimizaba distancias en la red
+De las métricas que hemos calculdo podemos observar lo siguiente:</li>
+<li>El nodo que ha tenido más trabajos tanto colaborativos como de dirección en esta componente connexa es Hortensia Galeana Sanchez, esto lo deducimos la tener un alto grado de centralidad. Además también coincide en ser el nodo más colaborativo en toda la red.</li>
+<li>El nodo que esta más cerca de los demás (Enterminos de geodesicas) es Francisco Federico Raggi Cardenas, esto lo podemos interpretar como un director que si fuera el análogo a Erdos entonces su némero promedio a los demás es bajo.</li>
+<li>El nodo que conecta a más clussters en la red es Hugo Alberto Rincon Mejia, esto lo obtenemos por la centralidad de intermediación.</li>
+<li>Por último la centralidad de vector propio nos dice no solo cuántas conexiones tiene un nodo, sino qué tan importantes son los nodos a los que está conectado, este nodo corresponde a Hortensia Galeana Sanchez.</li>
+</ul>
+<p>Optamos por tomar a Hortensia Galeana Sanchez como análogo a Erdos en esta grafo, el número de Erdos correspondiente será la distancia de la longitud más corta, en el siguiente (<a href="../../../red_interactiva3.html">link</a>) hay un buscador en el que se puede buscar la ruta más corta desde Hortensia Galeana Sanchez a los demás nodos de la misma componente conexa (no se muestra toda la red por el tamaño de la misma) .</p>
 
           </article>
         </div>
@@ -608,9 +648,10 @@ completamente, esta es la idea general del concepto de conexidad, cada &ldquo;pe
                         <h5 class="card-title bg-transparent" title="Álgebra">Álgebra</h5>
                     </a>
                     <div class="card-text secondary-font">
-                        <p><h1 id="10-lecciones-básicas-del-álgebra">10 Lecciones básicas del álgebra</h1>
-<h2 id="grupos">Grupos</h2>
-<p>Una de las estructuras algebraicas más sencillas que se presentan en la universidad son los grupos, pues lo único que necesitamos es un conjunto, una operación binaria y asociativa, y ciertas restricciones sobre sus elementos, podríamos empezar directamente …</p></p>
+                        <p><h1 id="lecciones-básicas-del-álgebra">Lecciones básicas del álgebra</h1>
+<h2 id="enteros-y-el-algoritmo-de-la-división">Enteros y el algoritmo de la división</h2>
+<p>Los números enteros son un conjunto de números con los que estamos familiarizados desde una temprana edad estos los escribimos de la siguiente forma: $$ \mathbb{Z} = { 0, 1, -1, 2, -2, \ldots } $$
+Este conjunto tiene una gran …</p></p>
                     </div>
                 </div>
                 <div class="mt-auto card-footer">
