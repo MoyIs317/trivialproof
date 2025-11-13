@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/trivialproof/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=trivialproof/livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=../../../TP3.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="../../../css/font.css" media="all">
+
+
+
+<meta property="og:url" content="http://localhost:1313/trivialproof/project/red_tesis/reporte/">
+  <meta property="og:site_name" content="Trivial Proof">
+  <meta property="og:title" content="Análisis de Red de Tesis UNAM">
+  <meta property="og:description" content="Introducción Una red social (en el área de las matemáticas) es un grupo de personas unidas por cierto tipo de relación, hay una gran variedad de relaciones que tenemos los humanos entre sí, por ejemplo las relaciones de amistad, de romance, laborales, etc.
+En las redes sociales cada nodo representa una persona y una arista entre dos nodos representa la relación que existe entre ellos. Las redes nos permiten estudiar distintos fenómenos que involucran la interacción entre las personas.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="project">
+    <meta property="article:published_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-24T00:00:00+00:00">
+    <meta property="article:tag" content="Matemáticas">
+    <meta property="article:tag" content="Redes">
+    <meta property="article:tag" content="Tesis">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Análisis de Red de Tesis UNAM">
+  <meta name="twitter:description" content="Introducción Una red social (en el área de las matemáticas) es un grupo de personas unidas por cierto tipo de relación, hay una gran variedad de relaciones que tenemos los humanos entre sí, por ejemplo las relaciones de amistad, de romance, laborales, etc.
+En las redes sociales cada nodo representa una persona y una arista entre dos nodos representa la relación que existe entre ellos. Las redes nos permiten estudiar distintos fenómenos que involucran la interacción entre las personas.">
+
+
+<link rel="stylesheet" href="../../../bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="../../../css/header.css" media="all">
+<link rel="stylesheet" href="../../../css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="../../../css/theme.css" media="all">
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --text-link-color: #007bff;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --text-link-color-dark: #ffffff;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+
+
+<meta name="description" content="">
+<link rel="stylesheet" href="../../../css/single.css">
+
+
+<script defer src="../../../fontawesome-6/all-6.4.2.js"></script>
+
+
+  
+  
+
+  <title>
+Análisis de Red de Tesis UNAM | Trivial Proof
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  true ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="../../../">
+                
+                <img src="../../../TP3.png" width="30" height="30"
+                    class="d-inline-block align-top">
+                Trivial Proof
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Ctrl &#43; k to Search...'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Ctrl &#43; k to Search...' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="../../../#about" aria-label="about">
+                            Sobre mí
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="../../../#education"
+                            aria-label="education">
+                            Educación
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="../../../#projects"
+                            aria-label="projects">
+                            Proyectos
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="../../../#contact"
+                            aria-label="contact">
+                            Contacto
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="../../../blogs" title="Blog posts">
+                            
+                            Blog
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="../../../gallery" title="Blog posts">
+                            
+                            Galería
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Análisis de Red de Tesis UNAM</h1>
+            <div class="text-center">
+              
+                Moisés A.
+                <small>|</small>
+              
+              Oct 24, 2025
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <article class="page-content  p-2">
+          <h2 id="introducción">Introducción</h2>
+<p>Una red social (en el área de las matemáticas) es un grupo de personas unidas por cierto tipo de relación, hay una gran variedad de relaciones que tenemos los humanos entre sí, por ejemplo las relaciones de amistad, de romance, laborales, etc.</p>
+<p>En las redes sociales cada nodo representa una persona y una arista entre dos nodos representa la relación que existe entre ellos. Las redes nos permiten estudiar distintos fenómenos que involucran la interacción entre las personas.</p>
+<p>Antes de explicar la estructura de la red expuesta a continuación me gustaría hablar de un concepto que inspiró este proyecto.</p>
+<p>Paul Erdős fue un matemático húngaro que además de su excentricidad es conocido por la impresionante cantidad de trabajos colaborativos que realizó durante su vida, a esto le debemos añadir la diversa variedad de áreas de las matemáticas que estos trabajos abarcan, en sus investigaciones podemos encontrar trabajos relacionados con la teoría de números, teoría de gráficas, teoría de la aproximación, combinatoria, teoría de conjuntos y la probabilidad.</p>
+<p>Es gracias a lo anterior que se inventó el número de Erdős, esto como homenaje, este número se construye de la siguiente forma: A Erdős le corresponde el 0, todo aquel colaborador en algún artículo con él le corresponde el número 1, aquellos que hayan colaborado con alguno de estos colaboradores pero no directamente con Erdős se les da el número 2 y así sucesivamente. Lo sorprendente es que algunas estimaciones dan que el 90% de los matemáticos activos tienen un número de Erdős menor a 8.</p>
+<div style="text-align: center;">
+  <img src="../../../projects/red_tesis/erdos_ai.png" alt="Paul Erdos" width="300">
+  <p style="font-size: 0.9em; color: gray;">
+    <em>Paul Erdos (Imagen generada con AI)</em>
+  </p>
+</div>
+<p>Lo que se intenta hacer aquí es encontrar si existe un análogo a Erdős, es decir, buscamos si es que existe un autor o director de tesis que tenga suficientes publicaciones y colaboraciones como para dotar a los demás nodos con un número menor a 8.</p>
+<p>La red está constituida solamente por las tesis realizadas para obtener el título de matemático a nivel licenciatura (<a href="../../../red_tesis_final_version_search3.html">Red de Tesis de Matemáticas</a>), cada nodo corresponde a una persona, cada nodo cuenta con dos metadatos: el primero corresponde al título de la tesis y el segundo señala el año de publicación. En la red existen tres tipos de nodos, los cuales son señalados de colores distintos de la siguiente forma:</p>
+<ul>
+<li>Nodos Azules: Corresponden a aquellos registros que sólo aparecen como autores.</li>
+<li>Nodos Rojos: Estos señalan aquellos que sólo han sido directores.</li>
+<li>Nodos Morados: Estos nodos son aquellos registros que aparecen como autores y directores.</li>
+</ul>
+<div style="text-align: center;">
+  <img src="../../../projects/red_tesis/red_ejemplo.png" alt="Imagen ejemplo de la red">
+</div>
+<p>Las aristas corresponden a la relación de trabajo colaborativo es decir no se trata de una red dirigida pues consideramos a esta relación como la de colaboración.</p>
+<blockquote>
+<p><strong>Nota</strong> Existen registros los cuales no tienen director de tesis o algunos se desconoce el año de publicación.</p></blockquote>
+<h2 id="dos-pequeñas-observaciones">Dos pequeñas observaciones</h2>
+<p>Los datos extraídos del portal de la UNAM no son muchos, pero si podemos hacer dos observaciones interesantes respecto a los directores y el año de publicación.</p>
+<h3 id="quién-es-el-director-que-más-trabajos-dirigidos">¿Quién es el director que más trabajos dirigidos?</h3>
+<p>Para responder esta pregunta se realizaron una serie de pasos para poder limpiar los datos, pues existen varias inconsistencias. Lo primero que se realizó fue una estandarización de los nombres la cual consistía en quitar puntos, convertir a minúsculas, eliminar acentos. Esto no bastó pues existían además errores tipográficos, lo que imposibilitaba el conteo de forma correcta, pues podíamos encontrar registros como: Pablo R Juárez y Pablo Ruiz Juárez. Estos registros se refieren a la misma persona, sin embargo, a la hora de realizar el conteo lo consideraba como dos personas distintas. En este caso usamos la librería de Python llamada rapidfuzz; con esta pude detectar cadenas de texto similares pero que no son iguales, para después poder realizar una corrección en los registros que hicieran falta. Después de esta limpieza pudimos encontrar lo que se presenta en el siguiente gráfico.</p>
+<div id="plotly-graph-f9fc2c73fcc6425cb21422690b8ee6c9" style="width:100%;height:600px;"></div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    var fig_data = {"data":[{"marker":{"color":[21,21,22,22,22,23,23,23,25,25,25,26,29,29,44],"colorbar":{"title":{"text":"Conteo"}},"colorscale":[[0.0,"rgb(211, 242, 163)"],[0.16666666666666666,"rgb(151, 225, 150)"],[0.3333333333333333,"rgb(108, 192, 139)"],[0.5,"rgb(76, 155, 130)"],[0.6666666666666666,"rgb(33, 122, 121)"],[0.8333333333333334,"rgb(16, 89, 101)"],[1.0,"rgb(7, 64, 80)"]],"showscale":true},"orientation":"h","x":[21,21,22,22,22,23,23,23,25,25,25,26,29,29,44],"y":["Jose Antonio Gomez Ortega","Oscar Alfredo Palmas Velasco","Jose Rafael Martinez Enriquez","Julio Cesar Guevara Bravo","Emilio Esteban Lluis Puebla","Alejandro Ricardo Garciadiego Dantan","Maria Isabel Puga Espinoza","Monica Alicia Clapp Jimenez Labora","Jose Rios Montes","Alejandro Bravo Mojica","Guillermo Gomez Alcaraz","Alejandro Illanes Mejia","Antonio Lascurain Orive","Hugo Alberto Rincon Mejia","Hortensia Galeana Sanchez"],"type":"bar"}],"layout":{"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"Top 15 de los directores con m\u00e1s trabajos dirigidos","y":0.95,"x":0.5,"xanchor":"center","yanchor":"top"},"xaxis":{"title":{"text":"N\u00famero de Publicaciones"}},"yaxis":{"title":{"text":"Nombre del Director"}}}};
+    Plotly.newPlot('plotly-graph-f9fc2c73fcc6425cb21422690b8ee6c9', fig_data.data, fig_data.layout);
+</script>
+<h3 id="cuántas-publicaciones-se-han-hecho-por-año">¿Cuántas publicaciones se han hecho por año?</h3>
+<p>En esta parte durante la exploración nos encontramos con registros los cuales contenían en año el valor de &ldquo;0000&rdquo; esto claramente es un error así que revisando el portal de tesis UNAM podemos encontrar que no fue un error a la hora de la extracción, si no a la hora de capturar el registro en el portal de la UNAM por lo que para esta pregunta solo consideramos lo registros donde el año sea mayor a 0.</p>
+<div id="plotly-graph-90ad28db9393489bb10832af248b185c" style="width:100%;height:600px;"></div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    var fig_data = {"data":[{"line":{"color":"#2ecc71","width":2},"marker":{"color":"#2ecc71","size":6},"mode":"lines+markers","x":[1937,1938,1950,1951,1953,1954,1955,1956,1957,1958,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"y":[1,1,3,1,2,2,1,2,2,1,3,3,5,4,7,12,11,4,15,14,20,23,22,26,43,31,21,29,32,40,35,31,30,40,36,46,29,44,46,37,42,35,35,40,34,34,47,40,20,38,45,54,44,57,34,49,50,43,71,66,65,66,56,68,66,67,64,95,82,48,82,79,68,70,52],"type":"scatter"}],"layout":{"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"N\u00famero de publicaciones por a\u00f1o","y":0.95,"x":0.5,"xanchor":"center","yanchor":"top"},"xaxis":{"title":{"text":"A\u00f1o"}},"yaxis":{"title":{"text":"N\u00famero de Publicaciones"}}}};
+    Plotly.newPlot('plotly-graph-90ad28db9393489bb10832af248b185c', fig_data.data, fig_data.layout);
+</script>
+<p>De este gráfico podemos observar que durante el 2018 fue el año con más tesis de matematicas.</p>
+<h2 id="propiedades-de-la-red">Propiedades de la Red</h2>
+<p>El análisis realizado de la red se hizo usando la librería de Python llamada <a href="https://networkx.org/documentation/stable/index.html">Networkx</a> la cual se recomienda leer la documentación, mientras que para las viualizaciones se utilizó <a href="https://pyvis.readthedocs.io/en/latest/index.html">Pyvis</a>.</p>
+<pre tabindex="0"><code class="language-pyhton" data-lang="pyhton">num_nodos = red.number_of_nodes()
+num_aristas = red.number_of_edges()
+
+La red cuenta con: 
+
+    # Nodos : 3024 
+
+    # Aristas: 2385 
+</code></pre><blockquote>
+<p><strong>Densidad:</strong> Si consideramos un grafo no dirigido podemos definir a la densidad como la proporción que existe entre la cantidad de aristas existentes con la máxima posible. Esto lo podemos calcular como: $$ d = \frac{2|E|}{|V|(|V| - 1)}$$ Podemos notar que para un grafo completo este número es uno, para otro caso es menor.</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;La densidad de la red es: </span><span style="color:#e6db74">{</span>nx<span style="color:#f92672">.</span>density(red)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>La densidad de la red es: <span style="color:#ae81ff">0.0005217932359844367</span>
+</span></span></code></pre></div><blockquote>
+<p><strong>Grado Promedio:</strong>  Para un grafo no dirigido podemos definir el grado promedio como la siguiente expresión: $$ &lt;k&gt; = \frac{2|E|}{|V|}$$ Este numero nos índica el número de conexionesde por cada nodo en promedio.</p></blockquote>
+<p>Para nuestra red tenemos lo siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>average_degree_1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span> num_aristas <span style="color:#f92672">/</span> num_nodos
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;El grado promedio es: </span><span style="color:#e6db74">{</span>average_degree_1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1.5773809523809523</span>
+</span></span></code></pre></div><p>En resumen tenemos:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Red</th>
+          <th style="text-align: right">#Nodos</th>
+          <th style="text-align: right">#Aristas</th>
+          <th style="text-align: left">Densidad</th>
+          <th style="text-align: right">Grado Promedio</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Tesis</td>
+          <td style="text-align: right">3024</td>
+          <td style="text-align: right">2385</td>
+          <td style="text-align: left">0.00052</td>
+          <td style="text-align: right">1.58</td>
+      </tr>
+  </tbody>
+</table>
+<div style="text-align: center;">
+  <img src="../../../projects/red_tesis/red_imagen_general.png" alt="Imagen ejemplo de la red">
+</div>
+<p>Esta información nos dice que nuestra red es muy dispersa, dando un breve vistaso podemos ver que hay muchos &ldquo;pedazos&rdquo;, es decir, no esta unida completamente, esta es la idea general del concepto de conexidad, cada &ldquo;pedazo&rdquo; se le llama componente conexa, veamos cuantas de estas hay en nuestra red.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>componentes <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>connected_components(red) <span style="color:#75715e">#Esto genera un generador</span>
+</span></span><span style="display:flex;"><span>num_componentes <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>number_connected_components(red) <span style="color:#75715e">#Nos da el número de componentes conexas</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Obtengamos la componente conexa mpas grande</span>
+</span></span><span style="display:flex;"><span>componente_max <span style="color:#f92672">=</span> max(componentes, key <span style="color:#f92672">=</span> len)
+</span></span><span style="display:flex;"><span>sub_componente <span style="color:#f92672">=</span> red<span style="color:#f92672">.</span>subgraph(componente_max)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;Para la red que estamos estudiando tenemos: </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      El número de componentes conexas es : </span><span style="color:#e6db74">{</span>num_componentes<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Para la red que estamos estudiando tenemos: 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      El número de componentes conexas es : <span style="color:#ae81ff">655</span>
+</span></span></code></pre></div><p>De aquí obtenemos que la componente conexa más grande se compone de 449 nodos lo cual corresponde apenas a un 14.85% de los nodos de la red, veamos esta componente.</p>
+<iframe src="../../../projects/red_tesis/Componente_max.html" width="100%" height="700px" style="border:none;"></iframe>
+<p>En esta componente lo que intentaremos determinar es la importancia de los nodos, existen distintas metricas de centralidad. Exploraremos dos de estas medidas para esto procederemos a definirlas:</p>
+<blockquote>
+<p><strong>Grado de centralidad:</strong> Dada una gráfica definimos al grado de centralidad como $$ C_{D}(v) = \delta(v)$$, a veces se toma dicho valor normalizado, usando la siguiente expresión $$ \frac{\delta(v)}{n-1}$$ donde \(n \) corresponde al número de nodos en la gráfica.</p></blockquote>
+<blockquote>
+<p><strong>Centralidad de cercanía:</strong> Dada una gráfica definimos a esta metrica como el promedio de las distancias de las geodesicas de un nodo a los demás. Esta toma la siguiente expresión: $$C_{c}(i) =(n-1) [\sum_{j=1}^{n}d(i,j)]^{-1}$$ la cual esta normalizada.</p></blockquote>
+<blockquote>
+<p><strong>Centralidad de intermediación:</strong>  Dado un grafo con \( V \) como el conjunto de vértices o nodos y \( E \) el conjunto de aristas si consideramos un nodo de este \( i \) definimos a la centralidad de intermediación como la siguiente suma $$C(i)= \sum_{j\neq k \in V} \frac{b_{jik}}{b_{jk}}$$ donde \(b_{jk}\) es el  número de caminos mpas cortos desde el nodo \(j\) hasta el nodo \(k\), mientras que \(b_{jik}\) es el número de caminos más cortos desde \(j\) hasta \(k\) que pasan por el nodo \(i\).</p></blockquote>
+<blockquote>
+<p><strong>Centralidad de vector propio:</strong> Sea un grafo donde \( V \) es el conjunto de vértices o nodos y \( E \) el conjunto de aristas.  El número de vértices lo denotamos por \( n = |V| \).Sea \(A := (a_{ij})\) la matriz de adyacencia de nuestro grafo, y \( A&rsquo; \) su matriz transpuesta. En el caso de un grafo no dirigido, se cumple que \( A = A&rsquo;\). La centralidad de vector propio la definimos como: $$C_{VP}(j) = \sum_{i=1}^{n} a_{ij} , C_{VP}(i)= a_{1j}C_{VP}(1) + a_{2j}C_{VP}(2) + \dots + a_{nj}C_{VP}(n)$$ Esta expresión establece que la centralidad de un nodo es proporcional a la suma de las centralidades de los nodos que están conectados a él.</p></blockquote>
+<p>Todas estas métricas nos dan una gran cantida de información sobre los nodos que estamos estudiando, procedermos a mostrar los nodos los cuales tienen el valor más alto en cada métrica.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>grados <span style="color:#f92672">=</span> dict(sub_componente<span style="color:#f92672">.</span>degree())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> node, data <span style="color:#f92672">in</span> sub_componente<span style="color:#f92672">.</span>nodes(data<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
+</span></span><span style="display:flex;"><span>    label <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;label&#39;</span>, str(node))
+</span></span><span style="display:flex;"><span>    degree <span style="color:#f92672">=</span> grados[node]
+</span></span><span style="display:flex;"><span>    size <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">+</span> degree <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>  
+</span></span><span style="display:flex;"><span>    componente<span style="color:#f92672">.</span>add_node(node, label<span style="color:#f92672">=</span>label, size<span style="color:#f92672">=</span>size)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> u, v <span style="color:#f92672">in</span> sub_componente<span style="color:#f92672">.</span>edges():
+</span></span><span style="display:flex;"><span>    componente<span style="color:#f92672">.</span>add_edge(u, v)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>componente<span style="color:#f92672">.</span>save_graph(<span style="color:#e6db74">&#39;Componente_max.html&#39;</span>)
+</span></span><span style="display:flex;"><span>porcentaje_nodos <span style="color:#f92672">=</span> round((len(sub_componente) <span style="color:#f92672">/</span> num_nodos )<span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34; El porcentaje de nodos en esta compoenete es </span><span style="color:#e6db74">{</span>porcentaje_nodos<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>G <span style="color:#f92672">=</span> sub_componente<span style="color:#f92672">.</span>to_undirected()  
+</span></span><span style="display:flex;"><span>deg_central <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>degree_centrality(G)
+</span></span><span style="display:flex;"><span>close_central <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>closeness_centrality(G)
+</span></span><span style="display:flex;"><span>betw_central <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>betweenness_centrality(G)
+</span></span><span style="display:flex;"><span>eig_central <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>eigenvector_centrality(G, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">top1</span>(dic):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> max(dic, key<span style="color:#f92672">=</span>dic<span style="color:#f92672">.</span>get), dic[max(dic, key<span style="color:#f92672">=</span>dic<span style="color:#f92672">.</span>get)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Más alto en degree:&#34;</span>, top1(deg_central))
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Más alto en closeness:&#34;</span>, top1(close_central))
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Más alto en betweenness:&#34;</span>, top1(betw_central))
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Más alto en eigenvector:&#34;</span>, top1(eig_central))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> El porcentaje de nodos en esta compoenete es <span style="color:#ae81ff">14.85</span>
+</span></span><span style="display:flex;"><span>Más alto en degree: (<span style="color:#e6db74">&#39;Hortensia Galeana Sanchez&#39;</span>, <span style="color:#ae81ff">0.09821428571428571</span>)
+</span></span><span style="display:flex;"><span>Más alto en closeness: (<span style="color:#e6db74">&#39;Francisco Federico Raggi Cardenas&#39;</span>, <span style="color:#ae81ff">0.18353133961491191</span>)
+</span></span><span style="display:flex;"><span>Más alto en betweenness: (<span style="color:#e6db74">&#39;Hugo Alberto Rincon Mejia&#39;</span>, <span style="color:#ae81ff">0.6563798338127197</span>)
+</span></span><span style="display:flex;"><span>Más alto en eigenvector: (<span style="color:#e6db74">&#39;Hortensia Galeana Sanchez&#39;</span>, <span style="color:#ae81ff">0.6812820600968277</span>)
+</span></span></code></pre></div><h2 id="conclusión">Conclusión</h2>
+<p>Erdős se caracterizaba en su red por:</p>
+<ul>
+<li>Colaboraba con muchísimas personas diferentes (más de 500 coautores).</li>
+<li>Conectaba diferentes comunidades de matemáticos (diversas áreas de las matemáticas).</li>
+<li>Tenía una posición estratégica que minimizaba distancias en la red.
+De las métricas que hemos calculado podemos observar lo siguiente:</li>
+</ul>
+<p>El nodo que ha tenido más trabajos tanto colaborativos como de dirección en esta componente conexa es Hortensia Galeana Sánchez, esto lo deducimos al tener un alto grado de centralidad. Además, también coincide en ser el nodo más colaborativo en toda la red.</p>
+<p>El nodo que está más cerca de los demás (en términos de geodésicas) es Francisco Federico Raggi Cárdenas, esto lo podemos interpretar como un director que, si fuera el análogo a Erdős, entonces su número promedio a los demás es bajo.</p>
+<p>El nodo que conecta a más clusters en la red es Hugo Alberto Rincón Mejía, esto lo obtenemos por la centralidad de intermediación.</p>
+<p>Por último, la centralidad de vector propio nos dice no solo cuántas conexiones tiene un nodo, sino qué tan importantes son los nodos a los que está conectado; este nodo corresponde a Hortensia Galeana Sánchez.</p>
+<p>Optamos por tomar a Hortensia Galeana Sánchez como análogo a Erdős en esta grafo, el número de Erdős correspondiente será la distancia de la longitud más corta. En el siguiente (<a href="../../../red_interactiva3.html">link</a>)hay un buscador en el que se puede buscar la ruta más corta desde Hortensia Galeana Sánchez a los demás nodos de la misma componente conexa (no se muestra toda la red por el tamaño de la misma).</p>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introducción">Introducción</a></li>
+    <li><a href="#dos-pequeñas-observaciones">Dos pequeñas observaciones</a>
+      <ul>
+        <li><a href="#quién-es-el-director-que-más-trabajos-dirigidos">¿Quién es el director que más trabajos dirigidos?</a></li>
+        <li><a href="#cuántas-publicaciones-se-han-hecho-por-año">¿Cuántas publicaciones se han hecho por año?</a></li>
+      </ul>
+    </li>
+    <li><a href="#propiedades-de-la-red">Propiedades de la Red</a></li>
+    <li><a href="#conclusión">Conclusión</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/trivialproof/tags/matem%C3%A1ticas"
+                target="_blank"
+              >matemáticas</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/trivialproof/tags/redes"
+                target="_blank"
+              >redes</a></li>
+              
+              <li class="list-inline-item"><a href="http://localhost:1313/trivialproof/tags/tesis"
+                target="_blank"
+              >tesis</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="../../../js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar =  true ;
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+
+<script src="../../../js/readingTime.js"></script>
+
+
+
+  </div><footer>
+    
+ 
+ 
+<div class="container py-3" id="recent-posts">
+    
+    
+    <div class="h3 text-center text-secondary py-3">
+        Recent Posts
+    </div>
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="../../../blogs/ecuaciones/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Ecuaciones Diferenciales">Ecuaciones Diferenciales</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h1 id="lecciones-básicas-de-ecuaciones-diferenciales">Lecciones básicas de ecuaciones diferenciales</h1>
+<p>La forma que tenemos para describir el cambio es por medio de la derivada, así que para conocer como se da este cambio es por medio de las ecuaciones diferenciales, las cuales son ecuaciones en las que hay presencia derivadas.</p>
+<h2 id="conceptos-básicos">Conceptos básicos</h2></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Oct 16, 2025</span>
+                    <a href="../../../blogs/ecuaciones/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="../../../blogs/%C3%A1lgebra/">
+                        <img src="../../../images/algebra_cover.png" class="card-img-top" alt="Álgebra">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="../../../blogs/%C3%A1lgebra/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Álgebra">Álgebra</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h1 id="lecciones-básicas-del-álgebra">Lecciones básicas del álgebra</h1>
+<h2 id="enteros-y-el-algoritmo-de-la-división">Enteros y el algoritmo de la división</h2>
+<p>Los números enteros son un conjunto de números con los que estamos familiarizados desde una temprana edad estos los escribimos de la siguiente forma: $$ \mathbb{Z} = { 0, 1, -1, 2, -2, \ldots } $$
+Este conjunto tiene una gran …</p></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Oct 15, 2025</span>
+                    <a href="../../../blogs/%C3%A1lgebra/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="../../../blogs/estadistica/">
+                        <img src="../../../images/estadis_cover.png" class="card-img-top" alt="Estadística">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="../../../blogs/estadistica/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Estadística">Estadística</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h1 id="10-lecciones-básicas-de-estadística">10 Lecciones Básicas de Estadística</h1>
+<h2 id="lección-1-estadística-descriptiva">Lección 1 Estadística Descriptiva</h2>
+<p>En la actualidad nos encontramos con una inmensa cantidad de datos, estos vienen en distintas &ldquo;formas&rdquo;, &ldquo;sabores&rdquo; y &ldquo;colores&rdquo;; desde datos numéricos, una inmensa cantidad de texto, miles de …</p></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Aug 1, 2025</span>
+                    <a href="../../../blogs/estadistica/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="../../../blogs/geometria/">
+                        <img src="../../../images/geodif_cover.png" class="card-img-top" alt="Geometría Diferencial">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="../../../blogs/geometria/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Geometría Diferencial">Geometría Diferencial</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h1 id="lecciones-básicas-de-geometría-diferencial">Lecciones Básicas de Geometría Diferencial</h1>
+<h2 id="superficies">Superficies</h2>
+<h3 id="qué-es-un-superficie">¿Qué es un superficie?</h3>
+<p>Primero debemos recordar que es un conjunto abierto.</p>
+<blockquote>
+<p>Un subconjunto (U \subseteq \matbb{R}^{n}) es abierto si para cada (a \in U) hay un número positivo (\epsilon&gt;0) tal que para cada punto ( x\in \matbb{R}^{n}) a una …</p></blockquote></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Apr 3, 2021</span>
+                    <a href="../../../blogs/geometria/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="https://github.com/MoyIs317" target="_blank" aria-label="github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
+                <path id="footer-socialNetworks-github-svg-path"
+                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
+
+                <metadata>
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description about="https://iconscout.com/legal#licenses"
+                            dc:title="Github, Online, Project, Hosting, Square"
+                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
+                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+                            <dc:creator>
+                                <rdf:Bag>
+                                    <rdf:li>Font Awesome</rdf:li>
+                                </rdf:Bag>
+                            </dc:creator>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </metadata>
+            </svg>
+        </a>
+    </span>
+    
+
+    
+
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            
+                <div class="pb-2">
+                    <a href="http://localhost:1313/trivialproof/" title="Trivial Proof">
+                        <img alt="Footer logo" src="../../../TP3.png"
+                            height="40px" width="40px">
+                    </a>
+                </div>
+            
+            &copy; 2025  All rights reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</footer><script src="../../../bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+        document.documentElement.classList.remove('dark');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            document.documentElement.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="../../../js/search.js"></script>
+
+
+
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" integrity="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW" crossorigin="anonymous"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\[','\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        TeX: { equationNumbers: { autoNumber: "AMS" },
+             extensions: ["AMSmath.js", "AMSsymbols.js"] }
+      }
+    });
+</script>
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>

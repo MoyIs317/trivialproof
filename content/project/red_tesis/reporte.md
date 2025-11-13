@@ -8,16 +8,16 @@ mathjax: true
 tags: ["matemáticas", "redes", "tesis"]
 ---
 ## Introducción
-
-Una red social (en el área de las matemáticas) es un grupo de personar unidas por cierto tipo de relación, hay una gran variedad de relaciones que tenemos los humanos entre sí, por ejemplo las relaciones de amistad, de romance, laborales, etc.
+Una red social (en el área de las matemáticas) es un grupo de personas unidas por cierto tipo de relación, hay una gran variedad de relaciones que tenemos los humanos entre sí, por ejemplo las relaciones de amistad, de romance, laborales, etc.
 
 En las redes sociales cada nodo representa una persona y una arista entre dos nodos representa la relación que existe entre ellos. Las redes nos permiten estudiar distintos fenómenos que involucran la interacción entre las personas.
 
 Antes de explicar la estructura de la red expuesta a continuación me gustaría hablar de un concepto que inspiró este proyecto.
 
-Paul Erdos fue un matemático húngaro que además de su excentricidad es conocido por la impresionante cantidad de trabajos colaborativos que realizo durante su vida, a esto le debemos añadir la diversa variedad de áreas de las matemáticas que estos trabajos abarcan, en sus investigaciones podemos encontrar trabajos relacionados con la teoría de números, teoría de gráficas, teoría de la aproximación, combinatoria, teoría de conjuntos y la probabilidad. 
+Paul Erdős fue un matemático húngaro que además de su excentricidad es conocido por la impresionante cantidad de trabajos colaborativos que realizó durante su vida, a esto le debemos añadir la diversa variedad de áreas de las matemáticas que estos trabajos abarcan, en sus investigaciones podemos encontrar trabajos relacionados con la teoría de números, teoría de gráficas, teoría de la aproximación, combinatoria, teoría de conjuntos y la probabilidad.
 
-Es gracias a lo anterior que se inventó el número de Erdos esto como homenaje, este numero se construye de la siguiente forma: A Erdos le corresponde el 0, todo aquel colaborador en algún articulo con él le corresponde el número 1, aquellos que hayan colaborado con alguno de estos colaboradores pero no directamente con Erdos se les da el número 2 y así sucesivamente. Lo sorprendente es es que algunas estimaciones dan que el 90% de los matemáticos activos tiene un número de Erdos menor a 8.
+Es gracias a lo anterior que se inventó el número de Erdős, esto como homenaje, este número se construye de la siguiente forma: A Erdős le corresponde el 0, todo aquel colaborador en algún artículo con él le corresponde el número 1, aquellos que hayan colaborado con alguno de estos colaboradores pero no directamente con Erdős se les da el número 2 y así sucesivamente. Lo sorprendente es que algunas estimaciones dan que el 90% de los matemáticos activos tienen un número de Erdős menor a 8.
+
 
 <div style="text-align: center;">
   <img src="/projects/red_tesis/erdos_ai.png" alt="Paul Erdos" width="300">
@@ -26,13 +26,13 @@ Es gracias a lo anterior que se inventó el número de Erdos esto como homenaje,
   </p>
 </div>
 
-Lo que se intenta hacer aquí es encontrar si existe un análogo a Erdos es decir buscamos si es que existe un autor o director de tesis quién tenga suficientes publicaciones y colaboraciones como para dotar a los demás nodos con un número menor a 8.
+Lo que se intenta hacer aquí es encontrar si existe un análogo a Erdős, es decir, buscamos si es que existe un autor o director de tesis que tenga suficientes publicaciones y colaboraciones como para dotar a los demás nodos con un número menor a 8.
 
-La red esta constituida solamente por las tesis realizadas para obtener el titulo de matemático a nivel licenciatura ([Red de Tesis de Matemáticas](/red_tesis_final_version_search3.html)), cada nodo corresponde a una persona cada nodo cuenta con dos metadatos el primero corresponde al titulo de la tesis y el segundo señala el año de publicación, en la red existen tres tipos de nodos, los cuales son señalados de colores distintos de la siguiente forma:
-
-- Nodos Azules: Corresponden a aquellos registros que sólo parecen como autores.
+La red está constituida solamente por las tesis realizadas para obtener el título de matemático a nivel licenciatura ([Red de Tesis de Matemáticas](/red_tesis_final_version_search3.html)), cada nodo corresponde a una persona, cada nodo cuenta con dos metadatos: el primero corresponde al título de la tesis y el segundo señala el año de publicación. En la red existen tres tipos de nodos, los cuales son señalados de colores distintos de la siguiente forma:
+- Nodos Azules: Corresponden a aquellos registros que sólo aparecen como autores.
 - Nodos Rojos: Estos señalan aquellos que sólo han sido directores.
 - Nodos Morados: Estos nodos son aquellos registros que aparecen como autores y directores.
+
 
 <div style="text-align: center;">
   <img src="/projects/red_tesis/red_ejemplo.png" alt="Imagen ejemplo de la red">
@@ -47,7 +47,7 @@ Las aristas corresponden a la relación de trabajo colaborativo es decir no se t
 Los datos extraídos del portal de la UNAM no son muchos, pero si podemos hacer dos observaciones interesantes respecto a los directores y el año de publicación.
 
 ### ¿Quién es el director que más trabajos dirigidos?
- Para responder esta pregunta se realizaron una serie de pasos para poder limpiar los datos pues existen varias inconsistencias, lo primero que se realizo fue una estandarización de los nombres la cal consistía en quitar puntos, convertir a minúsculas, eliminar acentos. Esto no basto pues existían además errores tipográficos lo que imposibilitaba el conteo de forma correcta, pues podíamos encontrar registros como: Pablo R Juárez y Pablo Ruiz Juares estos registros se refieren a la misma persona sin embargo a la hora de realizar el conteo lo consideraba como dos personas distintas, en este caso usamos la librería de Python llamada rapidfuzz con esta pude detectar cadenas de texto similares pero que no son iguales, para después poder realizar una corrección en los registros que hicieran falta. Después de esta limpieza pudimos encontrar lo que se presenta en el siguiente gráfico.
+ Para responder esta pregunta se realizaron una serie de pasos para poder limpiar los datos, pues existen varias inconsistencias. Lo primero que se realizó fue una estandarización de los nombres la cual consistía en quitar puntos, convertir a minúsculas, eliminar acentos. Esto no bastó pues existían además errores tipográficos, lo que imposibilitaba el conteo de forma correcta, pues podíamos encontrar registros como: Pablo R Juárez y Pablo Ruiz Juárez. Estos registros se refieren a la misma persona, sin embargo, a la hora de realizar el conteo lo consideraba como dos personas distintas. En este caso usamos la librería de Python llamada rapidfuzz; con esta pude detectar cadenas de texto similares pero que no son iguales, para después poder realizar una corrección en los registros que hicieran falta. Después de esta limpieza pudimos encontrar lo que se presenta en el siguiente gráfico.
 
 <div id="plotly-graph-f9fc2c73fcc6425cb21422690b8ee6c9" style="width:100%;height:600px;"></div>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -58,7 +58,7 @@ Los datos extraídos del portal de la UNAM no son muchos, pero si podemos hacer 
 
 
 ### ¿Cuántas publicaciones se han hecho por año?
-En esta parte durante la exploración nos encontramos con registros los cuales contenían en año el valor de "0000" esto claramente es un error así que revisando el portal de tesis UNAM podemos encontrar que no fue un error a la hora de la extracción, por lo que para esta pregunta solo consideramos lo registros donde el año sea mayor a 0.
+En esta parte durante la exploración nos encontramos con registros los cuales contenían en año el valor de "0000" esto claramente es un error así que revisando el portal de tesis UNAM podemos encontrar que no fue un error a la hora de la extracción, si no a la hora de capturar el registro en el portal de la UNAM por lo que para esta pregunta solo consideramos lo registros donde el año sea mayor a 0.
 
 <div id="plotly-graph-90ad28db9393489bb10832af248b185c" style="width:100%;height:600px;"></div>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -83,13 +83,13 @@ La red cuenta con:
 
     # Aristas: 2385 
 ```
->**Densidad:** Si consoderamos un grafo no dirigido podemos definir a la densidad como la proporción que existe entre la cantidad de aristas exitentes con la máxima posible. Esto lo podemos calcular como: $$ d = \frac{2|E|}{|V|(|V| - 1)}$$ Podemos notar que para un grafo completo este número es uno, para otro caso es menor.
+>**Densidad:** Si consideramos un grafo no dirigido podemos definir a la densidad como la proporción que existe entre la cantidad de aristas existentes con la máxima posible. Esto lo podemos calcular como: $$ d = \frac{2|E|}{|V|(|V| - 1)}$$ Podemos notar que para un grafo completo este número es uno, para otro caso es menor.
 ```python
 print(f"La densidad de la red es: {nx.density(red)}")
 La densidad de la red es: 0.0005217932359844367
 ```
 
->**Grado Promedio:**  Para un grafo no dirigido podemos definir el grado promedio como la siguiente expresión: $$ \<k\> = \frac{2|E|}{|V|}$$ Este numero nos índica el número de conexionesde cada nodo en promedio.
+>**Grado Promedio:**  Para un grafo no dirigido podemos definir el grado promedio como la siguiente expresión: $$ \<k\> = \frac{2|E|}{|V|}$$ Este numero nos índica el número de conexionesde por cada nodo en promedio.
 
 Para nuestra red tenemos lo siguiente:
 ```python
@@ -107,8 +107,7 @@ En resumen tenemos:
   <img src="/projects/red_tesis/red_imagen_general.png" alt="Imagen ejemplo de la red">
 </div>
 
-Esta información nos dice que nuestra red es muy dispersa, dando un breve vistaso a nuestra red podemos ver que hay muchos "pedazos", es decir, no esta unida
-completamente, esta es la idea general del concepto de conexidad, cada "pedazo" se le llama componente conexa, veamos cuantas de estas hay en nuestra red.
+Esta información nos dice que nuestra red es muy dispersa, dando un breve vistaso podemos ver que hay muchos "pedazos", es decir, no esta unida completamente, esta es la idea general del concepto de conexidad, cada "pedazo" se le llama componente conexa, veamos cuantas de estas hay en nuestra red.
 
 ```python
 componentes = nx.connected_components(red) #Esto genera un generador
@@ -124,13 +123,13 @@ Para la red que estamos estudiando tenemos:
 
       El número de componentes conexas es : 655
 ```
-De aquí obtenemos que la componente conexa más grande se compone de 449 nodos lo cual corresponde apenas a un 14.85% de los nodos de la red. Veamos esta componente.
+De aquí obtenemos que la componente conexa más grande se compone de 449 nodos lo cual corresponde apenas a un 14.85% de los nodos de la red, veamos esta componente.
 
 <iframe src="/projects/red_tesis/Componente_max.html" width="100%" height="700px" style="border:none;"></iframe>
 
 En esta componente lo que intentaremos determinar es la importancia de los nodos, existen distintas metricas de centralidad. Exploraremos dos de estas medidas para esto procederemos a definirlas:
 
-> **Grado de centralidad:** Dada una gráfica definimos al grado de centralidad como $$ C_{D}(v) = \delta(v)$$, a veces se toma dicho calor normalizado, usando la siguiente expresión $$ \frac{\delta(v)}{n-1}$$ donde \\(n \\) corresponde al número de nodos en la gráfica.
+> **Grado de centralidad:** Dada una gráfica definimos al grado de centralidad como $$ C_{D}(v) = \delta(v)$$, a veces se toma dicho valor normalizado, usando la siguiente expresión $$ \frac{\delta(v)}{n-1}$$ donde \\(n \\) corresponde al número de nodos en la gráfica.
 
 > **Centralidad de cercanía:** Dada una gráfica definimos a esta metrica como el promedio de las distancias de las geodesicas de un nodo a los demás. Esta toma la siguiente expresión: $$C_{c}(i) =(n-1) [\sum_{j=1}^{n}d(i,j)]^{-1}$$ la cual esta normalizada.
 
@@ -139,7 +138,7 @@ En esta componente lo que intentaremos determinar es la importancia de los nodos
 >**Centralidad de vector propio:** Sea un grafo donde \\( V \\) es el conjunto de vértices o nodos y \\( E \\) el conjunto de aristas.  El número de vértices lo denotamos por \\( n = |V| \\).Sea \\(A := (a_{ij})\\) la matriz de adyacencia de nuestro grafo, y \\( A' \\) su matriz transpuesta. En el caso de un grafo no dirigido, se cumple que \\( A = A'\\). La centralidad de vector propio la definimos como: $$C_{VP}(j) = \sum_{i=1}^{n} a_{ij} \, C_{VP}(i)= a_{1j}C_{VP}(1) + a_{2j}C_{VP}(2) + \dots + a_{nj}C_{VP}(n)$$ Esta expresión establece que la centralidad de un nodo es proporcional a la suma de las centralidades de los nodos que están conectados a él.
 
 
-Todas estas métricas nos dan una gran cantida de información sobre los nodos que estamos estudiando, procedermos a mostrar los nodos loc cuales tienen el valor más alto en cada métrica-
+Todas estas métricas nos dan una gran cantida de información sobre los nodos que estamos estudiando, procedermos a mostrar los nodos los cuales tienen el valor más alto en cada métrica.
 
 ```python
 grados = dict(sub_componente.degree())
@@ -180,15 +179,21 @@ Más alto en eigenvector: ('Hortensia Galeana Sanchez', 0.6812820600968277)
 ```
 
 ## Conclusión
-Erdos se caracterizaba en su red por:
-- Colaboraba con muchísimas personas diferentes (más de 500 coautores)
-- Conectaba diferentes comunidades de matemáticos (Diversas áreas de las matemáticas)
-- Tenía una posición estratégica que minimizaba distancias en la red
-De las métricas que hemos calculdo podemos observar lo siguiente:
-- El nodo que ha tenido más trabajos tanto colaborativos como de dirección en esta componente connexa es Hortensia Galeana Sanchez, esto lo deducimos la tener un alto grado de centralidad. Además también coincide en ser el nodo más colaborativo en toda la red.
-- El nodo que esta más cerca de los demás (Enterminos de geodesicas) es Francisco Federico Raggi Cardenas, esto lo podemos interpretar como un director que si fuera el análogo a Erdos entonces su némero promedio a los demás es bajo.
-- El nodo que conecta a más clussters en la red es Hugo Alberto Rincon Mejia, esto lo obtenemos por la centralidad de intermediación.
-- Por último la centralidad de vector propio nos dice no solo cuántas conexiones tiene un nodo, sino qué tan importantes son los nodos a los que está conectado, este nodo corresponde a Hortensia Galeana Sanchez.
+Erdős se caracterizaba en su red por:
+- Colaboraba con muchísimas personas diferentes (más de 500 coautores).
+- Conectaba diferentes comunidades de matemáticos (diversas áreas de las matemáticas).
+- Tenía una posición estratégica que minimizaba distancias en la red.
+De las métricas que hemos calculado podemos observar lo siguiente:
 
-Optamos por tomar a Hortensia Galeana Sanchez como análogo a Erdos en esta grafo, el número de Erdos correspondiente será la distancia de la longitud más corta, en el siguiente ([link](/red_interactiva3.html)) hay un buscador en el que se puede buscar la ruta más corta desde Hortensia Galeana Sanchez a los demás nodos de la misma componente conexa (no se muestra toda la red por el tamaño de la misma) .
+El nodo que ha tenido más trabajos tanto colaborativos como de dirección en esta componente conexa es Hortensia Galeana Sánchez, esto lo deducimos al tener un alto grado de centralidad. Además, también coincide en ser el nodo más colaborativo en toda la red.
+
+El nodo que está más cerca de los demás (en términos de geodésicas) es Francisco Federico Raggi Cárdenas, esto lo podemos interpretar como un director que, si fuera el análogo a Erdős, entonces su número promedio a los demás es bajo.
+
+El nodo que conecta a más clusters en la red es Hugo Alberto Rincón Mejía, esto lo obtenemos por la centralidad de intermediación.
+
+Por último, la centralidad de vector propio nos dice no solo cuántas conexiones tiene un nodo, sino qué tan importantes son los nodos a los que está conectado; este nodo corresponde a Hortensia Galeana Sánchez.
+
+Optamos por tomar a Hortensia Galeana Sánchez como análogo a Erdős en esta grafo, el número de Erdős correspondiente será la distancia de la longitud más corta. En el siguiente ([link](/red_interactiva3.html))hay un buscador en el que se puede buscar la ruta más corta desde Hortensia Galeana Sánchez a los demás nodos de la misma componente conexa (no se muestra toda la red por el tamaño de la misma).
+
+
 
