@@ -30,9 +30,10 @@ Con esto podemos demostrar algunos hechos simples los cuales solo se usa la defi
 
 
 ## Grupos
-Una de las estructuras algebraicas más sencillas que se presentan en la universidad son los grupos, pues lo único que necesitamos es un conjunto, una operación binaria y asociativa, y ciertas restricciones sobre sus elementos, podríamos empezar directamente con las definiciones de estos objetos sin embargo, es mejor dar un ejemplo y explorar esta idea.
+Una de las estructuras algebraicas más sencillas que se presentan en la universidad son los grupos, pues lo único que necesitamos es un conjunto, una operación binaria y asociativa, y ciertas restricciones sobre sus elementos, podríamos empezar directamente con las definiciones de estos objetos sin embargo, es mejor dar un ejemplo y explorar esta idea. Existen una gran cantida de ejemplos de grupos en diferentes áreas de las mátematicas; en geometría, cálculo, variable compleja.
 
-    - Simetrías sobre un triángulo: Para empezar definamos lo que es una simetría, imaginemos primero en 
+- Considera un cuadrado, nombremos cada vértice con una letra \\(( A, B, C y D \\))tal y como se muestra en la siguiente imagen, 
+
 
 
 
