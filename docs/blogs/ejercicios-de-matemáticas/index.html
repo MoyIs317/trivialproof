@@ -28,22 +28,22 @@
 
 
 
-<meta property="og:url" content="https://moyis317.github.io/trivialproof/blogs/%C3%A1lgebra/">
+<meta property="og:url" content="https://moyis317.github.io/trivialproof/blogs/ejercicios-de-matem%C3%A1ticas/">
   <meta property="og:site_name" content="Trivial Proof">
-  <meta property="og:title" content="Álgebra">
-  <meta property="og:description" content="Conceptos e ideas básicas del álgebra">
+  <meta property="og:title" content="Ejercicios de Matemáticas">
+  <meta property="og:description" content="Ejecicios de Matemáticas">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blogs">
     <meta property="article:published_time" content="2025-10-15T00:00:00+00:00">
     <meta property="article:modified_time" content="2025-10-15T00:00:00+00:00">
     <meta property="article:tag" content="Matemáticas">
-    <meta property="article:tag" content="Álgebra Abstracta">
+    <meta property="article:tag" content="Ejecicios">
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Álgebra">
-  <meta name="twitter:description" content="Conceptos e ideas básicas del álgebra">
+  <meta name="twitter:title" content="Ejercicios de Matemáticas">
+  <meta name="twitter:description" content="Ejecicios de Matemáticas">
 
 
 <link rel="stylesheet" href="../../bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="../../css/header.css" media="all">
@@ -107,7 +107,7 @@
 
 
 
-<meta name="description" content="Conceptos e ideas básicas del álgebra">
+<meta name="description" content="Ejecicios de Matemáticas">
 <link rel="stylesheet" href="../../css/single.css">
 
 
@@ -118,7 +118,7 @@
   
 
   <title>
-Álgebra | Trivial Proof
+Ejercicios de Matemáticas | Trivial Proof
 
   </title>
 </head>
@@ -315,7 +315,7 @@
       <div class="col-sm-12 col-md-12 col-lg-9">
         <div class="pr-lg-4">
           <div class="title mb-5">
-            <h1 class="text-center mb-4">Álgebra</h1>
+            <h1 class="text-center mb-4">Ejercicios de Matemáticas</h1>
             <div class="text-center">
               
                 Moisés A.
@@ -331,29 +331,24 @@
             </div>
           </div>
           
-          <div class="featured-image">
-            <img class="img-fluid mx-auto d-block" src="../../images/algebra_cover.png" alt="Álgebra">
-          </div>
-          
           <article class="page-content  p-2">
-          <h1 id="lecciones-básicas-del-álgebra">Lecciones básicas del álgebra</h1>
-<h2 id="enteros-y-el-algoritmo-de-la-división">Enteros y el algoritmo de la división</h2>
-<p>Los números enteros son un conjunto de números con los que estamos familiarizados desde una temprana edad estos los escribimos de la siguiente forma: $$ \mathbb{Z} = { 0, 1, -1, 2, -2, \ldots } $$
-Este conjunto tiene una gran cantidad de propiedades y características, de las cuales exploraremos solo algunas las cuales nos permitirán deducir más.</p>
-<p>Euclides en su séptimo libro escribe que que dado  cualquier entero \(b\) al dividirlo por cualquier entero \(a\) nos da como resultado un numero \(q\) que llama cociente y otro numero el cual es único \(r\) conocido como residuo el cual además cumple con \(0 \leq r &lt; a\), esto lo traducimos a que $$b = aq + r$$ al proceso para obtener dichos números es conocido como el algoritmo de la división. Para entender lo que estamos diciendo daremos un pequeño ejemplo consideremos  \(b = 13, a = 4\) entonces observe que $$13 = 4(3) + 1$$ de donde en este caso en particular \(q = 3, r = 1\)</p>
-<p>Tenemos un caso particular que ocurre cunado \(r = 0\), entonces \(b = aq\) en dicho caso diremos que \(a\) divide a \(b\) o que \(b\) es un múltiplo de \(a\) esto se tiende denotar de la forma \(a|b\).</p>
-<p>Con esto podemos demostrar algunos hechos simples los cuales solo se usa la definición anterior:</p>
+          <h1 id="cálculo">CÁLCULO</h1>
+<p>Determina si los siguientes limites existen.</p>
 <ul>
-<li>Si \(a|b\) y \(b|c\) entonces \(a|c\)</li>
-<li>Si \(a|b\) y \(a|c\) y \(x,y\) son cualesquiera enteros entonces  \(a|bx + cy\)</li>
-<li>Si \(b \neq 0 \) y \(a|b\) entonces \(|a| \leq |b|\)</li>
-<li>Si \(a|b\) y \(b|a\) entonces \(a = b\) o \(a = -b\)</li>
+<li>\( \lim_{ (x,y)\to (0,0)} \frac{|y|}{\sqrt(x^{2} + y^{2})} \)
+Para determinar la existencia de este límite lo haremos mediante limites iterados:
+$$ \lim_{x\to 0} lim_{y\to 0}\frac{|y|}{\sqrt(x^{2} + y^{2})} = \lim_{x\to 0} 0 = 0  $$
+sin embargo podemos observar que:
+$$ \lim_{y\to 0} lim_{x\to 0}\frac{|y|}{\sqrt(x^{2} + y^{2})}= \lim_{y\to 0}\frac{|y|}{\sqrt{y^{2}}}  = \lim_{y\to 0} \frac{|y|}{|y|} = \lim_{y\to 0}1 = 1$$
+Como ambos límites son distintos podemos concluir que el límite original no existe.</li>
+<li>\( \lim_{ (x,y)\to (0,0)} \frac{(x+y)^2}{x^{2} + y^{2}} \)</li>
 </ul>
-<h2 id="grupos">Grupos</h2>
-<p>Una de las estructuras algebraicas más sencillas que se presentan en la universidad son los grupos, pues lo único que necesitamos es un conjunto, una operación binaria y asociativa, y ciertas restricciones sobre sus elementos, podríamos empezar directamente con las definiciones de estos objetos sin embargo, es mejor dar un ejemplo y explorar esta idea. Existen una gran cantida de ejemplos de grupos en diferentes áreas de las mátematicas; en geometría, cálculo, variable compleja.</p>
-<ul>
-<li>Considera un cuadrado, nombremos cada vértice con una letra \(( A, B, C y D \))tal y como se muestra en la siguiente imagen,</li>
-</ul>
+<p>Para este límite vamos a usar coordenadas polares, es decir vamos usar la sustitución \(x = rcos(\theta)\) e \(y = rsin(\theta)\). Veamos que obtenemos en el cociente del límite:
+$$ \frac{(x+y)^2}{x^2+y^2} = \frac{x^2 + 2xy +y^2}{x^2+y^2} = \frac{r^2cos^2(\theta) + 2r^2cos(\theta)sin(\theta) + r^2sin^2(\theta)}{r^2(cos^2(\theta) + sin^2(\theta))} =1+ 2cos(\theta)sin(\theta) $$</p>
+<p>Este límite depende de \(\theta\) por lo tanto este límte no existe.</p>
+<h1 id="álgebra">ÁLGEBRA</h1>
+<p>Prueba</p>
+<h1 id="geometría">GEOMETRÍA</h1>
 
           </article>
         </div>
@@ -366,12 +361,7 @@ Este conjunto tiene una gran cantidad de propiedades y características, de las 
                 Table Of Contents
               </h5>
               <div class="toc-content">
-                <nav id="TableOfContents">
-  <ul>
-    <li><a href="#enteros-y-el-algoritmo-de-la-división">Enteros y el algoritmo de la división</a></li>
-    <li><a href="#grupos">Grupos</a></li>
-  </ul>
-</nav>
+                <nav id="TableOfContents"></nav>
               </div>
           </aside>
           
@@ -385,9 +375,9 @@ Este conjunto tiene una gran cantidad de propiedades y características, de las 
                 target="_blank"
               >Matemáticas</a></li>
               
-              <li class="list-inline-item"><a href="https://moyis317.github.io/trivialproof/tags/%C3%A1lgebra-abstracta"
+              <li class="list-inline-item"><a href="https://moyis317.github.io/trivialproof/tags/ejecicios"
                 target="_blank"
-              >Álgebra abstracta</a></li>
+              >Ejecicios</a></li>
               
             </ul>
           </aside>

@@ -359,7 +359,8 @@ Análisis de Red de Tesis UNAM | Trivial Proof
 </div>
 <p>Las aristas corresponden a la relación de trabajo colaborativo es decir no se trata de una red dirigida pues consideramos a esta relación como la de colaboración.</p>
 <blockquote>
-<p><strong>Nota</strong> Existen registros los cuales no tienen director de tesis o algunos se desconoce el año de publicación.</p></blockquote>
+<p><strong>Nota</strong> Existen registros los cuales no tienen director de tesis o algunos se desconoce el año de publicación.</p>
+</blockquote>
 <h2 id="dos-pequeñas-observaciones">Dos pequeñas observaciones</h2>
 <p>Los datos extraídos del portal de la UNAM no son muchos, pero si podemos hacer dos observaciones interesantes respecto a los directores y el año de publicación.</p>
 <h3 id="quién-es-el-director-que-más-trabajos-dirigidos">¿Quién es el director que más trabajos dirigidos?</h3>
@@ -390,13 +391,15 @@ La red cuenta con:
 
     # Aristas: 2385 
 </code></pre><blockquote>
-<p><strong>Densidad:</strong> Si consideramos un grafo no dirigido podemos definir a la densidad como la proporción que existe entre la cantidad de aristas existentes con la máxima posible. Esto lo podemos calcular como: $$ d = \frac{2|E|}{|V|(|V| - 1)}$$ Podemos notar que para un grafo completo este número es uno, para otro caso es menor.</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;La densidad de la red es: </span><span style="color:#e6db74">{</span>nx<span style="color:#f92672">.</span>density(red)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+<p><strong>Densidad:</strong> Si consideramos un grafo no dirigido podemos definir a la densidad como la proporción que existe entre la cantidad de aristas existentes con la máxima posible. Esto lo podemos calcular como: $$ d = \frac{2|E|}{|V|(|V| - 1)}$$ Podemos notar que para un grafo completo este número es uno, para otro caso es menor.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;La densidad de la red es: </span><span style="color:#e6db74">{</span>nx<span style="color:#f92672">.</span>density(red)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>La densidad de la red es: <span style="color:#ae81ff">0.0005217932359844367</span>
 </span></span></code></pre></div><blockquote>
-<p><strong>Grado Promedio:</strong>  Para un grafo no dirigido podemos definir el grado promedio como la siguiente expresión: $$ &lt;k&gt; = \frac{2|E|}{|V|}$$ Este numero nos índica el número de conexionesde por cada nodo en promedio.</p></blockquote>
+<p><strong>Grado Promedio:</strong>  Para un grafo no dirigido podemos definir el grado promedio como la siguiente expresión: $$ &lt;k&gt; = \frac{2|E|}{|V|}$$ Este numero nos índica el número de conexionesde por cada nodo en promedio.</p>
+</blockquote>
 <p>Para nuestra red tenemos lo siguiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>average_degree_1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span> num_aristas <span style="color:#f92672">/</span> num_nodos
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>average_degree_1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span> num_aristas <span style="color:#f92672">/</span> num_nodos
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;El grado promedio es: </span><span style="color:#e6db74">{</span>average_degree_1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">1.5773809523809523</span>
 </span></span></code></pre></div><p>En resumen tenemos:</p>
@@ -424,7 +427,7 @@ La red cuenta con:
   <img src="../../../projects/red_tesis/red_imagen_general.png" alt="Imagen ejemplo de la red">
 </div>
 <p>Esta información nos dice que nuestra red es muy dispersa, dando un breve vistaso podemos ver que hay muchos &ldquo;pedazos&rdquo;, es decir, no esta unida completamente, esta es la idea general del concepto de conexidad, cada &ldquo;pedazo&rdquo; se le llama componente conexa, veamos cuantas de estas hay en nuestra red.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>componentes <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>connected_components(red) <span style="color:#75715e">#Esto genera un generador</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>componentes <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>connected_components(red) <span style="color:#75715e">#Esto genera un generador</span>
 </span></span><span style="display:flex;"><span>num_componentes <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>number_connected_components(red) <span style="color:#75715e">#Nos da el número de componentes conexas</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Obtengamos la componente conexa mpas grande</span>
 </span></span><span style="display:flex;"><span>componente_max <span style="color:#f92672">=</span> max(componentes, key <span style="color:#f92672">=</span> len)
@@ -440,15 +443,19 @@ La red cuenta con:
 <iframe src="../../../projects/red_tesis/Componente_max.html" width="100%" height="700px" style="border:none;"></iframe>
 <p>En esta componente lo que intentaremos determinar es la importancia de los nodos, existen distintas metricas de centralidad. Exploraremos dos de estas medidas para esto procederemos a definirlas:</p>
 <blockquote>
-<p><strong>Grado de centralidad:</strong> Dada una gráfica definimos al grado de centralidad como $$ C_{D}(v) = \delta(v)$$, a veces se toma dicho valor normalizado, usando la siguiente expresión $$ \frac{\delta(v)}{n-1}$$ donde \(n \) corresponde al número de nodos en la gráfica.</p></blockquote>
+<p><strong>Grado de centralidad:</strong> Dada una gráfica definimos al grado de centralidad como $$ C_{D}(v) = \delta(v)$$, a veces se toma dicho valor normalizado, usando la siguiente expresión $$ \frac{\delta(v)}{n-1}$$ donde \(n \) corresponde al número de nodos en la gráfica.</p>
+</blockquote>
 <blockquote>
-<p><strong>Centralidad de cercanía:</strong> Dada una gráfica definimos a esta metrica como el promedio de las distancias de las geodesicas de un nodo a los demás. Esta toma la siguiente expresión: $$C_{c}(i) =(n-1) [\sum_{j=1}^{n}d(i,j)]^{-1}$$ la cual esta normalizada.</p></blockquote>
+<p><strong>Centralidad de cercanía:</strong> Dada una gráfica definimos a esta metrica como el promedio de las distancias de las geodesicas de un nodo a los demás. Esta toma la siguiente expresión: $$C_{c}(i) =(n-1) [\sum_{j=1}^{n}d(i,j)]^{-1}$$ la cual esta normalizada.</p>
+</blockquote>
 <blockquote>
-<p><strong>Centralidad de intermediación:</strong>  Dado un grafo con \( V \) como el conjunto de vértices o nodos y \( E \) el conjunto de aristas si consideramos un nodo de este \( i \) definimos a la centralidad de intermediación como la siguiente suma $$C(i)= \sum_{j\neq k \in V} \frac{b_{jik}}{b_{jk}}$$ donde \(b_{jk}\) es el  número de caminos mpas cortos desde el nodo \(j\) hasta el nodo \(k\), mientras que \(b_{jik}\) es el número de caminos más cortos desde \(j\) hasta \(k\) que pasan por el nodo \(i\).</p></blockquote>
+<p><strong>Centralidad de intermediación:</strong>  Dado un grafo con \( V \) como el conjunto de vértices o nodos y \( E \) el conjunto de aristas si consideramos un nodo de este \( i \) definimos a la centralidad de intermediación como la siguiente suma $$C(i)= \sum_{j\neq k \in V} \frac{b_{jik}}{b_{jk}}$$ donde \(b_{jk}\) es el  número de caminos mpas cortos desde el nodo \(j\) hasta el nodo \(k\), mientras que \(b_{jik}\) es el número de caminos más cortos desde \(j\) hasta \(k\) que pasan por el nodo \(i\).</p>
+</blockquote>
 <blockquote>
-<p><strong>Centralidad de vector propio:</strong> Sea un grafo donde \( V \) es el conjunto de vértices o nodos y \( E \) el conjunto de aristas.  El número de vértices lo denotamos por \( n = |V| \).Sea \(A := (a_{ij})\) la matriz de adyacencia de nuestro grafo, y \( A&rsquo; \) su matriz transpuesta. En el caso de un grafo no dirigido, se cumple que \( A = A&rsquo;\). La centralidad de vector propio la definimos como: $$C_{VP}(j) = \sum_{i=1}^{n} a_{ij} , C_{VP}(i)= a_{1j}C_{VP}(1) + a_{2j}C_{VP}(2) + \dots + a_{nj}C_{VP}(n)$$ Esta expresión establece que la centralidad de un nodo es proporcional a la suma de las centralidades de los nodos que están conectados a él.</p></blockquote>
+<p><strong>Centralidad de vector propio:</strong> Sea un grafo donde \( V \) es el conjunto de vértices o nodos y \( E \) el conjunto de aristas.  El número de vértices lo denotamos por \( n = |V| \).Sea \(A := (a_{ij})\) la matriz de adyacencia de nuestro grafo, y \( A&rsquo; \) su matriz transpuesta. En el caso de un grafo no dirigido, se cumple que \( A = A&rsquo;\). La centralidad de vector propio la definimos como: $$C_{VP}(j) = \sum_{i=1}^{n} a_{ij} , C_{VP}(i)= a_{1j}C_{VP}(1) + a_{2j}C_{VP}(2) + \dots + a_{nj}C_{VP}(n)$$ Esta expresión establece que la centralidad de un nodo es proporcional a la suma de las centralidades de los nodos que están conectados a él.</p>
+</blockquote>
 <p>Todas estas métricas nos dan una gran cantida de información sobre los nodos que estamos estudiando, procedermos a mostrar los nodos los cuales tienen el valor más alto en cada métrica.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>grados <span style="color:#f92672">=</span> dict(sub_componente<span style="color:#f92672">.</span>degree())
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>grados <span style="color:#f92672">=</span> dict(sub_componente<span style="color:#f92672">.</span>degree())
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> node, data <span style="color:#f92672">in</span> sub_componente<span style="color:#f92672">.</span>nodes(data<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
 </span></span><span style="display:flex;"><span>    label <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;label&#39;</span>, str(node))
@@ -663,6 +670,30 @@ Este conjunto tiene una gran …</p></p>
         <div class="col-lg-4 col-md-6 pt-2">
             <div class="card h-100">
                 
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="../../../blogs/ejercicios-de-matem%C3%A1ticas/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Ejercicios de Matemáticas">Ejercicios de Matemáticas</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h1 id="cálculo">CÁLCULO</h1>
+<p>Determina si los siguientes limites existen.</p>
+<ul>
+<li>\( \lim_{ (x,y)\to (0,0)} \frac{|y|}{\sqrt(x^{2} + y^{2})} \)
+Para determinar la existencia de este límite lo haremos mediante limites iterados:
+$$ \lim_{x\to 0} lim_{y\to 0}\frac{|y|}{\sqrt(x^{2} + y^{2})} = \lim_{x\to 0} 0 = 0  $$
+sin embargo …</li></ul></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Oct 15, 2025</span>
+                    <a href="../../../blogs/ejercicios-de-matem%C3%A1ticas/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
                 <div class="card-header">
                     <a href="../../../blogs/estadistica/">
                         <img src="../../../images/estadis_cover.png" class="card-img-top" alt="Estadística">
@@ -682,35 +713,6 @@ Este conjunto tiene una gran …</p></p>
                 <div class="mt-auto card-footer">
                     <span class="float-start">Aug 1, 2025</span>
                     <a href="../../../blogs/estadistica/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 pt-2">
-            <div class="card h-100">
-                
-                <div class="card-header">
-                    <a href="../../../blogs/geometria/">
-                        <img src="../../../images/geodif_cover.png" class="card-img-top" alt="Geometría Diferencial">
-                    </a>
-                </div>
-                
-                <div class="card-body bg-transparent p-3 shadow-sm">
-                    <a href="../../../blogs/geometria/" class="primary-font card-title">
-                        <h5 class="card-title bg-transparent" title="Geometría Diferencial">Geometría Diferencial</h5>
-                    </a>
-                    <div class="card-text secondary-font">
-                        <p><h1 id="lecciones-básicas-de-geometría-diferencial">Lecciones Básicas de Geometría Diferencial</h1>
-<h2 id="superficies">Superficies</h2>
-<h3 id="qué-es-un-superficie">¿Qué es un superficie?</h3>
-<p>Primero debemos recordar que es un conjunto abierto.</p>
-<blockquote>
-<p>Un subconjunto (U \subseteq \matbb{R}^{n}) es abierto si para cada (a \in U) hay un número positivo (\epsilon&gt;0) tal que para cada punto ( x\in \matbb{R}^{n}) a una …</p></blockquote></p>
-                    </div>
-                </div>
-                <div class="mt-auto card-footer">
-                    <span class="float-start">Apr 3, 2021</span>
-                    <a href="../../../blogs/geometria/" class="float-end btn btn-outline-info btn-sm">Read</a>
                 </div>
             </div>
         </div>
@@ -764,7 +766,7 @@ Este conjunto tiene una gran …</p></p>
                     </a>
                 </div>
             
-            &copy; 2025  All rights reserved
+            &copy; 2026  All rights reserved
             <div class="text-secondary">
                 Made with
                 <span class="text-danger">
