@@ -322,7 +322,7 @@ params:
     title: "Contacto"
     content: Mi bandeja de entrada está siempre abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible para responderte!
     btnName: Mandame correo
-    btnLink: moisesguam842@gmail.com
+    btnLink: "mailto:moisesguam842@gmail.com"
     # formspree:
     #   enable: true # `contact.email` value will be ignored
     #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
