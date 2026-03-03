@@ -26,6 +26,6 @@ $$ \frac{(x+y)^2}{x^2+y^2} = \frac{x^2 + 2xy +y^2}{x^2+y^2} = \frac{r^2cos^2(\th
 
 Este límite depende de \\(\theta\\) por lo tanto este límte no existe.
 # ÁLGEBRA
-
+Prueba
 # GEOMETRÍA
 
