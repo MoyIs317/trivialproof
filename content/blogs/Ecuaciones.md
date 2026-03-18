@@ -1,7 +1,7 @@
 ---
 title: "Ecuaciones Diferenciales"
 date: 2025-10-16
-draft: false
+draft: true
 author: "Moisés A."
 tags:
   - Matemáticas

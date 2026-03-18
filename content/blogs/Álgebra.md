@@ -1,7 +1,7 @@
 ---
 title: "Álgebra"
 date: 2025-10-15
-draft: false
+draft: true
 author: "Moisés A."
 tags:
   - Matemáticas

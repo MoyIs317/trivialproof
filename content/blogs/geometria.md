@@ -1,7 +1,8 @@
 ---
 title: "Geometría Diferencial"
 date: 2021-04-03T22:53:58+05:30
-draft: false
+draft: true
+
 author: "Moisés A."
 tags:
   - Matemáticas
