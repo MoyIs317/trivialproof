@@ -13,6 +13,7 @@ mathjax: True
 ---
 # CÁLCULO
 ## Cálculo Multivariable
+### Límites
 Determina si los siguientes limites existen.
 - \\( \lim_{ (x,y)\to (0,0)} \frac{|y|}{\sqrt(x^{2} + y^{2})} \\)
 Para determinar la existencia de este límite lo haremos mediante limites iterados:
@@ -34,14 +35,21 @@ El cual de nuevo es un límite que depende de un parámetro, con esto concluimos
 - \\( \lim_{ (x,y)\to (0,0)} \frac{2x^2 + y^2}{x^{2} + y^{2}}\\)
 Usando límites iterados podemosobservar que:
 $$ \lim\limits_{x \to 0} \lim\limits_{y \to 0}\frac{2x^2 + y^2}{x^{2} + y^{2}} = \lim_{x\to 0}\frac{2x^2}{x^2} = \lim_{x\to 0}2 = 2 $$
+
 mientras que por otro lado:
 $$  \lim\limits_{y \to 0} \lim\limits_{x \to 0}\frac{2x^2 + y^2}{x^{2} + y^{2}} = \lim_{y\to 0}\frac{y^2}{y^2} = \lim_{y\to 0} 1 = 1$$ 
 Como ambos límites son distintos concluimos que el límite original no existe.
 
 # ÁLGEBRA
-## Teoría de Grupos
+## Álgebra abstracta
+### Teoría de Grupos
+
 -
 # GEOMETRÍA
+## Geometría Diferencial
+### Superficies
+
+
 
 # VARIABLE COMPLEJA
 ## Números Complejos
