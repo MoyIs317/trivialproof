@@ -335,6 +335,36 @@ Ecuaciones Diferenciales | Trivial Proof
           <h1 id="lecciones-básicas-de-ecuaciones-diferenciales">Lecciones básicas de ecuaciones diferenciales</h1>
 <p>La forma que tenemos para describir el cambio es por medio de la derivada, así que para conocer como se da este cambio es por medio de las ecuaciones diferenciales, las cuales son ecuaciones en las que hay presencia derivadas.</p>
 <h2 id="conceptos-básicos">Conceptos básicos</h2>
+<blockquote>
+<p>Ecuación Diferencial: Una ecuación diferencial es una ecuación en la que estan involucradas derivadas de alguna función.</p>
+</blockquote>
+<blockquote>
+<p>Orden: En una ecuación diferencial definimos el orden de esta como el orden más grande de la derivada presente en dicha ecuación.</p>
+</blockquote>
+<h2 id="ecuaciones-de-primer-orden">Ecuaciones de primer orden</h2>
+<p>La forma general de las ecuaciones de primer orden es: $$ a_{1}(t)\frac{dx}{dt} + a_{0}(t)x = f(t)$$ nos vamos a concentrar en aquellas que en cualquier instante \(t\) tenemos una ecuación de primer grado, es decir pedimos que \(a_{1}(t) \neq 0 \) para todo \(t\) en el intervalo que estemos estudiandos. De esta forma obtenemos una forma equivalente a: $$ \frac{dx}{dt} + p(t)x = q(t) $$</p>
+<h3 id="métodos-de-solución">Métodos de solución</h3>
+<h4 id="variación-de-parámetros">Variación de parámetros</h4>
+<p>Primero consideremos la ecuación:
+$$\frac{dx}{dt} + px = 0$$
+esta es una ecuación homógenea la cual podemos resolver mediante variables separables, a la solución que obtenemos al resolver dicha ecuación la llamaremos solución complementaria la cual la denotaremos por \(y_{c}\), nosotros podemos multiplicar aesta función por cualquier constante y esta va a seguir siendo una solución sin embargo vamos a considerar ahora a \(uy_{c}\)  donde  \(u\) es una función que haremos que dicho producto sea una solución, de esta forma sis sutituimos en la ecuación original tenemos que:
+$$\frac{d}{dt}(uy_{c}) + p(uy_{c}) = q$$
+lo cual por la regla del producto obtenemos:
+$$\frac{du}{dt}y_{c} + u\frac{dy_{c}}{dt} + p(uy_{c}) = q$$
+podemos factorizar \(u\)
+$$\frac{du}{dt}y_{c}+u[\frac{dy_{c}}{dt} + p(y_{c})] = q$$
+pero como \(y_{c}\) es solución de parte homégenea concluimos podmeos reudcir la ecuación a:
+$$\frac{du}{dt}y_{c} = q$$</p>
+<h4 id="factor-integrante">Factor integrante</h4>
+<h3 id="ecuaciones-homógeneas">Ecuaciones Homógeneas</h3>
+<h4 id="factor-integrante-1">Factor integrante</h4>
+<h2 id="teorema-de-existencia-y-unicidad">Teorema de Existencia y Unicidad</h2>
+<h2 id="ecuaciones-de-segundo-orden-con-coeficientes-constantes">Ecuaciones de segundo orden con coeficientes constantes</h2>
+<h2 id="ecuaciones-de-segundo-orden-con-coeficientes-varibles">Ecuaciones de segundo orden con coeficientes varibles</h2>
+<h2 id="ecuaciones-de-orden-n">Ecuaciones de orden (n)</h2>
+<h2 id="ecuaciones-en-diferencia">Ecuaciones en diferencia</h2>
+<h2 id="sistemas-de-ecuaciones-lineales">Sistemas de ecuaciones lineales</h2>
+<h2 id="sistema-de-ecuaciones-no-lineales">Sistema de ecuaciones no lineales</h2>
 
           </article>
         </div>
@@ -350,6 +380,19 @@ Ecuaciones Diferenciales | Trivial Proof
                 <nav id="TableOfContents">
   <ul>
     <li><a href="#conceptos-básicos">Conceptos básicos</a></li>
+    <li><a href="#ecuaciones-de-primer-orden">Ecuaciones de primer orden</a>
+      <ul>
+        <li><a href="#métodos-de-solución">Métodos de solución</a></li>
+        <li><a href="#ecuaciones-homógeneas">Ecuaciones Homógeneas</a></li>
+      </ul>
+    </li>
+    <li><a href="#teorema-de-existencia-y-unicidad">Teorema de Existencia y Unicidad</a></li>
+    <li><a href="#ecuaciones-de-segundo-orden-con-coeficientes-constantes">Ecuaciones de segundo orden con coeficientes constantes</a></li>
+    <li><a href="#ecuaciones-de-segundo-orden-con-coeficientes-varibles">Ecuaciones de segundo orden con coeficientes varibles</a></li>
+    <li><a href="#ecuaciones-de-orden-n">Ecuaciones de orden (n)</a></li>
+    <li><a href="#ecuaciones-en-diferencia">Ecuaciones en diferencia</a></li>
+    <li><a href="#sistemas-de-ecuaciones-lineales">Sistemas de ecuaciones lineales</a></li>
+    <li><a href="#sistema-de-ecuaciones-no-lineales">Sistema de ecuaciones no lineales</a></li>
   </ul>
 </nav>
               </div>
@@ -451,39 +494,14 @@ Ecuaciones Diferenciales | Trivial Proof
                     <div class="card-text secondary-font">
                         <p><h1 id="lecciones-básicas-de-ecuaciones-diferenciales">Lecciones básicas de ecuaciones diferenciales</h1>
 <p>La forma que tenemos para describir el cambio es por medio de la derivada, así que para conocer como se da este cambio es por medio de las ecuaciones diferenciales, las cuales son ecuaciones en las que hay presencia derivadas.</p>
-<h2 id="conceptos-básicos">Conceptos básicos</h2></p>
+<h2 id="conceptos-básicos">Conceptos básicos</h2>
+<blockquote>
+<p>Ecuación …</p></blockquote></p>
                     </div>
                 </div>
                 <div class="mt-auto card-footer">
                     <span class="float-start">Oct 16, 2025</span>
                     <a href="../../blogs/ecuaciones/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 pt-2">
-            <div class="card h-100">
-                
-                <div class="card-header">
-                    <a href="../../blogs/%C3%A1lgebra/">
-                        <img src="../../images/algebra_cover.png" class="card-img-top" alt="Álgebra">
-                    </a>
-                </div>
-                
-                <div class="card-body bg-transparent p-3 shadow-sm">
-                    <a href="../../blogs/%C3%A1lgebra/" class="primary-font card-title">
-                        <h5 class="card-title bg-transparent" title="Álgebra">Álgebra</h5>
-                    </a>
-                    <div class="card-text secondary-font">
-                        <p><h1 id="lecciones-básicas-del-álgebra">Lecciones básicas del álgebra</h1>
-<h2 id="enteros-y-el-algoritmo-de-la-división">Enteros y el algoritmo de la división</h2>
-<p>Los números enteros son un conjunto de números con los que estamos familiarizados desde una temprana edad estos los escribimos de la siguiente forma: $$ \mathbb{Z} = { 0, 1, -1, 2, -2, \ldots } $$
-Este conjunto tiene una gran …</p></p>
-                    </div>
-                </div>
-                <div class="mt-auto card-footer">
-                    <span class="float-start">Oct 15, 2025</span>
-                    <a href="../../blogs/%C3%A1lgebra/" class="float-end btn btn-outline-info btn-sm">Read</a>
                 </div>
             </div>
         </div>
@@ -497,14 +515,13 @@ Este conjunto tiene una gran …</p></p>
                     </a>
                     <div class="card-text secondary-font">
                         <p><h1 id="cálculo">CÁLCULO</h1>
-<h2 id="cálculo-multivariable">Cálculo Multivariable</h2>
-<h3 id="límites">Límites</h3>
-<p>Determina si los siguientes limites existen.</p>
+<h2 id="cálculo-de-una-sola-variable">Cálculo de una sola variable</h2>
+<h3 id="sucesiones">Sucesiones</h3>
+<p>Sean (a_n) y (b_n) dos sucesiones de números reales. Bajo que condiciones es la sucesión (a_n b_n) convergente.</p>
 <ul>
 <li>
-<p>\( \lim_{ (x,y)\to (0,0)} \frac{|y|}{\sqrt(x^{2} + y^{2})} \)
-Para determinar la existencia de este límite lo haremos mediante limites iterados:
-$$ \lim_{x\to 0} lim_{y\to 0}\frac{|y|}{\sqrt(x^{2} + y^{2})} = …</p></li></ul></p>
+<p>(a_n) converge.
+No es suficente. Basta considerar a ((a_n)) = (\frac{1}{n}), esta sucesión converge a cero, per si ((b_n)) = (n^2), …</p></li></ul></p>
                     </div>
                 </div>
                 <div class="mt-auto card-footer">

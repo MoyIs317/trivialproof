@@ -179,6 +179,39 @@ sns.catplot(data = estres, x = 'Gender', y = 'CGPA', kind = 'box', hue = 'Gender
 [Gráfico de caja](/images/estadis/box.png)
  Estos son algunos de los gráficos más comunes que podemos encontrar en distintos estudios estadísticos, se recomienda a explorar la documentación de Seaborn y Matplotlib, o explorar algunas librerías que sirven para la elaboración de dashbords.
 
+## Estimación Puntual
+
+Para empezar esta sección definamos nuestro problema princial, supongamos que tenemos una variable aleatoria \\(X\\), lo único que sabemos de dicha variable es que viene de cierta distribución conocida, pero no del todo, esto significa que tiene sigue función de distibución \\(f(x,\theta)\\) donde \\(\theta\\) es un parámetro desconocido. Lo que expodremos a continuación es una serie de técnicas las cuales bajo ciertos supuestos nos van a permitir estimar dichos parámetros.
+ 
+ Ahora daremos una serie de definiciones que nos van a permitir dar un lenguaje más apropiado a nuestro caso de estudio.
+
+ >Definición(Espacio Parametral) Al conjunto de valores posibles que puede tomar el parámetro \\(\theta\\) lo llamamos espacio parametral y lo denotamos por \\(\Theta\\).
+
+ >Definición(Muestra Aleatoria) Decimos que una colección de variables aleatorias \\(X_{1}, X_{2},...,X_{n}\\) es una muestra aleatoria si son independientes e idénticamente distribuidas.
+
+ >Definición(Estadística) Una función de una muestra aleatoria que no depende de un parámetros desconocido. En la mayoría de los casos la denotamos con la letra \\(T\\).
+
+ Ejemplos de estadísticas tenemos a:
+
+- \\(T_1(X_{1}, X_{2},...X_{n}) = \frac{1}{n}\sum_{i}^{n}X_{i}\\)
+- \\(T_2(X_{1}, X_{2},...X_{n}) = \frac{1}{n-1}\sum_{i}^{n}(X_{i} - \bar{X})^2\\)
+
+>Definición(Estimador Puntual) Un estimador puntual para un parámetro desconocido \\(\theta\\) es una estadística denotada por \\(\hat{\theta}\\), esl cual se propone para estimar dicho parámetro.
+
+### Método de Momentos
+>Definición(Momento de una Variable Aleatoria) Considermeos un entero \\(n\geq1\\). El k-ésimo momento de la variable aleatoria \\(X\\), encaso de existir es la \\(E(X^k)\\), los solemos llamar momentos poblacionales.
+
+>Definición(Momento de una muestra aleatoria) Sea un entero \\(n\geq1\\). El k-ésimo momento de una muestra aleatoria \\(X_{1}, X_{2},...,X_{n}\\) es la variable aleatoria \\(\frac{1}{n}\sum_{i}^{n}X_{i}^k \\), a estos momentos en la literatura suelen llamarse momentos muestrales.
+
+EL método de momentos simplemente consiste en igualar los momentos poblacionales a los momentos muestrales correspondientes, y resolver las ecuaciones resultantes, cuando esto sea posible.
+
+Por ejemplo:
+
+- Sea \\(X_{1}, X_{2},...,X_{n}\\) una muestra aleatoria de la distribución 
+\\(Ber(\theta)\\) donde \\(\theta\\) es desconocido. Aplicar el método de momentos directamente nos produce la siguiente igualdad:
+$$ \hat{\theta} = \bar{X}$$
+
+- Si consideramos ahora 
 
 
 

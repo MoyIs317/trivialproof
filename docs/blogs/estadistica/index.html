@@ -463,6 +463,45 @@ $$ s ^2 = \frac{1}{n-1}\sum_{i = 1}^{n}(x_i - \bar{x})^2 $$</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>catplot(data <span style="color:#f92672">=</span> estres, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Gender&#39;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;CGPA&#39;</span>, kind <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;box&#39;</span>, hue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Gender&#39;</span>, palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pastel&#39;</span>);
 </span></span></code></pre></div><p><a href="../../images/estadis/box.png">Gráfico de caja</a>
 Estos son algunos de los gráficos más comunes que podemos encontrar en distintos estudios estadísticos, se recomienda a explorar la documentación de Seaborn y Matplotlib, o explorar algunas librerías que sirven para la elaboración de dashbords.</p>
+<h2 id="estimación-puntual">Estimación Puntual</h2>
+<p>Para empezar esta sección definamos nuestro problema princial, supongamos que tenemos una variable aleatoria \(X\), lo único que sabemos de dicha variable es que viene de cierta distribución conocida, pero no del todo, esto significa que tiene sigue función de distibución \(f(x,\theta)\) donde \(\theta\) es un parámetro desconocido. Lo que expodremos a continuación es una serie de técnicas las cuales bajo ciertos supuestos nos van a permitir estimar dichos parámetros.</p>
+<p>Ahora daremos una serie de definiciones que nos van a permitir dar un lenguaje más apropiado a nuestro caso de estudio.</p>
+<blockquote>
+<p>Definición(Espacio Parametral) Al conjunto de valores posibles que puede tomar el parámetro \(\theta\) lo llamamos espacio parametral y lo denotamos por \(\Theta\).</p>
+</blockquote>
+<blockquote>
+<p>Definición(Muestra Aleatoria) Decimos que una colección de variables aleatorias \(X_{1}, X_{2},&hellip;,X_{n}\) es una muestra aleatoria si son independientes e idénticamente distribuidas.</p>
+</blockquote>
+<blockquote>
+<p>Definición(Estadística) Una función de una muestra aleatoria que no depende de un parámetros desconocido. En la mayoría de los casos la denotamos con la letra \(T\).</p>
+</blockquote>
+<p>Ejemplos de estadísticas tenemos a:</p>
+<ul>
+<li>\(T_1(X_{1}, X_{2},&hellip;X_{n}) = \frac{1}{n}\sum_{i}^{n}X_{i}\)</li>
+<li>\(T_2(X_{1}, X_{2},&hellip;X_{n}) = \frac{1}{n-1}\sum_{i}^{n}(X_{i} - \bar{X})^2\)</li>
+</ul>
+<blockquote>
+<p>Definición(Estimador Puntual) Un estimador puntual para un parámetro desconocido \(\theta\) es una estadística denotada por \(\hat{\theta}\), esl cual se propone para estimar dicho parámetro.</p>
+</blockquote>
+<h3 id="método-de-momentos">Método de Momentos</h3>
+<blockquote>
+<p>Definición(Momento de una Variable Aleatoria) Considermeos un entero \(n\geq1\). El k-ésimo momento de la variable aleatoria \(X\), encaso de existir es la \(E(X^k)\), los solemos llamar momentos poblacionales.</p>
+</blockquote>
+<blockquote>
+<p>Definición(Momento de una muestra aleatoria) Sea un entero \(n\geq1\). El k-ésimo momento de una muestra aleatoria \(X_{1}, X_{2},&hellip;,X_{n}\) es la variable aleatoria \(\frac{1}{n}\sum_{i}^{n}X_{i}^k \), a estos momentos en la literatura suelen llamarse momentos muestrales.</p>
+</blockquote>
+<p>EL método de momentos simplemente consiste en igualar los momentos poblacionales a los momentos muestrales correspondientes, y resolver las ecuaciones resultantes, cuando esto sea posible.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>
+<p>Sea \(X_{1}, X_{2},&hellip;,X_{n}\) una muestra aleatoria de la distribución
+\(Ber(\theta)\) donde \(\theta\) es desconocido. Aplicar el método de momentos directamente nos produce la siguiente igualdad:
+$$ \hat{\theta} = \bar{X}$$</p>
+</li>
+<li>
+<p>Si consideramos ahora</p>
+</li>
+</ul>
 
           </article>
         </div>
@@ -481,6 +520,11 @@ Estos son algunos de los gráficos más comunes que podemos encontrar en distint
       <ul>
         <li><a href="#descripciones-numéricas">Descripciones numéricas</a></li>
         <li><a href="#descripciones-gráficas">Descripciones gráficas</a></li>
+      </ul>
+    </li>
+    <li><a href="#estimación-puntual">Estimación Puntual</a>
+      <ul>
+        <li><a href="#método-de-momentos">Método de Momentos</a></li>
       </ul>
     </li>
   </ul>
@@ -582,19 +626,40 @@ Estos son algunos de los gráficos más comunes que podemos encontrar en distint
             <div class="card h-100">
                 
                 <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="../../blogs/ecuaciones/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Ecuaciones Diferenciales">Ecuaciones Diferenciales</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p><h1 id="lecciones-básicas-de-ecuaciones-diferenciales">Lecciones básicas de ecuaciones diferenciales</h1>
+<p>La forma que tenemos para describir el cambio es por medio de la derivada, así que para conocer como se da este cambio es por medio de las ecuaciones diferenciales, las cuales son ecuaciones en las que hay presencia derivadas.</p>
+<h2 id="conceptos-básicos">Conceptos básicos</h2>
+<blockquote>
+<p>Ecuación …</p></blockquote></p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Oct 16, 2025</span>
+                    <a href="../../blogs/ecuaciones/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
                     <a href="../../blogs/ejercicios-de-matem%C3%A1ticas/" class="primary-font card-title">
                         <h5 class="card-title bg-transparent" title="Ejercicios de Matemáticas">Ejercicios de Matemáticas</h5>
                     </a>
                     <div class="card-text secondary-font">
                         <p><h1 id="cálculo">CÁLCULO</h1>
-<h2 id="cálculo-multivariable">Cálculo Multivariable</h2>
-<h3 id="límites">Límites</h3>
-<p>Determina si los siguientes limites existen.</p>
+<h2 id="cálculo-de-una-sola-variable">Cálculo de una sola variable</h2>
+<h3 id="sucesiones">Sucesiones</h3>
+<p>Sean (a_n) y (b_n) dos sucesiones de números reales. Bajo que condiciones es la sucesión (a_n b_n) convergente.</p>
 <ul>
 <li>
-<p>\( \lim_{ (x,y)\to (0,0)} \frac{|y|}{\sqrt(x^{2} + y^{2})} \)
-Para determinar la existencia de este límite lo haremos mediante limites iterados:
-$$ \lim_{x\to 0} lim_{y\to 0}\frac{|y|}{\sqrt(x^{2} + y^{2})} = …</p></li></ul></p>
+<p>(a_n) converge.
+No es suficente. Basta considerar a ((a_n)) = (\frac{1}{n}), esta sucesión converge a cero, per si ((b_n)) = (n^2), …</p></li></ul></p>
                     </div>
                 </div>
                 <div class="mt-auto card-footer">

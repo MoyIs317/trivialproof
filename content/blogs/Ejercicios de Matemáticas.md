@@ -12,10 +12,23 @@ toc: true
 mathjax: True
 ---
 # CÁLCULO
+## Cálculo de una sola variable
+### Sucesiones
+Sean \(a_n\) y \(b_n\) dos sucesiones de números reales. Bajo que condiciones es la sucesión \(a_n b_n\) convergente.
+- \(a_n\) converge.
+No es suficente. Basta considerar a \((a_n)\) = \(\frac{1}{n}\), esta sucesión converge a cero, per si \((b_n)\) = \(n^2\), entonces \((a_n b_n)\) = \(n\) la cual no converge.
+
+- \(a_n\) converge y \(b_n\) es acotada.
+No es suficiente pues basta considerar \((a_n)\) = \(1\) y \((b_n)\) = \((-1)^n\), ambas sicesiones cimplen lo pedido sin embargo \((a_n b_n)\) =  \((-1)^n\) la cual no es una sucesión convergente.
+
+- \(a_n\) converge  a cero y \(b_n\) es acotada.
+Con esto podemos asegurar la convergencia del producto.
+Demostración: Como  \(b_n\) es acotada implica que existe una constante \(C\) en los reales tal que \(|b_n|\leq C\) esto para todo \(n\), por otro lado la convergencia de la otra sucesión nos asegura que 
+$$ \epsilon $$
 ## Cálculo Multivariable
 ### Límites
 Determina si los siguientes limites existen.
-- \\( \lim_{ (x,y)\to (0,0)} \frac{|y|}{\sqrt(x^{2} + y^{2})} \\)
+- \( \lim_{ (x,y)\to (0,0)} \frac{|y|}{\sqrt(x^{2} + y^{2})} \)
 Para determinar la existencia de este límite lo haremos mediante limites iterados:
 $$ \lim_{x\to 0} lim_{y\to 0}\frac{|y|}{\sqrt(x^{2} + y^{2})} = \lim_{x\to 0} 0 = 0  $$
 sin embargo podemos observar que:

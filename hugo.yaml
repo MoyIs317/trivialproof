@@ -148,9 +148,9 @@ params:
     button:
       enable: true
       name: "Resume"
-      url: "https://drive.google.com/file/d/1NZbAHMXL9aL-I4xQ7iO0a1CwhWzn8Euc/view?usp=sharing"
+      url: "https://drive.google.com/file/d/1edVMCsP6dmSDH-TNFVauixuTQPb40xa5/view?usp=sharing"
       download: true
-      newPage: false
+      newPage: true
     socialLinks:
       fontAwesomeIcons:
         - icon: fab fa-github
@@ -306,14 +306,14 @@ params:
         badges:
           - "Python"
           - "HTML"
-      - title: Análisis de sentimientos de música
-        content: Apliqué tecnicas de NLP para analizar los sentimentos de un dísco músical.
-        image: /projects/sentimientos.png
-        featured: 
-          name: github
-          link: 
-        badges:
-          - "Python"
+ ##     - title: Análisis de sentimientos de música
+       ## content: Apliqué tecnicas de NLP para analizar los sentimentos de un dísco músical.
+        ##image: /projects/sentimientos.png
+        ##featured: 
+          ##name: github
+          ##link: 
+        ##badges:
+          ##- "Python"
           
 
   #Contact
