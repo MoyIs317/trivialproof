@@ -21,9 +21,9 @@ Es gracias a las matemáticas que tenemos una forma de comprender la informació
 
 > Definición: La estadística como área de estudio es el arte y ciencia de diseñar estudios y analizar  los datos que estos producen. Su objetivo final es el traducir los datos en   conocimiento y comprensión del mundo que nos rodea. En resumen, la estadística es el arte y la ciencia de aprender de los datos,
 
-Dentro de la misma estadística no encontramos con una subrama a la que se le suele llamar estadística descriptiva, esta es una serie de herramientas que nos permite resumir nuestros datos con la finalidad de enfatizar nuestra información y con esto poder lograr nuestro planteamiento de preguntas y modelos. 
+Dentro de la misma estadística nos encontramos con una subrama a la que se le suele llamar estadística descriptiva, esta es una serie de herramientas que nos permite resumir nuestros datos con la finalidad de enfatizar nuestra información y con esto poder lograr nuestro planteamiento de preguntas y modelos. 
 
-A lo largo de esta secciones daremos algunas definiciones así como ejemplos con Python y R, esto con la finalidad de ejemplificar cada idea y obtener habilidades a lo largo de la lectura.
+A lo largo de estas secciones daremos algunas definiciones así como ejemplos con Python y R, esto con la finalidad de ejemplificar cada idea y obtener habilidades a lo largo de la lectura.
 
 ***Definición (Muestra)***:  Entenderemos como muestra a una parte  de una población de estudio. a la información y mediciones obtenidas de esta los llamaremos datos.
 
@@ -37,7 +37,7 @@ A nuestras variables las podemos clasificar en cuantitativas y cualitativas.
 
 Para dar un breve ejemplo de este tipo de variables pensemos en un grupo de estudiantes en alguna universidad, sus estaturas, sus calificaciones son ejemplos de variables cuantitativas mientras que su sexo, o religión son ejemplos de variables cualitativas.
 
-En la practica algunos modelos de Machine Learning aceptan variables categóricas de entrada o salida, por lo que es común usar números para etiquetar los valores de alguna variable categórica, sin embargo es importante no confundir el echo de que no representa un cantidad si no que señala una cualidad.
+En la práctica algunos modelos de Machine Learning aceptan variables categóricas de entrada o salida, por lo que es común usar números para etiquetar los valores de alguna variable categórica, sin embargo es importante no confundir el hecho de que no representa una cantidad sino que señala una cualidad.
 
 ### Descripciones numéricas
 
@@ -70,7 +70,7 @@ sum(estaturas) / length(estaturas)
 mean(estaturas)
 170.142857142857
 ```
-Hay una serie de propiedades y observaciones interesantes de la media, cuya demostración es directa de la definición, las cuales solo se enunciaran:
+Hay una serie de propiedades y observaciones interesantes de la media, cuya demostración es directa de la definición, las cuales solo se enunciarán:
 1. La media no necesariamente pertenece al conjunto de observaciones.
 2. Si tenemos las observaciones \\(x_1, x_2, x_3,...,x_n\\) y consideramos una constante \\(c\\) y se define \\(y_i = x_i + c\\) entonces \\(\bar{y} = \bar{x} + c\\).
 3. De nuevo si tenemos las observaciones \\(x_1, x_2, x_3,...,x_n\\) y consideramos una constante \\(c\\) y se define \\(y_i = c\bar{x_i}\\) entonces  \\(\bar{y} = c \bar{x}\\).
@@ -90,7 +90,7 @@ Tanto en Python como en R tenemos muchas formas de obtener este resultado, expon
 ```python
 import numpy as np
 estaturas = [187, 163, 145, 178, 177, 172, 169]
-#Igual que en ejejmplo anterior puedes hacer el procedimiento paso a paso o simplemente usar la función ya integrada en alguna librería, en nuestro caso aplicaremos la segunda forma
+#Igual que en el ejemplo anterior puedes hacer el procedimiento paso a paso o simplemente usar la función ya integrada en alguna librería, en nuestro caso aplicaremos la segunda forma
 mediana = np.median(estaturas)
 print(mediana)
 172.0
@@ -103,7 +103,7 @@ median(estaturas)
 ```
 >Definición (Moda): Definimos a la moda como el valor más repetido en el conjunto de nuestras observaciones.
 
-Es importante señalar que para el caso de la moda existen ocasiones en la que no es única. Para calcular este valor en Python utilizaremos otra librería interesante que os permitirá obtener esta medida.
+Es importante señalar que para el caso de la moda existen ocasiones en la que no es única. Para calcular este valor en Python utilizaremos otra librería interesante que nos permitirá obtener esta medida.
 
 ```python
 from scipy import stats
@@ -111,7 +111,7 @@ from scipy import stats
 estaturas = [187, 163, 145, 178, 177, 172, 169, 145, 178, 145]
 print(stats.mode(estaturas))
 ModeResult(mode=np.int64(145), count=np.int64(3))
-#Nota: Es importante hacer notar que si la moda no es única entonces devuelve le dato menor
+#Nota: Es importante hacer notar que si la moda no es única entonces devuelve el dato menor
 ```
 Existen otras cantidades que nos permiten medir la dispersión de los datos es decir que tan separados están nuestros, a continuación se detallarán algunas de estas.
 
@@ -119,12 +119,12 @@ Existen otras cantidades que nos permiten medir la dispersión de los datos es d
 >$$ s ^2 = \frac{1}{n-1}\sum_{i = 1}^{n}(x_i - \bar{x})^2 $$
 
 ### Descripciones gráficas
-Nosotros trabajaremos con los siguientes datos [Student Depresion Dataset](https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset) los cuales correspondes a un dataset de Kaggle en el que se mide el nivel de estrés de una muestra de estudiantes, para más información respecto a las variables revisar el link. Con este dataset exploraremos algunas gráficas más  comunes en estadística. Las representaciones gráficas las elaboraremos en Python, se invita al lector a investigar sus análogo en R.
+Nosotros trabajaremos con los siguientes datos [Student Depresion Dataset](https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset) los cuales corresponden a un dataset de Kaggle en el que se mide el nivel de estrés de una muestra de estudiantes, para más información respecto a las variables revisar el link. Con este dataset exploraremos algunas gráficas más  comunes en estadística. Las representaciones gráficas las elaboraremos en Python, se invita al lector a investigar su análogo en R.
 
 #### Gráfica de barras
 Para datos categóricos la forma más común para poder visualizarlos es por medio del gráfico de barras. En este gráfico cada barra representa la frecuencia(o frecuencias relativas) de las diferentes categorías. 
 
-Para nuestro ejemplo tenemos que nuestro dataset tenemos una columna llamada **Gender** que corresponde al genero de cada individuo en el dataset, podríamos construir una gráfica que nos permita ver la cantidad de integrantes de cada sexo. Usaremos la librería de Seaborn, en particular usaremos el objeto catplot el cual es usado para variables categóricas y el parámetro kind = 'bar' , se recomienda leer la documentación al respecto
+Para nuestro ejemplo tenemos que en nuestro dataset tenemos una columna llamada **Gender** que corresponde al género de cada individuo en el dataset, podríamos construir una gráfica que nos permita ver la cantidad de integrantes de cada sexo. Usaremos la librería de Seaborn, en particular usaremos el objeto catplot el cual es usado para variables categóricas y el parámetro kind = 'bar' , se recomienda leer la documentación al respecto
 
 ```python
 import kagglehub
@@ -144,16 +144,16 @@ else:
     print("Error")
 genero = estres["Gender"].value_counts()
 sns.catplot(data = genero, kind="bar", color = 'palette')
-plt.xlabel("Genero")
+plt.xlabel("Género")
 plt.ylabel("Cantidad")
 ```
 El anterior código nos devuelve la siguiente imagen:
 
 ![Gráfica de barras](/images/estadis/genero.png)
 #### Histograma
-Ahora veremos un gráfico que perecería darnos un resultado parecido al gráfico de barras sin embargo le damos el nombre de histograma cuando existe un orden entre nuestras variables, aquí se intenta el tener una idea de como se comportan nuestros datos pensando en una función de densidad empírica, aquí cada barra representa la frecuancia de un intervalo sobre el rango de observaciones. 
+Ahora veremos un gráfico que parecería darnos un resultado parecido al gráfico de barras sin embargo le damos el nombre de histograma cuando existe un orden entre nuestras variables, aquí se intenta el tener una idea de como se comportan nuestros datos pensando en una función de densidad empírica, aquí cada barra representa la frecuencia de un intervalo sobre el rango de observaciones. 
 
-Vamos a construir un histograma para la columna de **CGPA** el cual corresponde al promedio acumulado de calificaciones por sus siglas en inglés, usando Seaborn con la función displot y el parámetro kind = 'hist', podemos ver la dstribución de CGPA por genero. 
+Vamos a construir un histograma para la columna de **CGPA** el cual corresponde al promedio acumulado de calificaciones por sus siglas en inglés, usando Seaborn con la función displot y el parámetro kind = 'hist', podemos ver la distribución de CGPA por género.
 
 ```python
 sns.displot(data=estres, x= 'CGPA', kind = 'hist', col = 'Gender', hue = 'Gender');
@@ -161,7 +161,7 @@ sns.displot(data=estres, x= 'CGPA', kind = 'hist', col = 'Gender', hue = 'Gender
 obteniendo
 ![Histograma del CGPA](/images/estadis/CGPA_gender.png)
 #### Gráfica de pastel
-Una gráfica de pastel es usada para representar las frecuencias relativas o las proporciones de los distintos resultados de una variable categórica. Para este caso exploraremos la variable de **Dietary Habits** la cual tiene información de las hábitos en la dieta de los individuos en nuestro dataset. En este caso Seaborn no tiene una función especifica para crear un gráfico de pastel, por lo que usaremos matplotlib directamente.
+Una gráfica de pastel es usada para representar las frecuencias relativas o las proporciones de los distintos resultados de una variable categórica. Para este caso exploraremos la variable de **Dietary Habits** la cual tiene información de los hábitos en la dieta de los individuos en nuestro dataset. En este caso Seaborn no tiene una función específica para crear un gráfico de pastel, por lo que usaremos matplotlib directamente.
 ```python
 habitos = estres['Dietary Habits'].value_counts().to_frame().reset_index()
 habitos.columns=['Dietary Habits', 'count']
@@ -169,7 +169,7 @@ plt.pie(data=habitos, x = habitos['count'], labels=habitos['Dietary Habits'], au
 ```
 [Gráfica de pastel](/images/estadis/pie.png)
 #### Boxplot
-Este gráfico nos permite obtener información de nuestra muestra por medio de la información de los cuartiles de la misma, este grafico se compones de unas líneas y una caja, las líneas indican la variabilidad que existe fuera del rango intercuatil. Este gráfico nos permite comparar una variable cuantitativa con una cualitativa.
+Este gráfico nos permite obtener información de nuestra muestra por medio de la información de los cuartiles de la misma, este gráfico se compone de unas líneas y una caja, las líneas indican la variabilidad que existe fuera del rango intercuartil. Este gráfico nos permite comparar una variable cuantitativa con una cualitativa.
 
 Por ejemplo en nuestro dataset podemos ver el **CGPA**  comparándolo con **Gender**. 
 
@@ -177,11 +177,11 @@ Por ejemplo en nuestro dataset podemos ver el **CGPA**  comparándolo con **Gend
 sns.catplot(data = estres, x = 'Gender', y = 'CGPA', kind = 'box', hue = 'Gender', palette='pastel');
 ```
 [Gráfico de caja](/images/estadis/box.png)
- Estos son algunos de los gráficos más comunes que podemos encontrar en distintos estudios estadísticos, se recomienda a explorar la documentación de Seaborn y Matplotlib, o explorar algunas librerías que sirven para la elaboración de dashbords.
+ Estos son algunos de los gráficos más comunes que podemos encontrar en distintos estudios estadísticos, se recomienda a explorar la documentación de Seaborn y Matplotlib, o explorar algunas librerías que sirven para la elaboración de dashboards.
 
 ## Estimación Puntual
 
-Para empezar esta sección definamos nuestro problema princial, supongamos que tenemos una variable aleatoria \\(X\\), lo único que sabemos de dicha variable es que viene de cierta distribución conocida, pero no del todo, esto significa que tiene sigue función de distibución \\(f(x,\theta)\\) donde \\(\theta\\) es un parámetro desconocido. Lo que expodremos a continuación es una serie de técnicas las cuales bajo ciertos supuestos nos van a permitir estimar dichos parámetros.
+Para empezar esta sección definamos nuestro problema principal, supongamos que tenemos una variable aleatoria \\(X\\), lo único que sabemos de dicha variable es que viene de cierta distribución conocida, pero no del todo, esto significa que tiene una función de distribución \\(f(x,\theta)\\) donde \\(\theta\\) es un parámetro desconocido. Lo que expondremos a continuación es una serie de técnicas las cuales bajo ciertos supuestos nos van a permitir estimar dichos parámetros.
  
  Ahora daremos una serie de definiciones que nos van a permitir dar un lenguaje más apropiado a nuestro caso de estudio.
 
@@ -189,21 +189,21 @@ Para empezar esta sección definamos nuestro problema princial, supongamos que t
 
  >Definición(Muestra Aleatoria) Decimos que una colección de variables aleatorias \\(X_{1}, X_{2},...,X_{n}\\) es una muestra aleatoria si son independientes e idénticamente distribuidas.
 
- >Definición(Estadística) Una función de una muestra aleatoria que no depende de un parámetros desconocido. En la mayoría de los casos la denotamos con la letra \\(T\\).
+ >Definición(Estadística) Una función de una muestra aleatoria que no depende de un parámetro desconocido. En la mayoría de los casos la denotamos con la letra \\(T\\).
 
  Ejemplos de estadísticas tenemos a:
 
 - \\(T_1(X_{1}, X_{2},...X_{n}) = \frac{1}{n}\sum_{i}^{n}X_{i}\\)
 - \\(T_2(X_{1}, X_{2},...X_{n}) = \frac{1}{n-1}\sum_{i}^{n}(X_{i} - \bar{X})^2\\)
 
->Definición(Estimador Puntual) Un estimador puntual para un parámetro desconocido \\(\theta\\) es una estadística denotada por \\(\hat{\theta}\\), esl cual se propone para estimar dicho parámetro.
+>Definición(Estimador Puntual) Un estimador puntual para un parámetro desconocido \\(\theta\\) es una estadística denotada por \\(\hat{\theta}\\), el cual se propone para estimar dicho parámetro.
 
 ### Método de Momentos
->Definición(Momento de una Variable Aleatoria) Considermeos un entero \\(n\geq1\\). El k-ésimo momento de la variable aleatoria \\(X\\), encaso de existir es la \\(E(X^k)\\), los solemos llamar momentos poblacionales.
+>Definición(Momento de una Variable Aleatoria) Consideremos un entero \\(n\geq1\\). El k-ésimo momento de la variable aleatoria \\(X\\), en caso de existir es la \\(E(X^k)\\), los solemos llamar momentos poblacionales.
 
 >Definición(Momento de una muestra aleatoria) Sea un entero \\(n\geq1\\). El k-ésimo momento de una muestra aleatoria \\(X_{1}, X_{2},...,X_{n}\\) es la variable aleatoria \\(\frac{1}{n}\sum_{i}^{n}X_{i}^k \\), a estos momentos en la literatura suelen llamarse momentos muestrales.
 
-EL método de momentos simplemente consiste en igualar los momentos poblacionales a los momentos muestrales correspondientes, y resolver las ecuaciones resultantes, cuando esto sea posible.
+El método de momentos simplemente consiste en igualar los momentos poblacionales a los momentos muestrales correspondientes, y resolver las ecuaciones resultantes, cuando esto sea posible.
 
 Por ejemplo:
 
@@ -211,8 +211,7 @@ Por ejemplo:
 \\(Ber(\theta)\\) donde \\(\theta\\) es desconocido. Aplicar el método de momentos directamente nos produce la siguiente igualdad:
 $$ \hat{\theta} = \bar{X}$$
 
-- Si consideramos ahora 
-
+- Si consideramos ahora
 
 
 

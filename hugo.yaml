@@ -306,14 +306,14 @@ params:
         badges:
           - "Python"
           - "HTML"
- ##     - title: Análisis de sentimientos de música
-       ## content: Apliqué tecnicas de NLP para analizar los sentimentos de un dísco músical.
-        ##image: /projects/sentimientos.png
-        ##featured: 
-          ##name: github
-          ##link: 
-        ##badges:
-          ##- "Python"
+      - title: Análisis LinkedIn Job Postings
+        content: Este proyecto analiza un conjunto de datos de ofertas de empleo de LinkedIn para identificar cuáles son las habilidades, herramientas y tecnologías más demandadas para el rol de Data Analyst como también Data Scientist.
+        image: /projects/blogs_img/data-analytics.png
+        featured: 
+          name: github
+          link: https://github.com/MoyIs317/LinkedIn-Job-Postings-2023---2024-Data-project
+        badges:
+          - "Python"
           
 
   #Contact
