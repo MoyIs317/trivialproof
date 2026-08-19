@@ -14,21 +14,62 @@ mathjax: True
 # CÁLCULO
 ## Cálculo de una sola variable
 ### Sucesiones
-Sean \(a_n\) y \(b_n\) dos sucesiones de números reales. Bajo que condiciones es la sucesión \(a_n b_n\) convergente.
-- \(a_n\) converge.
-No es suficente. Basta considerar a \((a_n)\) = \(\frac{1}{n}\), esta sucesión converge a cero, per si \((b_n)\) = \(n^2\), entonces \((a_n b_n)\) = \(n\) la cual no converge.
+Sean \\(a_n\\) y \\(b_n\\) dos sucesiones de números reales. Bajo que condiciones es la sucesión \\(a_n b_n\\) convergente.
+- \\(a_n'\) converge.
+No es suficente. Basta considerar a \\((a_n)\\) = \\(\frac{1}{n}\\), esta sucesión converge a cero, per si \\((b_n)\\) = \\(n^2\\), entonces \\((a_n b_n)\\) = \\(n\\) la cual no converge.
 
-- \(a_n\) converge y \(b_n\) es acotada.
-No es suficiente pues basta considerar \((a_n)\) = \(1\) y \((b_n)\) = \((-1)^n\), ambas sicesiones cimplen lo pedido sin embargo \((a_n b_n)\) =  \((-1)^n\) la cual no es una sucesión convergente.
+- \\(a_n\\) converge y \\(b_n\\) es acotada.
+No es suficiente pues basta considerar \\((a_n)\\) = \\(1\\) y \\((b_n)\\) = \\((-1)^n\\), ambas sicesiones cimplen lo pedido sin embargo \\((a_n b_n)\\) =  \\((-1)^n\\) la cual no es una sucesión convergente.
 
-- \(a_n\) converge  a cero y \(b_n\) es acotada.
+- \\(a_n\\) converge  a cero y \\(b_n\\) es acotada.
 Con esto podemos asegurar la convergencia del producto.
-Demostración: Como  \(b_n\) es acotada implica que existe una constante \(C\) en los reales tal que \(|b_n|\leq C\) esto para todo \(n\), por otro lado la convergencia de la otra sucesión nos asegura que 
-$$ \epsilon $$
+Demostración: Como  \\(b_n\\) es acotada implica que existe una constante \\(C\\) en los reales tal que \\(|b_n|\leq C\\) esto para todo \\(n\\), por otro lado la convergencia de la otra sucesión nos asegura que 
+$$ \forall \epsilon > 0 \exist N\in \mathbb{N} : \forall n \geq N,  |a_n|<\epsilon$$
+Cont todo esto tenemos lo siguiente:
+$$ |a_nb_n| = |a_n||b_n|\leq C|a_n| <C\epsilon$$
+Con esto queda demostrado que \\(a_nb_n\\) converge a cero.
+### Continuidad
+Sea \\(f: [a,b]\longrightarrow \mathbb{R}\\) una función continua, demostrar que dados \\(c_1, c_2, ..., c_n\\) existe un \\(c \in [a,b]\\) tal que 
+$$f(c) = \frac{f(c_1) + f(c_2) + ...+f(c_n)}{n}$$
+
+Definamos lo siguiente:
+$$x = min\{f(c_1),f(c_2),...,f(c_n)\}$$
+$$y = max\{f(c_1),f(c_2),...,f(c_n)\}$$
+
+Afirmamos que:
+$$x \leq  \frac{f(c_1) + f(c_2) + ...+f(c_n)}{n} \leq y$$
+
+La demostración de este echo es fácil pues  basta notar lo siguiente:
+$$ x \leq f(c_1) \\
+  x \leq f(c_2)\\
+  .\\
+  .\\
+  .\\
+  x\leq f(c_n)$$
+  Ahora podemos sumar estas desigualdades obteniendo que:
+  $$ nx \leq f(c_1) + f(c_2) + ...+f(c_n)$$
+  dividiendo por \(n\) tenemos 
+  $$x \leq \frac{f(c_1) + f(c_2) + ...+f(c_n)}{n}$$
+de forma similar tenemos 
+$$  f(c_1) \leq y\\
+  f(c_2) \leq y\\
+  .\\
+  .\\
+  .\\
+  f(c_n) \leq y$$
+sumando y dividiendo por \(n\) concluimos
+$$\frac{f(c_1) + f(c_2) + ...+f(c_n)}{n}\leq y$$
+
+es decir 
+$$\frac{f(c_1) + f(c_2) + ...+f(c_n)}{n} \in [x,y]$$
+
+Entonces por el torema del valor intermedio existe \\(c \in [a,b]\\) tal que:
+$$ f(c) = \frac{f(c_1) + f(c_2) + ...+f(c_n)}{n}$$
+
 ## Cálculo Multivariable
 ### Límites
 Determina si los siguientes limites existen.
-- \( \lim_{ (x,y)\to (0,0)} \frac{|y|}{\sqrt(x^{2} + y^{2})} \)
+- \\( \lim_{ (x,y)\to (0,0)} \frac{|y|}{\sqrt(x^{2} + y^{2})} \\)
 Para determinar la existencia de este límite lo haremos mediante limites iterados:
 $$ \lim_{x\to 0} lim_{y\to 0}\frac{|y|}{\sqrt(x^{2} + y^{2})} = \lim_{x\to 0} 0 = 0  $$
 sin embargo podemos observar que:
@@ -71,7 +112,8 @@ Como ambos límites son distintos concluimos que el límite original no existe.
 Demostración: Sea \\(z = e^{i\theta}\\), además sabemos que:
 $$ \sum_{k = 0}^{n}z^k = \frac{1-z^{n+1}}{1-z}$$
 De esta forma tenemos que:
-$$ \sum_{k = 0}^{n}z^k = \frac{1-(e^{i\theta})^{n+1}}{1-e^{i\theta}} = \frac{1-e^{i(n+1)\theta}}{1-e^{i\theta}} = \frac{1-e^{i(n+\frac{1}{2})\theta + \frac{1}{2}i\theta}}{1-e^{\frac{2}{2}i\theta}}  = \frac{e^{\frac{1}{2}i\theta}(e^{-\frac{1}{2}i\theta} -e^{i(n+\frac{1}{2})\theta})}{e^{\frac{1}{2}i\theta}(e^{-\frac{1}{2}i\theta}-e^{\frac{1}{2}i\theta})} = \frac{e^{-\frac{1}{2}i\theta} -e^{i(n+\frac{1}{2})\theta}}{e^{-\frac{1}{2}i\theta}-e^{\frac{1}{2}i\theta}} $$
+$$ \sum_{k = 0}^{n}z^k = \frac{1-(e^{i\theta})^{n+1}}{1-e^{i\theta}} = \frac{1-e^{i(n+1)\theta}}{1-e^{i\theta}} = \\
+\frac{1-e^{i(n+\frac{1}{2})\theta + \frac{1}{2}i\theta}}{1-e^{\frac{2}{2}i\theta}}  = \frac{e^{\frac{1}{2}i\theta}(e^{-\frac{1}{2}i\theta} -e^{i(n+\frac{1}{2})\theta})}{e^{\frac{1}{2}i\theta}(e^{-\frac{1}{2}i\theta}-e^{\frac{1}{2}i\theta})} = \frac{e^{-\frac{1}{2}i\theta} -e^{i(n+\frac{1}{2})\theta}}{e^{-\frac{1}{2}i\theta}-e^{\frac{1}{2}i\theta}} $$
 Ahora en el denominador tenemos la resta de un número complejo con su conjugado, entonces esto sabemos que es igual a \\(-2iIm(e^{\frac{1}{2}i\theta} = -2isin(\frac{\theta}{2}))\\), ahora desarrollando el numerador tenemos que:
 $$\frac{cos(\frac{\theta}{2}) - isin(\frac{\theta}{2}) - cos((n + \frac{1}{2})\theta) - isin((n + \frac{1}{2})\theta)}{-2isin(\frac{\theta}{2})}$$
 
