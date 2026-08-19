@@ -15,7 +15,7 @@ mathjax: True
 ## Cálculo de una sola variable
 ### Sucesiones
 Sean \\(a_n\\) y \\(b_n\\) dos sucesiones de números reales. Bajo que condiciones es la sucesión \\(a_n b_n\\) convergente.
-- \\(a_n'\) converge.
+- \\(a_n\\) converge.
 No es suficente. Basta considerar a \\((a_n)\\) = \\(\frac{1}{n}\\), esta sucesión converge a cero, per si \\((b_n)\\) = \\(n^2\\), entonces \\((a_n b_n)\\) = \\(n\\) la cual no converge.
 
 - \\(a_n\\) converge y \\(b_n\\) es acotada.
@@ -24,7 +24,7 @@ No es suficiente pues basta considerar \\((a_n)\\) = \\(1\\) y \\((b_n)\\) = \\(
 - \\(a_n\\) converge  a cero y \\(b_n\\) es acotada.
 Con esto podemos asegurar la convergencia del producto.
 Demostración: Como  \\(b_n\\) es acotada implica que existe una constante \\(C\\) en los reales tal que \\(|b_n|\leq C\\) esto para todo \\(n\\), por otro lado la convergencia de la otra sucesión nos asegura que 
-$$ \forall \epsilon > 0 \exist N\in \mathbb{N} : \forall n \geq N,  |a_n|<\epsilon$$
+$$ \forall \epsilon > 0 \exists N\in \mathbb{N} : \forall n \geq N,  |a_n|<\epsilon$$
 Cont todo esto tenemos lo siguiente:
 $$ |a_nb_n| = |a_n||b_n|\leq C|a_n| <C\epsilon$$
 Con esto queda demostrado que \\(a_nb_n\\) converge a cero.
