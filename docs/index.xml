@@ -6,8 +6,15 @@
     <description>Recent content on Trivial Proof</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://moyis317.github.io/trivialproof/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Análisis de Ventas</title>
+      <link>https://moyis317.github.io/trivialproof/project/sales_report/summary/</link>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://moyis317.github.io/trivialproof/project/sales_report/summary/</guid>
+      <description>&lt;h1 id=&#34;-sales-performance--profitability-analysis-2023-vs-2024&#34;&gt;📊 Sales Performance &amp;amp; Profitability Analysis (2023 vs. 2024)&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Resumen Ejecutivo:&lt;/strong&gt; El análisis de 200,000 transacciones revela que las métricas de negocio cambian radicalmente según el enfoque: mientras que &lt;strong&gt;Centre + Home &amp;amp; Furniture&lt;/strong&gt; domina en dinero absoluto ingresado, &lt;strong&gt;East + Accessories&lt;/strong&gt; lidera en eficiencia de margen (alcanzando un 34.07%), demostrando que un mayor precio o volumen no siempre equivale a la mayor rentabilidad porcentual&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;El proyecto entero est disponible en &lt;a href=&#34;https://github.com/MoyIs317/Sales-Analysis&#34;&gt;Proyecto Análisis de ventas&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Análisis de Red de Tesis UNAM</title>
       <link>https://moyis317.github.io/trivialproof/project/red_tesis/reporte/</link>

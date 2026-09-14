@@ -314,7 +314,15 @@ params:
           link: https://github.com/MoyIs317/LinkedIn-Job-Postings-2023---2024-Data-project
         badges:
           - "Python"
-          
+      - title: Análisis de ventas usando SQL
+        content: Exploración y análisis de dataset con ventas durante 2023 y 2024.
+        image: /projects/blogs_img/data-analytics.png
+        featured: 
+          name: Proyecto
+          link: /project/sales_report/summary/
+        badges:
+          - "Python" 
+          - "SQL"       
 
   #Contact
   contact:
