@@ -22,7 +22,7 @@ El proyecto entero est disponible en [Proyecto Análisis de ventas](https://gith
 - **Integridad de los datos:** 
   - No se encontraron valores nulos (missing values) ni registros duplicados.
   - La columna **Country** (*United States*) fue eliminada debido a su redundancia.
-  - Se detectó y corrigió una tasa de inconsistencia del 5.15% en la columna **Revenue** (Revenue $\neq$ Quantity $\times$ Unit_Price), logrando un 100% de consistencia mediante el recálculo con los valores de cantidad y precio unitario.
+  - Se detectó y corrigió una tasa de inconsistencia del 5.15% en la columna **Revenue** $$Revenue \neq Quantity \times Unit_Price$$, logrando un 100% de consistencia mediante el recálculo con los valores de cantidad y precio unitario.
 
 ## Esquema de Datos
 

@@ -63,7 +63,7 @@ Menus:
 
 params:
   title: "Trivial Proof" 
-  description: Es mi blog en el cual subo mis proyectos de matematicas, computación y lo que me apasione
+  description: Es mi blog en el cual subo mis proyectos de matemáticas, computación y lo que me guste
   # staticPath: ""  # The path to serve the static files from
   favicon: "/TP3.png"
 
@@ -148,7 +148,7 @@ params:
     button:
       enable: true
       name: "Resume"
-      url: "https://drive.google.com/file/d/1GpbjcAOYZbu24IQS0CyaAPvoYdfT_NNP/view?usp=sharing"
+      url: "https://drive.google.com/file/d/1DhOhpnnvCWq-vt_Gq8cLqf_gcN7UQblb/view?usp=sharing"
       download: true
       newPage: true
     socialLinks:
