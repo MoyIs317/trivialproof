@@ -384,7 +384,7 @@ Simulador de examen | Trivial Proof
   <hr>
   <div id="res-det"></div>
   <p id="mail-status" class="meta"></p>
-  <button id="b-mail" hidden>Enviar resumen por correo</button>
+  <button id="b-mail" hidden>Enviar con mi app de correo</button> <button id="b-gmail" hidden>Abrir en Gmail</button>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -395,8 +395,8 @@ const CONFIG = {
   passwordHash: "bf67e322956f7d920ca42a2ccb7e8f9e2b7978536e180cff083903602f7c317c", 
   bancoURLs: ["/banco/preguntas.json", "https://moyis317.github.io/trivialproof/banco/preguntas.json", "/banco/preguntas.json"],
   numPreguntas: 20,
-  correoProfesor: "moisesguam842@gmail.com",
-  emailjs: { publicKey: "9Lx313KmXyvmx5ddW", serviceId: "service_ibafslg", templateId: "template_7st1imk" }
+  correoProfesor: "tu_correo@ejemplo.com",
+  emailjs: { publicKey: "9Lx313KmXyvmx5ddW", serviceId: "service_t1ty6c6", templateId: "template_7st1imk" }
 };
 
  
@@ -492,14 +492,24 @@ $("b-end").onclick = () => {
 
  
 function enviarCorreo(){
-  const c = CONFIG.emailjs, st = $("mail-status"), b = $("b-mail");
+  const c = CONFIG.emailjs, st = $("mail-status");
+  const respaldo = () => { $("b-mail").hidden = false; $("b-gmail").hidden = false; };
   if (window.emailjs && c.publicKey && c.serviceId && c.templateId) {
     st.textContent = "Enviando resumen…";
     emailjs.send(c.serviceId, c.templateId, {alumno:nombre, resumen:resumenTxt, tiempo:fmt(segs)}, {publicKey:c.publicKey})
       .then(()=> st.textContent = "Resumen enviado al profesor.")
-      .catch(()=> { st.textContent = "No se pudo enviar automáticamente."; b.hidden = false; });
-  } else { b.hidden = false; }
+      .catch(e => {
+        console.error("EmailJS:", e);
+        const det = e ? [e.status, e.text || e.message].filter(Boolean).join(" ") : "";
+        st.textContent = "No se pudo enviar automáticamente" + (det ? " (" + det + ")" : "") + ".";
+        respaldo();
+      });
+  } else { respaldo(); }
 }
+$("b-gmail").onclick = () => {
+  const u = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONFIG.correoProfesor)}&su=${encodeURIComponent("Simulador de examen - "+nombre)}&body=${encodeURIComponent(resumenTxt)}`;
+  window.open(u, "_blank", "noopener");
+};
 $("b-mail").onclick = () => {
   location.href = `mailto:${CONFIG.correoProfesor}?subject=${encodeURIComponent("Simulador de examen - "+nombre)}&body=${encodeURIComponent(resumenTxt)}`;
 };
