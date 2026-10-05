@@ -6,8 +6,15 @@
     <description>Recent content in Matemáticas on Trivial Proof</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://moyis317.github.io/trivialproof/tags/matem%C3%A1ticas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simulador de examen</title>
+      <link>https://moyis317.github.io/trivialproof/blogs/test/</link>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://moyis317.github.io/trivialproof/blogs/test/</guid>
+      <description>&lt;h1 id=&#34;simulador-de-examen&#34;&gt;Simulador de examen&lt;/h1&gt;&#xA;&lt;p&gt;Este simulador te permite repasar los temas vistos en clase con preguntas de opción múltiple. Cada vez que lo uses recibirás un examen distinto, con las preguntas elegidas al azar, y al terminar verás tu calificación y el tiempo que tardaste.&lt;/p&gt;&#xA;&lt;h2 id=&#34;cómo-se-usa&#34;&gt;¿Cómo se usa?&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Ingresa.&lt;/strong&gt; Escribe tu nombre completo y la contraseña que se dio en clase.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Elige los temas.&lt;/strong&gt; Marca los temas que quieres repasar. Puedes elegir uno solo o varios.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Comienza el examen.&lt;/strong&gt; El simulador selecciona hasta 20 preguntas al azar de los temas que elegiste, y el cronómetro empieza a correr.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Responde.&lt;/strong&gt; Marca una opción en cada pregunta. En la parte superior verás tu tiempo y cuántas preguntas llevas respondidas, y puedes cambiar una respuesta antes de terminar.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Termina el examen.&lt;/strong&gt; Presiona &lt;em&gt;Terminar examen&lt;/em&gt;. Si dejaste preguntas sin responder, el simulador te avisará antes de cerrar.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Revisa tu resumen.&lt;/strong&gt; Verás tu calificación sobre 10, el número de aciertos, el tiempo total y, para cada pregunta, tu respuesta y la correcta.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;envío-de-resultados&#34;&gt;Envío de resultados&lt;/h2&gt;&#xA;&lt;p&gt;Al terminar, el resumen se envía automáticamente por correo a tu profesor y aparecerá el mensaje &lt;em&gt;Resumen enviado&lt;/em&gt;. Si el envío automático falla, el simulador te mostrará dos botones para mandarlo tú mismo: uno abre tu aplicación de correo y el otro abre Gmail en el navegador.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Análisis de Red de Tesis UNAM</title>
       <link>https://moyis317.github.io/trivialproof/project/red_tesis/reporte/</link>
