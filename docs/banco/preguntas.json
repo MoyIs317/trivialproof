@@ -1,0 +1,14 @@
+[
+ {"t":"Estadística descriptiva","q":"¿Cuál es la media de 2, 4, 6, 8?","o":["4","5","6","20"],"a":1},
+ {"t":"Estadística descriptiva","q":"¿Cuál es la mediana de 3, 1, 7, 5, 9?","o":["3","7","5","9"],"a":2},
+ {"t":"Estadística descriptiva","q":"¿Cuál es la moda de 2, 3, 3, 4, 4, 4, 5?","o":["3","4","5","No existe"],"a":1},
+ {"t":"Estadística descriptiva","q":"¿Cuál de estas es una variable cualitativa?","o":["Estatura","Calificación","Religión","Edad"],"a":2},
+ {"t":"Estadística descriptiva","q":"La varianza muestral \\(s^2\\) divide la suma de cuadrados entre:","o":["\\(n\\)","\\(n+1\\)","\\(n-1\\)","\\(2n\\)"],"a":2},
+ {"t":"Estadística descriptiva","q":"Si a los datos 10, 12, 14 se les suma 3 a cada uno, la nueva media \\(\\bar{y}\\) es:","o":["12","15","13","36"],"a":1},
+ {"t":"Estimación puntual","q":"Una muestra aleatoria es una colección de variables aleatorias:","o":["Dependientes","Independientes e idénticamente distribuidas","Siempre normales","Con media cero"],"a":1},
+ {"t":"Estimación puntual","q":"El espacio parametral \\(\\Theta\\) es:","o":["El conjunto de observaciones","El conjunto de valores posibles de \\(\\theta\\)","La muestra","La varianza"],"a":1},
+ {"t":"Estimación puntual","q":"Una estadística es una función de la muestra que:","o":["Depende de \\(\\theta\\)","No depende de parámetros desconocidos","Siempre es la media","Es constante"],"a":1},
+ {"t":"Estimación puntual","q":"El k-ésimo momento poblacional de \\(X\\) es:","o":["\\(E(X^k)\\)","\\((E(X))^k\\)","\\(Var(X)^k\\)","\\(X^k\\)"],"a":0},
+ {"t":"Estimación puntual","q":"Para \\(Ber(\\theta)\\), el estimador por método de momentos es:","o":["\\(\\hat{\\theta}=1/\\bar{X}\\)","\\(\\hat{\\theta}=\\bar{X}\\)","\\(\\hat{\\theta}=\\bar{X}^2\\)","\\(\\hat{\\theta}=n\\)"],"a":1},
+ {"t":"Estimación puntual","q":"Un estimador puntual de \\(\\theta\\) es:","o":["Un intervalo","Una estadística propuesta para estimar \\(\\theta\\)","El parámetro mismo","Una probabilidad"],"a":1}
+]
