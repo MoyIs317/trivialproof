@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ejecicios on Trivial Proof</title>
+    <link>https://moyis317.github.io/trivialproof/tags/ejecicios/</link>
+    <description>Recent content in Ejecicios on Trivial Proof</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://moyis317.github.io/trivialproof/tags/ejecicios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ejercicios de Matemáticas</title>
+      <link>https://moyis317.github.io/trivialproof/blogs/ejercicios-de-matem%C3%A1ticas/</link>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://moyis317.github.io/trivialproof/blogs/ejercicios-de-matem%C3%A1ticas/</guid>
+      <description>&lt;h1 id=&#34;cálculo&#34;&gt;CÁLCULO&lt;/h1&gt;&#xA;&lt;h2 id=&#34;cálculo-de-una-sola-variable&#34;&gt;Cálculo de una sola variable&lt;/h2&gt;&#xA;&lt;h3 id=&#34;sucesiones&#34;&gt;Sucesiones&lt;/h3&gt;&#xA;&lt;p&gt;Sean \(a_n\) y \(b_n\) dos sucesiones de números reales. Bajo que condiciones es la sucesión \(a_n b_n\) convergente.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;\(a_n\) converge.&#xA;No es suficente. Basta considerar a \((a_n)\) = \(\frac{1}{n}\), esta sucesión converge a cero, per si \((b_n)\) = \(n^2\), entonces \((a_n b_n)\) = \(n\) la cual no converge.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;\(a_n\) converge y \(b_n\) es acotada.&#xA;No es suficiente pues basta considerar \((a_n)\) = \(1\) y \((b_n)\) = \((-1)^n\), ambas sicesiones cimplen lo pedido sin embargo \((a_n b_n)\) =  \((-1)^n\) la cual no es una sucesión convergente.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
