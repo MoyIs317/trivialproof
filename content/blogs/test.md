@@ -33,7 +33,7 @@ Al terminar, el resumen se envía automáticamente por correo a tu profesor y ap
 - **No recargues ni cierres la página** durante el examen: perderías tus respuestas y el cronómetro.
 - Las preguntas sin responder cuentan como incorrectas.
 - Si repites el examen, las preguntas y el orden de las opciones cambian.
-- Si eliges pocos temas, el examen puede tener menos de 20 preguntas.
+- Si eliges pocos temas, el examen puede tener menos de 5 preguntas.
 - Funciona en computadora y en celular, pero necesitas conexión a internet.
 
 ## Empieza aquí
